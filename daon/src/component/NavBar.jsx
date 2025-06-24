@@ -16,7 +16,7 @@ const NavBar = () => {
                 <i className="fi fi-rr-user-robot"></i>
                 <span>AI채팅</span>
             </div>
-            <div className="nav-item">
+            <div className="nav-item" onClick={()=>{nav('/')}}>
                 <i className="fi fi-rr-home-location-alt"></i>
                 <span>홈</span>
             </div>
