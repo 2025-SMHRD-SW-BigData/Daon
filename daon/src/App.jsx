@@ -7,7 +7,7 @@ import Main from './component/Main'
 import Map from './component/Map'
 import Join from './component/Join'
 import Login from './component/Login'
-
+import './App.css';
 
 function App() {
   const [count, setCount] = useState(0)

@@ -16,7 +16,7 @@
 
 
  body {
-     font-family: 'Helvetica', sans-serif;
+     font-family: 'SBAggroL', sans-serif;
      background-color: #ffffff;
      color: #333;
  }
@@ -57,7 +57,7 @@
      font-size: calc(0.5rem + 0.8vw);
      /* 창 크기에 따라 크기 조절되는 글자 */
      font-weight: bold;
-     font-family: 'Helvetica', sans-serif;
+     font-family: 'SBAggroL', sans-serif;
      margin: 0;
      padding: 0;
 
@@ -173,6 +173,7 @@
   }
   
   .join-form {
+    text-align:left;
     display: flex;
     flex-direction: column;
     gap: 15px;

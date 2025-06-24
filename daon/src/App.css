@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "SBAggroL";
+  src: url("./assets/SB 어그로 L.ttf") format("truetype");
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
