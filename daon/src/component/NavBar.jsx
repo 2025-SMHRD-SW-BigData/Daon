@@ -24,7 +24,7 @@ const NavBar = () => {
                 <i className="fi fi-rr-bell" ></i>
                 <span>알림</span>
             </div>
-            <div className="nav-item">
+            <div className="nav-item" onClick={()=>{nav('/login')}}>
                 <i className="fi fi-rr-user"></i>
                 <span>로그인</span>
             </div>
