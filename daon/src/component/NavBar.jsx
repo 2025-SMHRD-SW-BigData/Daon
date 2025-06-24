@@ -12,7 +12,7 @@ const NavBar = () => {
                 <i className="fi fi-rr-marker"></i>
                 <span >어촌지도</span>
             </div>
-            <div className="nav-item">
+            <div className="nav-item" onClick={()=>{nav('/chatbot')}}>
                 <i className="fi fi-rr-user-robot"></i>
                 <span>AI채팅</span>
             </div>
