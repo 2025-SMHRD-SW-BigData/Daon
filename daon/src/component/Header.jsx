@@ -12,7 +12,7 @@ const Header = () => {
                 <span className="logo-text">귀어로드</span>
             </div>
             <div className="menu">
-                <span>로그인</span> | <span onClick={() => { nav('join') }}>회원가입</span>
+                 <span onClick={() => { nav('/login') }}>로그인</span> | <span onClick={() => { nav('join') }}>회원가입</span>
             </div>
         </header>
     )

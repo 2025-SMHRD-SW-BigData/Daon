@@ -6,6 +6,7 @@ import {Route, Routes} from 'react-router-dom'
 import Main from './component/Main'
 import Map from './component/Map'
 import Join from './component/Join'
+import Login from './component/Login'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,7 +16,7 @@ function App() {
       <Route path='/' element={<Main></Main>}></Route>
       <Route path='/map' element={<Map></Map>}></Route>
       <Route path='/join' element={<Join></Join>}></Route>
-      
+      <Route path='/login' element={<Login></Login>}></Route>
 
 
     </Routes>
