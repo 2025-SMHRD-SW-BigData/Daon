@@ -4,7 +4,7 @@ import './style/main.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import Header from './component/Header.jsx'
-import NavBar from './component/navBar.jsx'
+import NavBar from './component/NavBar.jsx'
 
 
 createRoot(document.getElementById('root')).render(

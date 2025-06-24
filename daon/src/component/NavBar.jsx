@@ -21,7 +21,7 @@ const NavBar = () => {
                 <span>홈</span>
             </div>
             <div className="nav-item">
-                <i className="fi fi-rr-bell"></i>
+                <i className="fi fi-rr-bell" ></i>
                 <span>알림</span>
             </div>
             <div className="nav-item">
