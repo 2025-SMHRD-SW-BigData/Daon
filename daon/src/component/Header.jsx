@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../assets/daonLogo.png'
 import { useNavigate } from 'react-router-dom'
-
+import '../style/header.css'
 const Header = () => {
     const nav = useNavigate()
     return (
