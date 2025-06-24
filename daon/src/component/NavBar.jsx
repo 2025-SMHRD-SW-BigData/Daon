@@ -1,11 +1,16 @@
 import React from 'react'
+import Map from './Map'
+import { useNavigate } from 'react-router-dom'
 
 const NavBar = () => {
+    
+    const nav = useNavigate();
+
     return (
         <nav className="footer-nav">
-            <div className="nav-item">
+            <div className="nav-item" onClick={()=>{nav('/map')}}>
                 <i className="fi fi-rr-marker"></i>
-                <span>어촌지도</span>
+                <span >어촌지도</span>
             </div>
             <div className="nav-item">
                 <i className="fi fi-rr-user-robot"></i>

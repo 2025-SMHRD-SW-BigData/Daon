@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 
-const Map = () => {
+const Map = ({height= 700}) => {
   const mapElement = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
@@ -68,17 +68,12 @@ const Map = () => {
   return (
     <div>
       <div className="section-title">
-        어촌 마을 소개
-        <hr />
+        <div
+          id="map"
+          ref={mapElement}
+          style={{ width: '70%', height, margin: '0 auto' }}
+        ></div>
       </div>
-
-      <div
-        id="map"
-        ref={mapElement}
-        style={{ width: '80%', height: '400px', margin: '0 auto' }}
-      ></div>
-      <div className="section-title">어촌계</div>
-      <hr />
     </div>
   );
 };

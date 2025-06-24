@@ -15,6 +15,7 @@ function App() {
       <Route path='/' element={<Main></Main>}></Route>
       <Route path='/map' element={<Map></Map>}></Route>
       <Route path='/join' element={<Join></Join>}></Route>
+      
 
 
     </Routes>
