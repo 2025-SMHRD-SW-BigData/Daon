@@ -1,0 +1,208 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ hr {
+     height: 2.5px;
+     /* 선의 두께 */
+     background-color: #66a5ed;
+     /* 선의 색상 */
+     border: none;
+     /* 기본 테두리 제거 */
+     margin: 30px 0;
+ }
+
+
+ body {
+     font-family: 'Helvetica', sans-serif;
+     background-color: #ffffff;
+     color: #333;
+ }
+
+ header {
+     background-color: #ffffff;
+     padding: 15px 20px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     /* border-bottom: 1px solid #ddd; 경계 일단 표시 안하자*/ 
+     position: sticky;
+     top: 0;
+     z-index: 100;
+ }
+
+ header .logo {
+     font-size: 20px;
+     font-weight: bold;
+     color: #00aaff;
+ }
+
+ .logo-img {
+     width: 8vw;
+     /* 브라우저 너비의 10% */
+     max-width: 60px;
+     /* 너무 커지지 않도록 제한 */
+     min-width: 30px;
+     /* 너무 작아지지 않도록 제한 */
+     height: auto;
+     /* 비율 유지 */
+     margin: 0;
+     padding: 0;
+
+ }
+
+ .logo-text {
+     font-size: calc(0.5rem + 0.8vw);
+     /* 창 크기에 따라 크기 조절되는 글자 */
+     font-weight: bold;
+     font-family: 'Helvetica', sans-serif;
+     margin: 0;
+     padding: 0;
+
+ }
+
+ .search-box {
+     display: flex;
+     justify-content: center;
+     /* 가운데 정렬 */
+     margin: 20px 0;
+ }
+
+ .search-box input[type="text"] {
+     width: 70%;
+     padding: 10px 16px;
+     font-size: 16px;
+     border: 1.4px solid #3B82F6;
+     /* 예쁜 파란색 */
+     border-radius: 15px;
+     outline: none;
+     transition: box-shadow 0.2s ease;
+ }
+
+ .search-box input[type="text"]:focus {
+     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+     /* 포커스 시 파란 빛 */
+ }
+
+ .section-title {
+     font-size: 18px;
+     font-weight: bold;
+     margin: 20px 20px 10px;
+ }
+
+ .company-list {
+     margin: 0 20px;
+ }
+
+ .company-card {
+     background-color: #ffffff;
+     padding: 15px;
+     border-radius: 8px;
+     margin-bottom: 15px;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+ }
+
+ .company-card h3 {
+     margin-bottom: 5px;
+     font-size: 16px;
+ }
+
+ .company-card .rating {
+     color: #ffaa00;
+     font-size: 14px;
+ }
+
+ .footer-nav {
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     background-color: #ffffff;
+     /* border-top: 1px solid #ddd;경계선 일단 표시하지말자 */
+     display: flex;
+     justify-content: space-around;
+     padding: 10px 0;
+ }
+
+ .footer-nav a {
+     text-align: center;
+     font-size: 14px;
+     color: #555;
+     text-decoration: none;
+ }
+
+ .footer-nav a:hover {
+     color: #00aaff;
+ }
+
+ .nav-item {
+     display: flex;
+     flex-direction: column;
+     /* 수직 정렬 */
+     align-items: center;
+     font-size: 12px;
+     color: #444;
+     text-align: center;
+ }
+
+ #map {
+     width: 80%;
+     height: 400px;
+     margin: 0 auto;
+ }
+
+
+ .join-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 40px auto;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .join-title {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    color: #00aaff;
+    margin-bottom: 10px;
+  }
+  
+  .join-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .join-input {
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 1.4px solid #3B82F6;
+    border-radius: 8px;
+    outline: none;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .join-input:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  }
+  
+  .join-button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #3B82F6;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .join-button:hover {
+    background-color: #2563eb; /* 살짝 더 진한 파랑 */
+  }
