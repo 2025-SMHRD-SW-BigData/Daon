@@ -27,7 +27,7 @@
      display: flex;
      justify-content: space-between;
      align-items: center;
-     /* border-bottom: 1px solid #ddd; 경계 일단 표시 안하자*/ 
+     /* border-bottom: 1px solid #ddd; 경계 일단 표시 안하자*/
      position: sticky;
      top: 0;
      z-index: 100;
@@ -64,6 +64,7 @@
  }
 
  .search-box {
+
      display: flex;
      justify-content: center;
      /* 가운데 정렬 */
@@ -71,7 +72,7 @@
  }
 
  .search-box input[type="text"] {
-     width: 70%;
+     width: 50%;
      padding: 10px 16px;
      font-size: 16px;
      border: 1.4px solid #3B82F6;
@@ -155,55 +156,108 @@
 
 
  .join-container {
-    width: 90%;
-    max-width: 400px;
-    margin: 40px auto;
-    background-color: #f9f9f9;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .join-title {
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
-    color: #00aaff;
-    margin-bottom: 10px;
-  }
-  
-  .join-form {
-    text-align:left;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .join-input {
-    padding: 12px 14px;
-    font-size: 16px;
-    border: 1.4px solid #3B82F6;
-    border-radius: 8px;
-    outline: none;
-    transition: box-shadow 0.2s ease;
-  }
-  
-  .join-input:focus {
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
-  }
-  
-  .join-button {
-    padding: 12px;
-    font-size: 16px;
-    background-color: #3B82F6;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-  
-  .join-button:hover {
-    background-color: #2563eb; /* 살짝 더 진한 파랑 */
-  }
+     width: 90%;
+     max-width: 400px;
+     margin: 40px auto;
+     background-color: #f9f9f9;
+     padding: 30px;
+     border-radius: 10px;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+ }
+
+ .join-title {
+     font-size: 22px;
+     font-weight: bold;
+     text-align: center;
+     color: #00aaff;
+     margin-bottom: 10px;
+ }
+
+ .join-form {
+     text-align: left;
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+ }
+
+ .join-input {
+     padding: 12px 14px;
+     font-size: 16px;
+     border: 1.4px solid #3B82F6;
+     border-radius: 8px;
+     outline: none;
+     transition: box-shadow 0.2s ease;
+ }
+
+ .join-input:focus {
+     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+ }
+
+ .join-button {
+     padding: 12px;
+     font-size: 16px;
+     background-color: #3B82F6;
+     color: #fff;
+     border: none;
+     border-radius: 8px;
+     cursor: pointer;
+     font-weight: bold;
+     transition: background-color 0.3s;
+ }
+
+ .join-button:hover {
+     background-color: #2563eb;
+     /* 살짝 더 진한 파랑 */
+ }
+
+ .div1 {
+     background-color: white;
+     /* width: 300px;
+     height: 300px;
+     margin-left: 50px;
+     margin-top: 50px; */
+     border-radius: 10%;
+    display: 'flex'; 
+    justify-content: 'center'; 
+    align-items: 'center';
+    
+    
+ }
+ .div2 {
+     background-color: white;
+     /* width: 300px;
+     height: 300px;
+     margin-left:50px;
+     margin-top: 50px; */
+     border-radius: 10%;
+         display: 'flex'; 
+    justify-content: 'center'; 
+    align-items: 'center';
+     
+    
+ }
+ .div3 {
+     background-color: white;
+     /* width: 300px;
+     height: 300px;
+     margin-left: 50px;
+     margin-top: 50px; */
+     border-radius: 10%;
+         display: 'flex'; 
+    justify-content: 'center'; 
+    align-items: 'center';
+     
+
+ }
+ .div4 {
+     background-color: white;
+     /* width: 300px;
+     height: 300px;
+     margin-left: 50px;
+     margin-top: 50px; */
+     border-radius: 10%;
+         display: 'flex'; 
+    justify-content: 'center'; 
+    align-items: 'center';
+
+ }
