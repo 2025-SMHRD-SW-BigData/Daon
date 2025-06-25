@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 
-const Map = ({ height = 700 }) => {
+const Map = ({ height = 700, searchText = '' }) => {
   const mapElement = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
+  const infoWindowsRef = useRef([]);
   const [village, setVillage] = useState([]);
 
   // 1. JSON 데이터 불러오기 및 항구명 기준 중복 제거
@@ -51,13 +52,14 @@ const Map = ({ height = 700 }) => {
     });
   }, []);
 
-  // 3. 마커 및 InfoWindow 생성
+  // 3. 마커 및 InfoWindow 생성 (village 바뀔 때)
   useEffect(() => {
     if (!mapRef.current) return;
 
-    // 기존 마커 제거
+    // 기존 마커 및 InfoWindow 제거
     markersRef.current.forEach(marker => marker.setMap(null));
     markersRef.current = [];
+    infoWindowsRef.current = [];
 
     village.forEach(v => {
       const marker = new window.naver.maps.Marker({
@@ -79,12 +81,55 @@ const Map = ({ height = 700 }) => {
       });
 
       window.naver.maps.Event.addListener(marker, 'click', () => {
+        infoWindowsRef.current.forEach(iw => iw.close());
         infoWindow.open(mapRef.current, marker);
       });
 
       markersRef.current.push(marker);
+      infoWindowsRef.current.push(infoWindow);
     });
   }, [village]);
+
+  // 4. searchText가 바뀔 때 가장 유사한 마커 찾아서 이동 + InfoWindow 열기
+  useEffect(() => {
+    if (!mapRef.current || village.length === 0) return;
+
+    if (!searchText || searchText.trim() === '') {
+      // 검색어가 없으면 기본 뷰(전국)로 이동
+      mapRef.current.setCenter(new window.naver.maps.LatLng(36.5, 127.5));
+      mapRef.current.setZoom(7);
+      infoWindowsRef.current.forEach(iw => iw.close());
+      return;
+    }
+
+    // 입력한 searchText와 가장 유사한 항구명 찾기 (단순히 완전일치 먼저, 없으면 포함, 없으면 첫 항구)
+    const lowerSearch = searchText.trim().toLowerCase();
+
+    // 완전 일치 항구 먼저
+    let foundIndex = village.findIndex(v => v.name.toLowerCase() === lowerSearch);
+
+    // 완전 일치 없으면 포함 검색
+    if (foundIndex === -1) {
+      foundIndex = village.findIndex(v => v.name.toLowerCase().includes(lowerSearch));
+    }
+
+    // 그래도 없으면 첫번째 항구
+    if (foundIndex === -1) foundIndex = 0;
+
+    const targetMarker = markersRef.current[foundIndex];
+    const targetInfoWindow = infoWindowsRef.current[foundIndex];
+    const targetVillage = village[foundIndex];
+
+    if (targetMarker && targetInfoWindow && targetVillage) {
+      // 지도 중심 이동 + 줌인
+      mapRef.current.setCenter(targetMarker.getPosition());
+      mapRef.current.setZoom(12);
+
+      // 모든 InfoWindow 닫고, 해당 마커 정보창 열기
+      infoWindowsRef.current.forEach(iw => iw.close());
+      targetInfoWindow.open(mapRef.current, targetMarker);
+    }
+  }, [searchText, village]);
 
   return (
     <div>
