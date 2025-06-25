@@ -71,7 +71,8 @@ const Map = ({height= 700}) => {
         <div
           id="map"
           ref={mapElement}
-          style={{ width: '70%', height, margin: '0 auto' }}
+          
+          style={{ width: '70%', height, margin: '0 auto', borderRadius : '3%' }}
         ></div>
       </div>
     </div>

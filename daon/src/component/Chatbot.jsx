@@ -9,7 +9,7 @@ const Chatbot = () => {
 
     const sendMessage = () => {
         axios
-            .post('http://localhost:3003/ask', { message: msg })
+            .post('http://192.168.219.45:3003/ask', { message: msg })
             .then((res) => {
                 // 서버로부터 받은 응답 데이터를 JSON 문자열로 변환하여 상태 변수에 저장합니다.
                 // 보기 좋게 들여쓰기(2칸)하여 출력합니다.
