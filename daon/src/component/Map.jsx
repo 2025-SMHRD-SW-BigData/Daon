@@ -8,9 +8,10 @@ const Map = ({ searchText = '' }) => {
   const infoWindowsRef = useRef([]);
   const [village, setVillage] = useState([]);
 
+  // 데이터 로드 및 포맷팅
   useEffect(() => {
     axios.get('/fishing_village.json')
-      .then((res) => {
+      .then(res => {
         const rawData = Array.isArray(res.data) ? res.data : [res.data];
         const nameSet = new Set();
         const formatted = rawData
@@ -22,7 +23,6 @@ const Map = ({ searchText = '' }) => {
           })
           .map(item => {
             const portName = item.FSHNG_PRT_NM?.trim();
-            const photoPath = `/images/${portName}/${portName}_1.jpg`;
             return {
               name: portName,
               lat: parseFloat(item.LA),
@@ -30,7 +30,7 @@ const Map = ({ searchText = '' }) => {
               info: item.MAIN_TRRSR_NM,
               address: item.FP_ADDR_DNL,
               beaches: item.NRB_BEACH_NM,
-              photo: photoPath,
+              photo: `/images/${portName}/${portName}_1.jpg`,
             };
           });
         setVillage(formatted);
@@ -38,9 +38,9 @@ const Map = ({ searchText = '' }) => {
       .catch(console.error);
   }, []);
 
+  // 맵 초기화
   useEffect(() => {
     if (!window.naver || !mapElement.current) return;
-
     if (!mapRef.current) {
       mapRef.current = new window.naver.maps.Map(mapElement.current, {
         center: new window.naver.maps.LatLng(36.5, 127.5),
@@ -49,10 +49,11 @@ const Map = ({ searchText = '' }) => {
     }
   }, []);
 
+  // 마커 & InfoWindow 렌더링
   useEffect(() => {
     if (!mapRef.current) return;
-
-    markersRef.current.forEach(marker => marker.setMap(null));
+    // 기존 마커 제거
+    markersRef.current.forEach(m => m.setMap(null));
     markersRef.current = [];
     infoWindowsRef.current = [];
 
@@ -62,7 +63,6 @@ const Map = ({ searchText = '' }) => {
         map: mapRef.current,
         title: v.name,
       });
-
       const infoWindow = new window.naver.maps.InfoWindow({
         content: `
           <div style="padding:10px; font-size:13px; line-height:1.5; max-width:250px;">
@@ -74,67 +74,51 @@ const Map = ({ searchText = '' }) => {
           </div>
         `
       });
-
       window.naver.maps.Event.addListener(marker, 'click', () => {
         infoWindowsRef.current.forEach(iw => iw.close());
         infoWindow.open(mapRef.current, marker);
       });
-
       markersRef.current.push(marker);
       infoWindowsRef.current.push(infoWindow);
     });
   }, [village]);
 
+  // 검색에 따른 센터 이동 & InfoWindow 오픈
   useEffect(() => {
-    if (!mapRef.current || village.length === 0) return;
-
-    if (!searchText || searchText.trim() === '') {
+    if (!mapRef.current || !village.length) return;
+    if (!searchText.trim()) {
       mapRef.current.setCenter(new window.naver.maps.LatLng(36.5, 127.5));
       mapRef.current.setZoom(7);
       infoWindowsRef.current.forEach(iw => iw.close());
       return;
     }
-
-    const lowerSearch = searchText.trim().toLowerCase();
-
-    let foundIndex = village.findIndex(v => v.name.toLowerCase() === lowerSearch);
-
-    if (foundIndex === -1) {
-      foundIndex = village.findIndex(v => v.name.toLowerCase().includes(lowerSearch));
-    }
-    if (foundIndex === -1) foundIndex = 0;
-
-    const targetMarker = markersRef.current[foundIndex];
-    const targetInfoWindow = infoWindowsRef.current[foundIndex];
-
-    if (targetMarker && targetInfoWindow) {
-      mapRef.current.setCenter(targetMarker.getPosition());
+    const query = searchText.trim().toLowerCase();
+    let idx = village.findIndex(v => v.name.toLowerCase() === query);
+    if (idx === -1) idx = village.findIndex(v => v.name.toLowerCase().includes(query));
+    if (idx === -1) idx = 0;
+    const marker = markersRef.current[idx];
+    const iw = infoWindowsRef.current[idx];
+    if (marker && iw) {
+      mapRef.current.setCenter(marker.getPosition());
       mapRef.current.setZoom(12);
-      infoWindowsRef.current.forEach(iw => iw.close());
-      targetInfoWindow.open(mapRef.current, targetMarker);
+      infoWindowsRef.current.forEach(i => i.close());
+      iw.open(mapRef.current, marker);
     }
   }, [searchText, village]);
 
   return (
-    
-    
     <div
       style={{
-        width: '390px',      // 핸드폰 가로 크기 고정
-        height: '844px',     // 적당한 지도 높이
+        width: '390px',
+        height: '844px',
         margin: '0 auto',
         borderRadius: '12px',
         overflow: 'hidden',
         boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
       }}
     >
-      <div
-        id="map"
-        ref={mapElement}
-        style={{ width: '90%', height: '90%' }}
-      />
+      <div id="map" ref={mapElement} style={{ width: '100%', height: '100%' }} />
     </div>
-
   );
 };
 
