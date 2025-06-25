@@ -21,7 +21,7 @@ const Chatbot = () => {
             })
             .catch((error) => {
                 console.log('Error:', error);
-                setResponse('에러: ' + error.message);
+                setResponse('Error: ' + error.message);
             });
     };
 
