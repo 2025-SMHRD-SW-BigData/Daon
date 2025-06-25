@@ -8,7 +8,18 @@ const NavBar = () => {
     const nav = useNavigate();
 
     return (
-        <nav className="footer-nav">
+        <nav className="footer-nav"
+          style={{
+          position: 'fixed',
+          bottom: 0,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '390px',
+          zIndex: 10,
+          backgroundColor: 'white',
+          borderTop: '1px solid #ccc',
+        }}
+        >
             <div className="nav-item" onClick={()=>{nav('/map')}}>
                 <i className="fi fi-rr-marker"></i>
                 <span >어촌지도</span>
@@ -29,6 +40,11 @@ const NavBar = () => {
                 <i className="fi fi-rr-user"></i>
                 <span>로그인</span>
             </div>
+            
+      
+      
+        
+      
              
         </nav>
     )

@@ -12,7 +12,7 @@ createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     {/* <Header></Header> */}
     <App />
-    {/* <NavBar></NavBar> */}
+    <NavBar></NavBar>
   </BrowserRouter>
   // </StrictMode>,
 )

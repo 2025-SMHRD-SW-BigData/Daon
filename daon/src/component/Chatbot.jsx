@@ -37,7 +37,21 @@ const Chatbot = () => {
   }, [messages]);
 
   return (
-    <div className="chatbot-container">
+    <div className="chatbot-container" style={{
+        width: '390px',
+        height: '844px',
+        margin: '0 auto',
+        backgroundColor: '#fff',
+        border: '1px solid #ccc',
+        borderRadius: '24px',
+        padding: '24px',
+        boxSizing: 'border-box',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+    }} >
       <h2 className="chatbot-title">💬 다온 챗봇</h2>
 
       <div className="chat-area">

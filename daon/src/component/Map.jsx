@@ -1,18 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 
-const Map = ({ height = 700 }) => {
+const Map = ({ searchText = '' }) => {
   const mapElement = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
+  const infoWindowsRef = useRef([]);
   const [village, setVillage] = useState([]);
 
-  // 1. JSON 데이터 불러오기 및 항구명 기준 중복 제거
   useEffect(() => {
     axios.get('/fishing_village.json')
       .then((res) => {
         const rawData = Array.isArray(res.data) ? res.data : [res.data];
-
         const nameSet = new Set();
         const formatted = rawData
           .filter(item => {
@@ -24,7 +23,6 @@ const Map = ({ height = 700 }) => {
           .map(item => {
             const portName = item.FSHNG_PRT_NM?.trim();
             const photoPath = `/images/${portName}/${portName}_1.jpg`;
-
             return {
               name: portName,
               lat: parseFloat(item.LA),
@@ -35,29 +33,28 @@ const Map = ({ height = 700 }) => {
               photo: photoPath,
             };
           });
-
         setVillage(formatted);
       })
       .catch(console.error);
   }, []);
 
-  // 2. 네이버 지도 생성
   useEffect(() => {
     if (!window.naver || !mapElement.current) return;
 
-    mapRef.current = new window.naver.maps.Map(mapElement.current, {
-      center: new window.naver.maps.LatLng(36.5, 127.5),
-      zoom: 7,
-    });
+    if (!mapRef.current) {
+      mapRef.current = new window.naver.maps.Map(mapElement.current, {
+        center: new window.naver.maps.LatLng(36.5, 127.5),
+        zoom: 7,
+      });
+    }
   }, []);
 
-  // 3. 마커 및 InfoWindow 생성
   useEffect(() => {
     if (!mapRef.current) return;
 
-    // 기존 마커 제거
     markersRef.current.forEach(marker => marker.setMap(null));
     markersRef.current = [];
+    infoWindowsRef.current = [];
 
     village.forEach(v => {
       const marker = new window.naver.maps.Marker({
@@ -79,24 +76,65 @@ const Map = ({ height = 700 }) => {
       });
 
       window.naver.maps.Event.addListener(marker, 'click', () => {
+        infoWindowsRef.current.forEach(iw => iw.close());
         infoWindow.open(mapRef.current, marker);
       });
 
       markersRef.current.push(marker);
+      infoWindowsRef.current.push(infoWindow);
     });
   }, [village]);
 
+  useEffect(() => {
+    if (!mapRef.current || village.length === 0) return;
+
+    if (!searchText || searchText.trim() === '') {
+      mapRef.current.setCenter(new window.naver.maps.LatLng(36.5, 127.5));
+      mapRef.current.setZoom(7);
+      infoWindowsRef.current.forEach(iw => iw.close());
+      return;
+    }
+
+    const lowerSearch = searchText.trim().toLowerCase();
+
+    let foundIndex = village.findIndex(v => v.name.toLowerCase() === lowerSearch);
+
+    if (foundIndex === -1) {
+      foundIndex = village.findIndex(v => v.name.toLowerCase().includes(lowerSearch));
+    }
+    if (foundIndex === -1) foundIndex = 0;
+
+    const targetMarker = markersRef.current[foundIndex];
+    const targetInfoWindow = infoWindowsRef.current[foundIndex];
+
+    if (targetMarker && targetInfoWindow) {
+      mapRef.current.setCenter(targetMarker.getPosition());
+      mapRef.current.setZoom(12);
+      infoWindowsRef.current.forEach(iw => iw.close());
+      targetInfoWindow.open(mapRef.current, targetMarker);
+    }
+  }, [searchText, village]);
+
   return (
-    <div>
-      <div className="section-title">
-        <div
-          id="map"
-          ref={mapElement}
-          
-          style={{ width: '70%', height, margin: '0 auto', borderRadius : '3%' }}
-        ></div>
-      </div>
+    
+    
+    <div
+      style={{
+        width: '390px',      // 핸드폰 가로 크기 고정
+        height: '844px',     // 적당한 지도 높이
+        margin: '0 auto',
+        borderRadius: '12px',
+        overflow: 'hidden',
+        boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+      }}
+    >
+      <div
+        id="map"
+        ref={mapElement}
+        style={{ width: '90%', height: '90%' }}
+      />
     </div>
+
   );
 };
 
