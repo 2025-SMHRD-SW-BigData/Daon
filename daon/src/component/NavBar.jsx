@@ -1,6 +1,7 @@
 import React from 'react'
 import Map from './Map'
 import { useNavigate } from 'react-router-dom'
+import '../style/navbar.css'
 
 const NavBar = () => {
     
