@@ -1,54 +1,60 @@
 .chatbot-container {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    font-family: 'Noto Sans KR', sans-serif;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .chatbot-title {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.chat-area {
+  height: 400px;
+  overflow-y: auto;
+  background: #f3f3f3;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-bubble {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 12px;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+.user {
+  background: #dcf8c6;
+  align-self: flex-end;
+  text-align: right;
+  margin-left: auto;
+}
+
+.bot {
+  background: #ffffff;
+  align-self: flex-start;
+  text-align: left;
+  margin-right: auto;
 }
 
 .input-group {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .input-group input {
-    flex: 1;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+  flex: 1;
+  padding: 10px;
 }
 
 .input-group button {
-    padding: 10px 16px;
-    background: #4f72ff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    /* transition: background 0.2s; */
-}
-
-.input-group button:hover {
-    background: #3b5ce3;
-}
-
-.chatbot-response {
-    margin-top: 20px;
-    background: #f8f9fc;
-    border: 1px solid #e1e4ea;
-    padding: 14px;
-    border-radius: 6px;
-    color: #333;
-    white-space: pre-wrap;
-    min-height: 80px;
+  padding: 10px 20px;
+  background-color: #00bfa5;
+  color: white;
+  border: none;
+  border-radius: 4px;
 }
