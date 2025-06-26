@@ -12,16 +12,14 @@ const nav = useNavigate();
         width: '390px',
         height: '844px',
         margin: '0 auto',
-        backgroundColor: '#fff',
-        border: '1px solid #ccc',
         borderRadius: '24px',
-        padding: '24px',
-        boxSizing: 'border-box',
+        border: '1px solid #ccc',
+        overflow: 'hidden',
         boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+        backgroundColor: '#fff',
+        position: 'relative',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
     }}>
       <div className="join-title">로그인</div>
       <br/>
@@ -47,8 +45,11 @@ const nav = useNavigate();
     <span style={{ color: '#999',marginLeft :'8px' }}> | </span>
     <span style={{ color: '#999', cursor: 'pointer',marginLeft :'8px' }} onClick={()=>{nav('/join')}}>회원가입</span>
   </div>
+
+  
  
       </form>
+      <NavBar></NavBar>
     </div>
   );
 };

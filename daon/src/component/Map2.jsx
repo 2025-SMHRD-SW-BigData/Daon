@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';
+import Header from './Header';
 
 const Map = ({ searchText = '' }) => {
   const mapElement = useRef(null);
@@ -121,21 +122,33 @@ const Map = ({ searchText = '' }) => {
     
     <div
       style={{
-        width: '390px',      // 핸드폰 가로 크기 고정
-        height: '844px',     // 적당한 지도 높이
+        width: '390px',
+        height: '844px',
         margin: '0 auto',
-        borderRadius: '12px',
+        borderRadius: '24px',
+        border: '1px solid #ccc',
         overflow: 'hidden',
-        boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+        backgroundColor: '#fff',
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
       }}
     >
-      
+      <Header></Header>
+      <br />
       <div
         id="map"
         ref={mapElement}
         style={{ width: '90%', height: '90%' }}
       />
-  
+   
+        <div style={{
+          padding: '50px',
+         }}>
+          </div>
+    
+          <NavBar/>
 
     </div>
     

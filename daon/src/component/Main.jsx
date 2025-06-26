@@ -280,16 +280,15 @@ const Main = () => {
           
         </div>
         <div style={{
-           flex: 1,
+          flex: 1,
           overflowY: 'auto',
           padding: '16px',
           paddingBottom: '76px', // NavBar 높이만큼 여백 확보
           boxSizing: 'border-box'
         }}>
-          <NavBar/>
           </div>
       </div>
-
+          <NavBar/>
     </div>
   );
 };

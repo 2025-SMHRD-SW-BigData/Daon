@@ -8,6 +8,7 @@ import Map from './component/Map'
 import Join from './component/Join'
 import Login from './component/Login'
 import Chatbot from './component/Chatbot'
+import Map2 from './component/Map2'
 
 
 import './App.css';
@@ -18,7 +19,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Main></Main>}></Route>
-      <Route path='/map' element={<Map></Map>}></Route>
+      <Route path='/map' element={<Map2></Map2>}></Route>
       <Route path='/join' element={<Join></Join>}></Route>
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/chatbot' element={<Chatbot></Chatbot>}></Route>

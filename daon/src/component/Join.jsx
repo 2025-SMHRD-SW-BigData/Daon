@@ -1,23 +1,22 @@
 import React from 'react';
 import '../style/main.css'; // CSS 파일 임포트
+import NavBar from './NavBar';
 
 const Join = () => {
   return (
     
     <div className="join-container" style={{
-        width: '390px',
+      width: '390px',
         height: '844px',
         margin: '0 auto',
-        backgroundColor: '#fff',
-        border: '1px solid #ccc',
         borderRadius: '24px',
-        padding: '24px',
-        boxSizing: 'border-box',
+        border: '1px solid #ccc',
+        overflow: 'hidden',
         boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+        backgroundColor: '#fff',
+        position: 'relative',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-start',
-        alignItems: 'center'
     }}>
       <div className="join-title">회원가입</div>
       <br/>
@@ -40,7 +39,7 @@ const Join = () => {
         <button type="submit" className="join-button">가입하기</button>
       </form>
     
-
+<NavBar></NavBar>
 
     
     </div>
