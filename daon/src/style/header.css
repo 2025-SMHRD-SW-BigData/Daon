@@ -1,4 +1,13 @@
 .menu span:hover {
-  color: #007BFF; /* 파란색 */
-  text-shadow: 0 0 5px rgba(0, 123, 255, 0.6); /* 빛나는 느낌 */
+  color: #007BFF;
+  /* 파란색 */
+  text-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+  /* 빛나는 느낌 */
+}
+
+
+/* 메뉴 버튼 */
+.menu {
+  font-size: 24px;
+  cursor: pointer;
 }

@@ -66,9 +66,12 @@ const Main = () => {
   return (
 
     <div className="screen-container">
+
       <div className="scroll-area">
 
+
         <Header />
+      <div className="scroll-area">
 
         <SearchBox setSearchText={setSearchText} />
 
@@ -89,6 +92,7 @@ const Main = () => {
       </div>
 
       <NavBar />
+    </div>
     </div>
   );
 };
