@@ -1,0 +1,47 @@
+/* ✅ style/communitypage.css - 커뮤니티 게시판 목록 스타일 */
+
+.community-container {
+  padding: 16px;
+  font-family: 'SBAggroL', sans-serif;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.community-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #66A5ED;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-card {
+  background-color: #f9f9f9;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+.post-card:hover {
+  background-color: #e6f0ff;
+}
+
+.post-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.post-meta {
+  font-size: 13px;
+  color: #888;
+}
