@@ -1,8 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../style/main.css'; // CSS 파일 임포트
 import NavBar from './NavBar';
 
 const Join = () => {
+    const [formData, setFormData] = useState({
+    user_id: '',
+    password: '',
+    confirmPassword: '',
+    username: '',
+    nickname: '',
+    phone_number: '',
+    role: 'user', // 기본값
+  });
+
+  // 입력값 변경 처리
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  // 제출 처리 (예시: 콘솔 출력)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (formData.password !== formData.confirmPassword) {
+      alert('비밀번호가 일치하지 않습니다.');
+      return;
+    }
+
+    // 서버로 전송 또는 처리
+    console.log('회원가입 데이터:', formData);
+  };
+  
   return (
     
     <div className="join-container" style={{
@@ -20,25 +48,92 @@ const Join = () => {
     }}>
       <div className="join-title">회원가입</div>
       <br/>
-      <form className="join-form">
-        아이디
-        <input type="text" placeholder="아이디" className="join-input" />
-        비밀번호
-        <input type="password" placeholder="비밀번호" className="join-input" />
-        비밀번호 확인
-        <input type="password" placeholder="비밀번호 확인" className="join-input" />
-        이름
-        <input type="text" placeholder="이름" className="join-input" />
-        휴대폰 번호
-        <input type="text" placeholder="휴대폰번호 입력" className="join-input" />
-        <br/>
-        <br />
-        <br />
-        <br />
-        <br />
-        <button type="submit" className="join-button">가입하기</button>
-      </form>
-    
+      <form className="join-form" onSubmit={handleSubmit}>
+  아이디
+  <input
+    type="text"
+    name="user_id"
+    placeholder="아이디 입력"
+    className="join-input"
+    value={formData.user_id}
+    onChange={handleChange}
+  />
+  비밀번호
+  <input
+    type="password"
+    name="password"
+    placeholder="비밀번호 입력"
+    className="join-input"
+    value={formData.password}
+    onChange={handleChange}
+  />
+  비밀번호 확인
+  <input
+    type="password"
+    name="confirmPassword"
+    placeholder="비밀번호 확인"
+    className="join-input"
+    value={formData.confirmPassword}
+    onChange={handleChange}
+  />
+  이름
+  <input
+    type="text"
+    name="username"
+    placeholder="이름 입력"
+    className="join-input"
+    value={formData.username}
+    onChange={handleChange}
+  />
+  닉네임
+  <input
+    type="text"
+    name="nickname"
+    placeholder="닉네임 입력"
+    className="join-input"
+    value={formData.nickname}
+    onChange={handleChange}
+  />
+  휴대폰 번호
+  <input
+    type="text"
+    name="phone_number"
+    placeholder="휴대폰번호 입력"
+    className="join-input"
+    value={formData.phone_number}
+    onChange={handleChange}
+  />
+  <label className="join-label">유형</label>
+<div style={{
+  display: 'flex',
+  justifyContent: 'center',
+  gap: '30px',
+  marginBottom: '20px'
+}}>
+  <label style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+    <input
+      type="radio"
+      name="role"
+      value="user"
+      checked={formData.role === 'user'}
+      onChange={handleChange}
+    />
+    회원
+  </label>
+
+  <label style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+    <input
+      type="radio"
+      name="role"
+      value="counselor"
+      checked={formData.role === 'counselor'}
+      onChange={handleChange}
+    />
+    상담가
+  </label>
+</div>
+  <button type="submit" className="join-button">가입하기</button>
+</form>
 <NavBar></NavBar>
 
     
