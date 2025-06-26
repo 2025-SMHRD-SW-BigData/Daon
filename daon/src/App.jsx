@@ -9,9 +9,9 @@ import Join from './component/Join'
 import Login from './component/Login'
 import Chatbot from './component/Chatbot'
 import Map2 from './component/Map2'
-
-
+import MyPage from './component/MyPage'
 import './App.css';
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +23,8 @@ function App() {
       <Route path='/join' element={<Join></Join>}></Route>
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/chatbot' element={<Chatbot></Chatbot>}></Route>
+      <Route path='/mypage' element={<MyPage></MyPage>}></Route>
+      
 
 
     </Routes>

@@ -120,20 +120,8 @@ const Map = ({ searchText = '' }) => {
   return (
     
     
-    <div
-      style={{
-        width: '390px',
-        height: '844px',
-        margin: '0 auto',
-        borderRadius: '24px',
-        border: '1px solid #ccc',
-        overflow: 'hidden',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-        backgroundColor: '#fff',
-        position: 'relative',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
+    <div className='phon_size'
+      
     >
       <Header></Header>
       <br />
