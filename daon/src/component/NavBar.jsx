@@ -10,7 +10,7 @@ const NavBar = () => {
     return (
         <nav className="footer-nav"
           style={{
-          position: 'fixed',
+          position: 'absolute',
           bottom: 0,
           left: '50%',
           transform: 'translateX(-50%)',

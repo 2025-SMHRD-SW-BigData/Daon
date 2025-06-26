@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import '../style/chatbot.css';
+import Header from './Header';
 
 const Chatbot = () => {
   const [msg, setMsg] = useState('');
@@ -37,6 +38,8 @@ const Chatbot = () => {
   }, [messages]);
 
   return (
+    <div>
+      
     <div className="chatbot-container" style={{
         width: '390px',
         height: '844px',
@@ -52,6 +55,7 @@ const Chatbot = () => {
         justifyContent: 'flex-start',
         alignItems: 'center',
     }} >
+      <Header></Header>
       <h2 className="chatbot-title">💬 다온 챗봇</h2>
 
       <div className="chat-area">
@@ -76,6 +80,7 @@ const Chatbot = () => {
         />
         <button onClick={sendMessage}>전송</button>
       </div>
+    </div>
     </div>
   );
 };

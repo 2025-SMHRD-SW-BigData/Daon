@@ -89,7 +89,7 @@ const Main = () => {
       >
         {/* Header */}
         <Header />
-        <NavBar />
+        
 
         {/* 검색창 + 자동완성 */}
         <div className="search-box" style={{ margin: '16px 0 24px 0', position: 'relative' }}>
@@ -277,24 +277,19 @@ const Main = () => {
           >
             커뮤니티
           </div>
+          
         </div>
+        <div style={{
+           flex: 1,
+          overflowY: 'auto',
+          padding: '16px',
+          paddingBottom: '76px', // NavBar 높이만큼 여백 확보
+          boxSizing: 'border-box'
+        }}>
+          <NavBar/>
+          </div>
       </div>
-{/* 
-      하단 고정 네비게이션
-      <div
-        style={{
-          position: 'fixed',
-          bottom: 0,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '390px',
-          zIndex: 10,
-          backgroundColor: 'white',
-          borderTop: '1px solid #ccc',
-        }}
-      >
-        <NavBar />
-      </div> */}
+
     </div>
   );
 };

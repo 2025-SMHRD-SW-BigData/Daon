@@ -10,9 +10,12 @@ import NavBar from './component/NavBar.jsx'
 createRoot(document.getElementById('root')).render(
   // <StrictMode>
   <BrowserRouter>
+    <div>
+
     {/* <Header></Header> */}
     <App />
-    <NavBar></NavBar>
+    {/* <NavBar></NavBar> */}
+    </div>
   </BrowserRouter>
   // </StrictMode>,
 )
