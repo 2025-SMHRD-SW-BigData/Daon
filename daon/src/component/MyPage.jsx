@@ -3,6 +3,7 @@ import Header from './Header'
 import '../style/mypage.css'
 import '../style/main.css'
 import Mypageimage from './Mypageimage'
+import NavBar from './NavBar'
 
 const MyPage = () => {
 
@@ -26,6 +27,7 @@ const MyPage = () => {
             <div className='hr_style'><hr /></div>
 
             <p className='mypage'>즐겨찾기</p>
+            <NavBar></NavBar>
         </div>
     )
 }

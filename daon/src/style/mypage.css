@@ -16,7 +16,7 @@
 .profile_text {
     text-align: left;
     font-size: 10px;
-    padding-left: 10px;
+    padding-left: 30px;
     padding-bottom: 10px;
     display: flex;
 }
@@ -32,5 +32,6 @@
     font-weight: bold;
     margin-top:0;
     display:flex;
-    width: 100px
+    width: 100px;
+    margin-left: 20px;
 }
