@@ -1,0 +1,68 @@
+.side-nav {
+    position: absolute;
+    /* ✅ fixed → absolute */
+    top: 0;
+    left: -400px;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    /* padding: 20px;  사이드바 꽉차도록 */
+    transition: left 0.3s ease-in-out;
+    z-index: 1001;
+}
+
+.side-nav.open {
+    left: 0;
+    /* 보임 */
+}
+
+.side-nav .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    float: right;
+    cursor: pointer;
+}
+
+.sidebar-header {
+    position: relative;
+    padding: 20px;
+    background-color: #66a5ed;
+    color: #333;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+    height: 20%;
+}
+
+.sidebar-header .my-page-btn {
+    margin-top: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.side-nav ul {
+    list-style: none;
+    padding: 40px 0 0;
+}
+
+.side-nav ul li {
+    margin: 20px 0;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#p1 {
+    font-size: 35px;
+    color: white;
+}
+
+#p2 {
+    font-size: 25px;
+    color: white;
+}
