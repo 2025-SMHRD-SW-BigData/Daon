@@ -390,6 +390,8 @@
   flex-direction: column;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  /* 포지션 relative로 수정했습니다 */
+  position :relative;
 }
 .scroll-area {
   flex: 1;

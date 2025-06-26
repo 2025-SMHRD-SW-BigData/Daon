@@ -44,6 +44,8 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    float: right;
+
 }
 
 .side-nav ul {
@@ -60,9 +62,60 @@
 #p1 {
     font-size: 35px;
     color: white;
+    text-align: left;
 }
 
 #p2 {
-    font-size: 25px;
+    font-size: 20px;
     color: white;
+    text-align: left;
+}
+
+#name {
+    color: #2167b8;
+}
+
+.menu-left {
+    width: 50%;
+    padding: 20px;
+    border-right: 2px solid #ccc;
+}
+
+.menu-right {
+    width: 50%;
+    padding: 20px;
+}
+
+.menu-left li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-left li.active {
+    background-color: #f0f4ff;
+}
+
+.menu-right li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 15px;
+}
+
+.sidebar-body {
+    display: flex;
+    /* ✅ 가로로 나란히 정렬 */
+    flex-direction: row;
+    /* 기본값이지만 명시해도 좋아요 */
+    height: calc(100% - 140px);
+    /* 상단 header 높이 제외 */
+}
+
+.arrow {
+    color: #66a5ed;
+
 }
