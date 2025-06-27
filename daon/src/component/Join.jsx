@@ -53,7 +53,7 @@ const Join = () => {
   <input
     type="text"
     name="user_id"
-    placeholder="아이디 입력"
+    placeholder="아이디"
     className="join-input"
     value={formData.user_id}
     onChange={handleChange}
@@ -62,7 +62,7 @@ const Join = () => {
   <input
     type="password"
     name="password"
-    placeholder="비밀번호 입력"
+    placeholder="비밀번호"
     className="join-input"
     value={formData.password}
     onChange={handleChange}
@@ -80,7 +80,7 @@ const Join = () => {
   <input
     type="text"
     name="username"
-    placeholder="이름 입력"
+    placeholder="이름"
     className="join-input"
     value={formData.username}
     onChange={handleChange}
