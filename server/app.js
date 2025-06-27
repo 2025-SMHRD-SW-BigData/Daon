@@ -16,8 +16,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // 라우터 등록
-app.use(userRouter);
-app.use(chatbotRouter);
+app.use('/api',userRouter);
+app.use('/api',chatbotRouter);
 
 // 서버 실행
 app.listen(3003, () => {
