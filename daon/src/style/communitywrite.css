@@ -1,0 +1,15 @@
+.community-container select,
+.community-container input,
+.community-container textarea {
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.community-container textarea {
+  resize: none;
+  line-height: 1.6;
+}
