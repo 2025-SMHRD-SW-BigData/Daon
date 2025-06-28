@@ -54,6 +54,7 @@ const Chatbot = () => {
         display: 'flex',
         flexDirection: 'column',
     }} >
+      
       <Header></Header>
       <h2 className="chatbot-title">💬 다온 챗봇</h2>
 

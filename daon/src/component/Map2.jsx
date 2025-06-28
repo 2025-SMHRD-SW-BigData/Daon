@@ -118,29 +118,32 @@ const Map = ({ searchText = '' }) => {
   }, [searchText, village]);
 
   return (
-    
-    
-    <div className='phon_size'
-      
-    >
-      <Header></Header>
-      <br />
-      <div
-        id="map"
-        ref={mapElement}
-        style={{ width: '90%', height: '90%' }}
-      />
-   
+
+
+    <div className='phon_size'>
+      <div className="scroll-area">
+       
+        
+        <Header></Header>
+        
+        <br />
+        <div
+          id="map"
+          ref={mapElement}
+          style={{ width: '90%', height: '90%' }}
+        />
+
         <div style={{
           padding: '50px',
-         }}>
-          </div>
-    
-          <NavBar/>
+        }}>
+        </div>
+      </div>
+
+      <NavBar />
 
     </div>
-    
-    
+
+
 
   );
 };
