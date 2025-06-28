@@ -110,8 +110,8 @@ const Map = ({ searchText = '' }) => {
   return (
     <div
       style={{
-        width: '390px',
-        height: '844px',
+        width: '300px',
+        height: '200px',
         margin: '0 auto',
         borderRadius: '12px',
         overflow: 'hidden',
