@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import '../style/main.css'; // CSS 파일 임포트
 import NavBar from './NavBar';
+import axios from 'axios';
 
 const Join = () => {
     const [formData, setFormData] = useState({
@@ -20,16 +21,39 @@ const Join = () => {
   };
 
   // 제출 처리 (예시: 콘솔 출력)
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      alert('비밀번호가 일치하지 않습니다.');
-      return;
-    }
+  if (formData.password !== formData.confirmPassword) {
+    alert('비밀번호가 일치하지 않습니다.');
+    return;
+  }
+   try {
+const response = await axios.post('http://localhost:3003/api/join', {
+  user_id: formData.user_id,
+  password: formData.password,
+  confirmPassword: formData.confirmPassword, 
+  username: formData.username,
+  nickname: formData.nickname,
+  phone_number: formData.phone_number,
+  role: formData.role
+});
 
-    // 서버로 전송 또는 처리
-    console.log('회원가입 데이터:', formData);
-  };
+    if (response.data.success) {
+      alert('회원가입 성공!');
+      // 필요하면 로그인 페이지로 이동도 가능
+      // navigate('/login');
+    } else {
+      alert('회원가입 실패: ' + response.data.message);
+    }
+} catch (error) {
+    console.error('회원가입 에러:', error);
+    if (error.response && error.response.data && error.response.data.message) {
+      alert('회원가입 실패: ' + error.response.data.message);
+    } else {
+      alert('서버 오류! 다시 시도해주세요.');
+    }
+  }
+};
   
   return (
     
