@@ -132,7 +132,6 @@ const Map = ({ searchText = '' }) => {
     
 
 
-
   );
 };
 
