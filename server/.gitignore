@@ -1,0 +1,34 @@
+# ⛔ node 패키지 - 절대 Git에 올리지 말기
+node_modules/
+
+# ⛔ 환경변수 - DB 비번, API 키 등 보안 정보 있음
+.env
+
+# 빌드 결과물 (TypeScript 쓸 경우)
+dist/
+build/
+
+# 로그 파일
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# 운영 시스템별 파일
+.DS_Store
+Thumbs.db
+
+# IDE/편집기 설정
+.vscode/
+.idea/
+*.swp
+
+# 테스트 커버리지 결과 (jest 등)
+coverage/
+
+# 기타
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
