@@ -34,10 +34,10 @@ const CommunityWrite = () => {
   };
 
   return (
-    <div className="screen-container">
-      <div className="scroll-area">
+    <div className="phon_size">
+      <div className="phon_size">
         <Header />
-        <div className="community-container">
+        <div className="phon_size">
           <h2 className="community-title">글쓰기</h2>
 
           <select name="region" value={form.region} onChange={handleChange}>

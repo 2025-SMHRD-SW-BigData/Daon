@@ -29,7 +29,7 @@ const CommunityPage = () => {
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
-    <div className="screen-container">
+    <div className="phon_size">
       <div className="scroll-area">
         <Header />
         <div className="community-container">

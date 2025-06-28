@@ -65,7 +65,7 @@ const Main = () => {
 
   return (
 
-    <div className="screen-container">
+    <div className="phon_size">
 
       <div className="scroll-area">
 
