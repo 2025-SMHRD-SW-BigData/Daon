@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../style/Sidebar.css'
+import { useNavigate } from 'react-router-dom'
 
 const menuData = [
     {
@@ -8,15 +9,15 @@ const menuData = [
     },
     {
         category: '어선 정보',
-        subItems: ['자망어선', '연승어선', '저인망어선','권형망어선','통발어선','잠수기어선','선망어선'],
+        subItems: ['자망어선', '연승어선', '저인망어선', '권형망어선', '통발어선', '잠수기어선', '선망어선'],
     },
     {
         category: '지원금 및 정책',
-        subItems: ['귀어인의 집', '귀어학교지원', '청년어선임대사업','귀어창업지원','청년어촌정착지원','주택구입자금지원'],
+        subItems: ['귀어인의 집', '귀어학교지원', '청년어선임대사업', '귀어창업지원', '청년어촌정착지원', '주택구입자금지원'],
     },
     {
         category: '어업 자격',
-        subItems: ['면허어업', '허가어업', '신고어업','낚시어선업','자격증'],
+        subItems: ['면허어업', '허가어업', '신고어업', '낚시어선업', '자격증'],
     },
     {
         category: '커뮤니티',
@@ -25,8 +26,7 @@ const menuData = [
 ];
 const SideBar = ({ isOpen, toggleSidebar }) => {
 
-    console.log(isOpen)
-    console.log(toggleSidebar)
+    const nav = useNavigate();
     const [selectedCategory, setSelectedCategory] = useState(null);
     const handleCategoryClick = (category) => {
         // 같은 항목을 다시 클릭하면 toggle
@@ -46,11 +46,11 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
 
 
                     <p id='p2'>
-                        <strong id='name'>이하늘님</strong> 마이페이지 바로가기 {'>'}
+                        <strong id='name'>이하늘님</strong> 마이페이지 <span id="ckMypg"onClick={()=>{nav('/mypage')}}>바로가기 {'>'}</span>
                     </p>
                 </div>
 
-                <button className="my-page-btn">로그인</button>
+                <button className="my-page-btn" onClick={() => { nav('/login') }}>로그인</button>
 
             </div>
 
@@ -64,7 +64,7 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
                                 onClick={() => handleCategoryClick(menu.category)}
                             >
                                 {menu.category}
-                                <span className="arrow">▶</span>
+                                <span className={selectedCategory === menu.category ? 'arrow' : 'arrow-no'}>▶</span>
                             </li>
                         ))}
                     </ul>

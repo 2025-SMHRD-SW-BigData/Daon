@@ -119,3 +119,13 @@
     color: #66a5ed;
 
 }
+
+.arrow-no {
+    display: none;
+    color: #66a5ed;
+
+}
+
+#ckMypg {
+    cursor: pointer;
+}
