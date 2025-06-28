@@ -17,7 +17,7 @@ app.use(express.json());
 
 // 라우터 등록
 app.use('/api',userRouter);
-app.use('/api',chatbotRouter);
+app.use('/',chatbotRouter);
 
 // 서버 실행
 app.listen(3003, () => {
