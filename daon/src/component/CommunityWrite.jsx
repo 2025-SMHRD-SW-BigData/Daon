@@ -34,7 +34,7 @@ const CommunityWrite = () => {
   };
 
   return (
-    <div className="screen-container">
+    <div className="phon_size">
       <div className="scroll-area">
         <Header />
         <div className="community-container">
