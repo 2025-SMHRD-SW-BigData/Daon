@@ -72,7 +72,7 @@ const Map2 = () => {
       });
 
       const infoWindow = new window.naver.maps.InfoWindow({
-  content: `
+        content: `
     <div style="
       padding:8px;
       font-size:12px;
@@ -83,14 +83,13 @@ const Map2 = () => {
       <b>주소:</b> ${v.address || '정보 없음'}<br/>
       <b>주요 관광지:</b> ${v.info || '없음'}<br/>
       <b>인근 해변:</b> ${v.beaches || '없음'}<br/>
-      ${
-        v.photo
-          ? `<img src="${v.photo}" alt="${v.name} 전경" style="width:100%; margin-top:6px;" />`
-          : ''
-      }
+      ${v.photo
+            ? `<img src="${v.photo}" alt="${v.name} 전경" style="width:100%; margin-top:6px;" />`
+            : ''
+          }
     </div>
   `
-});
+      });
 
 
       window.naver.maps.Event.addListener(marker, 'click', () => {
@@ -134,8 +133,8 @@ const Map2 = () => {
 
   return (
     <div className="phon_size">
+      <Header />
       <div className="scroll-area">
-        <Header />
         <SearchBox setSearchText={setSearchText} />
         <div
           id="map"
