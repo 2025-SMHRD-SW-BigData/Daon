@@ -1,0 +1,81 @@
+/* startupsupport.css */
+
+.page-title {
+  font-size: 20px;
+  padding-left: 16px;
+  margin: 16px 0 6px;
+  color: #333;
+  font-weight: bold;
+  text-align: left; /* 좌측 정렬 */
+}
+
+.section-hash {
+  font-size: 16px;
+  padding-left: 16px;
+  margin-bottom: 12px;
+  color: #4f81bd;
+  font-weight: bold;
+  text-align: left; /* 좌측 정렬 */
+}
+
+.startup-container {
+  padding: 16px;
+  text-align: left; /* 전체 좌측 정렬 */
+}
+
+.startup-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.startup-info {
+  background-color: #f6faff;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  text-align: left; /* 좌측 정렬 */
+}
+
+.startup-note {
+  margin-top: 6px;
+  padding-left: 0;
+  list-style: none;
+  text-align: left; /* 좌측 정렬 */
+}
+
+.startup-note li {
+  text-indent: -1em;
+  padding-left: 1em;
+  margin-bottom: 4px;
+}
+
+.dot {
+  color: #3b82f6;
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+.blue {
+  color: #3b82f6;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.startup-btn {
+  display: block;
+  margin: 0 auto 40px;
+  padding: 10px 20px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}

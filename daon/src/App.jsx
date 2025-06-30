@@ -15,6 +15,9 @@ import CommunityWrite from './component/CommunityWrite';
 import { CommunityProvider } from './context/CommunityContext';
 import HomeHouse from './component/HomeHouse';
 import FiSchool from './component/FiSchool';
+import YouthBoat from './component/youthboat';
+import StartUpSupport from './component/StartUpSupport';
+import HousingLoan from './component/HousingLoan';
 
 import Fish_자격 from './component/Fish_reported';
 
@@ -37,12 +40,16 @@ function App() {
         <Route path='/community' element={<CommunityPage />} />
         <Route path='/community/:id' element={<PostDetail />} />
         <Route path='/community/write' element={<CommunityWrite />} />
+        
 
         <Route path='/reportfishery' element={<Fish_reported />} />
 
         <Route path="/homehouse" element={<HomeHouse />} />
         <Route path="/fischool" element={<FiSchool />} />
+        <Route path="/youthboat" element={<YouthBoat />} />
         <Route path="/youthsupport" element={<YouthSupport />} />
+        <Route path="/startupsupport" element={<StartUpSupport />} />
+        <Route path="/housingloan" element={<HousingLoan />} />
 
       </Routes>
     </CommunityProvider>

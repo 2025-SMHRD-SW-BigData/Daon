@@ -1,23 +1,35 @@
-// ✅ CommunityPage.jsx - 페이징 기능 적용 버전
-
-import React, { useContext, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CommunityContext } from '../context/CommunityContext';
+import axios from 'axios';
 import Header from './Header';
 import NavBar from './NavBar';
 import '../style/communitypage.css';
 
 const CommunityPage = () => {
-  const { posts } = useContext(CommunityContext);
+  const [posts, setPosts] = useState([]); // 서버에서 받아온 게시글 상태
   const [region, setRegion] = useState('전체지역');
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 5;
   const navigate = useNavigate();
 
+  // 서버에서 게시글 데이터 불러오기 (컴포넌트 마운트 시)
+  useEffect(() => {
+    axios.get('http://localhost:3003/community/view') // 서버 API 주소에 맞게 변경
+      .then(res => {
+        // console.log('데이터 받아오는중')
+        setPosts(res.data);
+      })
+      .catch(err => {
+        console.error('게시글 불러오기 실패:', err);
+      });
+  }, []);
+
+  // 지역 필터링
   const filteredPosts = region === '전체지역'
     ? posts
     : posts.filter((p) => p.region === region);
 
+  // 페이징 계산
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
   const startIdx = (currentPage - 1) * postsPerPage;
   const currentPosts = filteredPosts.slice(startIdx, startIdx + postsPerPage);
@@ -70,18 +82,18 @@ const CommunityPage = () => {
             ) : (
               currentPosts.map((post) => (
                 <li
-                  key={post.id}
+                  key={post.post_id} // DB 컬럼명에 맞게 post_id로 변경
                   className="post-card"
-                  onClick={() => navigate(`/community/${post.id}`, { state: { post } })}
+                  onClick={() => navigate(`/community/${post.post_id}`, { state: { post } })}
                 >
                   <div className="post-title">{post.title}</div>
-                  <div className="post-meta">{post.author} · {post.date}</div>
+                  <div className="post-meta">{post.user_id} · {post.region} · {new Date(post.created_at).toLocaleDateString()}</div>
                 </li>
               ))
             )}
           </ul>
 
-          {/* ✅ 페이지네이션 UI */}
+          {/* 페이지네이션 UI */}
           {totalPages > 1 && (
             <div className="pagination">
               {pageNumbers.map((num) => (
