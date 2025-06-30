@@ -81,17 +81,17 @@
 .support-text {
   padding: 20px;
   text-align: left;
-  font-size: 15px;
+  font-size: 11px;
   line-height: 1.6;
   color: #333;
   box-sizing: border-box;
 }
 
 .support-img {
-  width: 100%;
+  width: 70%;
   height: auto;
   margin-top: 12px;
-  border-radius: 12px;
+  /* border-radius: 12px; */
 }
 
 .highlight {

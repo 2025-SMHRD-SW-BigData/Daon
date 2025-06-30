@@ -20,17 +20,17 @@
 
 .house-img {
   width: 100%;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   margin-bottom: 16px;
 }
 
 .house-box {
   background-color: #eef6ff;
-  border: 2px solid #3b82f6;
-  border-radius: 12px;
+  border: 5px solid #3b82f6;
+  /* border-radius: 12px; */
   padding: 20px;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   color: #333;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -38,7 +38,7 @@
 
 .house-desc {
   margin-top: 12px;
-  font-size: 15px;
+  font-size: 10px;
   line-height: 1.6;
   text-align: center;
   color: #333;
