@@ -1,10 +1,11 @@
+/* gillnet.css */
+
 .page-title {
   font-size: 20px;
   padding-left: 16px;
   margin: 16px 0 6px;
   color: #333;
   font-weight: bold;
-  text-align: left;
 }
 
 .section-hash {
@@ -13,55 +14,32 @@
   margin-bottom: 12px;
   color: #4f81bd;
   font-weight: bold;
-  text-align: left;
+  border-bottom: 2px solid #4f81bd;
+  padding-bottom: 4px;
 }
 
-.school-container {
+.gillnet-container {
   padding: 16px;
 }
 
-.school-img {
-  width: 92%;
-  /* border-radius: 10px; */
+.gillnet-img {
+  width: 100%;
+  border-radius: 10px;
   margin-bottom: 20px;
 }
 
-.school-info {
-  /* background-color: #f6faff; */
+.gillnet-info {
+  background-color: #f6faff;
   padding: 16px;
   border-radius: 10px;
   margin-bottom: 20px;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.6;
   color: #333;
   text-align: left;
 }
 
-.school-info p {
-  margin-bottom: 12px;
-}
-
-.school-note {
-  margin-top: 10px;
-  padding-left: 20px;
-  list-style: none;
-  /* font-size: 13px; */
-}
-
-.school-note li {
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 16px;
-}
-
-.school-note li .dot {
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #3b82f6;
-}
-
-.school-btn {
+.gillnet-btn {
   display: block;
   margin: 0 auto 40px;
   padding: 10px 20px;
@@ -80,10 +58,4 @@
 
 .blue {
   color: #3b82f6;
-}
-
-.dot {
-  color: #3b82f6;
-  margin-right: 4px;
-  
 }
