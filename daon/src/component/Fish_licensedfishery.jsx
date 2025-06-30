@@ -74,7 +74,7 @@ const Fish_licensedfishery = () => {
           }}>군부대,문화재관리국<br/>
           지방국토관리청,지방해양수산청</span></p>
           <br />
-          <p> <span style={{fontSize : '20px'}}>②</span> 처리 - <span style={{
+          <p> <span style={{fontSize : '20px'}}>③</span> 처리 - <span style={{
               color : '#6CB8FF',
               fontSize : '13px'
             }}>시 . 군 . 구</span></p>

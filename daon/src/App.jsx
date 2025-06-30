@@ -18,6 +18,7 @@ import Fish_licensedfishery from './component/Fish_licensedfishery';
 import Fish_reported from './component/Fish_reported';
 import FIsh_permitfishery from './component/FIsh_permitfishery';
 import './App.css';
+import Fish_fishingboat from './component/Fish_fishingboat';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path='/reportfishery' element={<Fish_reported />} />
         <Route path='/licensedfishery' element={<Fish_licensedfishery />} />
         <Route path='/permitfishery' element={<FIsh_permitfishery />} />
+        <Route path='/fishingboat' element={<Fish_fishingboat />} />
         
 
         <Route path="/youthsupport" element={<YouthSupport />} />
