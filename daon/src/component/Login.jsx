@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from './NavBar';
+import Header from './Header';
 
 const Login = () => {
 
@@ -21,6 +22,8 @@ const nav = useNavigate();
         display: 'flex',
         flexDirection: 'column',
     }}>
+     
+      <Header></Header>
       <div className="join-title">로그인</div>
       <br/>
       <br /><br /><br /><br />

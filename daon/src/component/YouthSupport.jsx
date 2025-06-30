@@ -7,8 +7,8 @@ import '../style/YouthSupport.css';
 const YouthSupport = () => {
   return (
     <div className="phon_size">
-      <div className="scroll-area">
         <Header />
+      <div className="scroll-area">
 
         <div className="support-container">
           <h2 className="page-title">청년어촌정착지원 사업</h2>
