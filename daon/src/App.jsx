@@ -12,47 +12,49 @@ import MyPage from './component/MyPage';
 import CommunityPage from './component/CommunityPage';
 import PostDetail from './component/PostDetail';
 import CommunityWrite from './component/CommunityWrite';
-import { CommunityProvider } from './context/CommunityContext';
+
+
 import HomeHouse from './component/HomeHouse';
 import FiSchool from './component/FiSchool';
 import YouthBoat from './component/youthboat';
 import StartUpSupport from './component/StartUpSupport';
 import HousingLoan from './component/HousingLoan';
 
-import Fish_자격 from './component/Fish_reported';
-
 import YouthSupport from './component/YouthSupport';
-
+import Fish_licensedfishery from './component/Fish_licensedfishery';
+import Fish_reported from './component/Fish_reported';
+import FIsh_permitfishery from './component/FIsh_permitfishery';
+import Fish_fishingboat from './component/Fish_fishingboat';
 
 import './App.css';
-import Fish_reported from './component/Fish_reported';
 
 function App() {
   return (
-    <CommunityProvider>
-      <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/map' element={<Map2 />} />
-        <Route path='/join' element={<Join />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/chatbot' element={<Chatbot />} />
-        <Route path='/mypage' element={<MyPage />} />
-        <Route path='/community' element={<CommunityPage />} />
-        <Route path='/community/:id' element={<PostDetail />} />
-        <Route path='/community/write' element={<CommunityWrite />} />
-        
+    <Routes>
+      <Route path='/' element={<Main />} />
+      <Route path='/map' element={<Map2 />} />
+      <Route path='/join' element={<Join />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/chatbot' element={<Chatbot />} />
+      <Route path='/mypage' element={<MyPage />} />
+      <Route path='/community' element={<CommunityPage />} />
+      <Route path='/community/:id' element={<PostDetail />} />
+      <Route path='/community/write' element={<CommunityWrite />} />
 
-        <Route path='/reportfishery' element={<Fish_reported />} />
+      {/* 어업 관련 페이지 */}
+      <Route path='/reportfishery' element={<Fish_reported />} />
+      <Route path='/licensedfishery' element={<Fish_licensedfishery />} />
+      <Route path='/permitfishery' element={<FIsh_permitfishery />} />
+      <Route path='/fishingboat' element={<Fish_fishingboat />} />
 
-        <Route path="/homehouse" element={<HomeHouse />} />
-        <Route path="/fischool" element={<FiSchool />} />
-        <Route path="/youthboat" element={<YouthBoat />} />
-        <Route path="/youthsupport" element={<YouthSupport />} />
-        <Route path="/startupsupport" element={<StartUpSupport />} />
-        <Route path="/housingloan" element={<HousingLoan />} />
-
-      </Routes>
-    </CommunityProvider>
+      {/* 정책지원 관련 페이지 */}
+      <Route path="/homehouse" element={<HomeHouse />} />
+      <Route path="/fischool" element={<FiSchool />} />
+      <Route path="/youthboat" element={<YouthBoat />} />
+      <Route path="/youthsupport" element={<YouthSupport />} />
+      <Route path="/startupsupport" element={<StartUpSupport />} />
+      <Route path="/housingloan" element={<HousingLoan />} />
+    </Routes>
   );
 }
 

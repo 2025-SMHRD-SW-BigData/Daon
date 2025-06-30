@@ -4,7 +4,7 @@ import '../style/fish자격.css'
 import '../style/main.css'
 import NavBar from './NavBar'
 
-const Fish_reported = () => {
+const Fish_licensedfishery = () => {
   return (
     <div className='phon_size'>
         <div  style={{
@@ -19,12 +19,12 @@ const Fish_reported = () => {
           
        <div className='fish_qualification'>어업 자격</div>
         <div className='hr_style'><hr /></div>
-        <h2 className='fish_head'># 신고어업</h2>
+        <h2 className='fish_head'># 면허어업</h2>
         <p style={{
           fontSize: '15px',
           paddingTop: '10px'
-        }}>소규모 어업 활동을 하려는 사람이 허가나 면허없이,<br/>
-          관할 행정기관에 '신고'만 하면 할 수 있는 어업 형태
+        }}>일정 지역에 고정된 구조물(예:양식장,정착망 등)을<br/>
+        설치해 지속적인 어업을 할 경우 독점적 권리를 부여받는 면허
         </p>
         <br />
         <p className='fish_body_font'> <span style={{fontSize:'10px',marginRight: '6px'}}> ▼ </span>  신청자격</p>
@@ -38,19 +38,19 @@ const Fish_reported = () => {
           padding : '10px 0px 20px 50px',
           textAlign: 'left',
           fontSize: '15px',
-        }}>인터넷, 방문, 우편</p>
+        }}>인터넷, 방문, FAX, 우편</p>
         <p className='fish_body_font'> <span style={{fontSize:'10px',marginRight: '6px'}}> ▼ </span> 처리기간</p>
         <p style={{
           padding : '10px 0px 20px 50px',
           textAlign: 'left',
           fontSize: '15px',
-        }}>총 2일</p>
+        }}>총 7일</p>
         <p className='fish_body_font'> <span style={{fontSize:'10px',marginRight: '6px'}}> ▼ </span> 제출 서류</p>
         <p style={{
           padding : '10px 0px 20px 50px',
           textAlign: 'left',
           fontSize: '15px',
-        }}>구비 서류 없음</p>
+        }}>면허를 받으려는 수면의 위치 및 구역도 1부</p>
         
         <p className='fish_body_font'> <span style={{fontSize:'10px',marginRight: '6px'}}> ▼ </span> 신청방법 및 절차</p>
             
@@ -68,22 +68,28 @@ const Fish_reported = () => {
           }}>
                시 . 군 . 구 </span></p>
           <br />
-          <p> <span style={{fontSize : '20px'}}>②</span> 처리 - <span style={{
+          <p> <span style={{fontSize : '20px'}}>②</span> 협의 - <span style={{
             color : '#6CB8FF',
             fontSize : '13px'
-          }}>시 . 군 . 구</span></p>
-          </div>
-<br />
+          }}>군부대,문화재관리국<br/>
+          지방국토관리청,지방해양수산청</span></p>
+          <br />
+          <p> <span style={{fontSize : '20px'}}>③</span> 처리 - <span style={{
+              color : '#6CB8FF',
+              fontSize : '13px'
+            }}>시 . 군 . 구</span></p>
+            </div>
+         
 
 <button className='pdf-btn'
   onClick={() => {
     const link = document.createElement('a');
-    link.href = '/pdf/어업신고서.pdf';
-    link.download = '어업신고서.pdf';
+    link.href = '/pdf/면허어업.pdf';
+    link.download = '면허어업.pdf';
     link.click(); 
   }}
 >
-  어업 신고 신청서 다운
+  어업 면허 신청서 다운
 </button>
   
 
@@ -96,4 +102,4 @@ const Fish_reported = () => {
   )
 }
 
-export default Fish_reported
+export default Fish_licensedfishery

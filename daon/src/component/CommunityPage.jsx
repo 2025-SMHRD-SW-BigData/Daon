@@ -14,7 +14,7 @@ const CommunityPage = () => {
 
   // 서버에서 게시글 데이터 불러오기 (컴포넌트 마운트 시)
   useEffect(() => {
-    axios.get('http://localhost:3003/community/view') // 서버 API 주소에 맞게 변경
+    axios.get('http://192.168.219.45:3003/community/view') // 서버 API 주소에 맞게 변경
       .then(res => {
         // console.log('데이터 받아오는중')
         setPosts(res.data);
