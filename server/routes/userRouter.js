@@ -32,7 +32,7 @@ router.post('/login', (req, res) => {
   const { user_id, password } = req.body;
 
   const sql = 'SELECT * FROM users WHERE user_id = ? AND password = ?';
-  
+
   conn.query(sql, [user_id, password], (err, rows) => {
     if (err) {
       console.error('로그인 쿼리 오류:', err);
@@ -40,12 +40,12 @@ router.post('/login', (req, res) => {
     }
 
     if (rows.length > 0) {
-       const user = rows[0];
+      const user = rows[0];
 
       // JWT 토큰 생성 (선택 사항)
       const token = jwt.sign({ user_id }, secretKey, { expiresIn: '1h' });
 
-       // 로그인 성공 시 사용자 정보와 토큰을 응답
+      // 로그인 성공 시 사용자 정보와 토큰을 응답
       res.status(200).json({
         success: true,
         message: '로그인 성공',
@@ -119,5 +119,22 @@ router.post('/join', (req, res) => {
     });
   });
 });
+
+
+// 게시글 삭제
+router.delete(`/community/delete/:post_id`, (req, res) => {
+  const { post_id } = req.params;
+  const sql = `DELETE FROM posts WHERE post_id = ?`;
+
+  conn.query(sql, [post_id], (err, result) => {
+    
+    if (err) {
+      console.error('게시글 삭제 실패:', err);
+      return res.status(500).json({ success: false, message: '서버 에러' });
+    }
+
+    return res.status(200).json({ success: true, message: '삭제 성공' });
+  });
+})
 
 module.exports = router;

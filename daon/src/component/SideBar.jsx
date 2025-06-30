@@ -1,7 +1,9 @@
 // ✅ 개선된 SideBar.jsx
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../style/Sidebar.css';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../context/UserContext';
+
 
 // 메뉴와 연동 경로 매핑
 const routeMap = {
@@ -57,6 +59,7 @@ const menuData = [
 const SideBar = ({ isOpen, toggleSidebar }) => {
   const nav = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const { user, setUser } = useContext(UserContext); // ✅ 로그인 정보 가져오기
 
   const handleCategoryClick = (category) => {
     setSelectedCategory((prev) => (prev === category ? null : category));
@@ -71,16 +74,41 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
     }
   };
 
+  const handleLogout = () => {
+    if (window.confirm('로그아웃 하시겠습니까?')) {
+      setUser(null); // ✅ 사용자 정보 초기화
+      nav('/');       // 홈으로 이동
+    }
+  };
+
   return (
     <nav className={`side-nav ${isOpen ? 'open' : ''}`}>
       <div className="sidebar-header">
         <button className="close-btn" onClick={toggleSidebar}>×</button>
-        <p id='p1'>반갑습니다.</p>
-        <p id='p2'>
-          <strong id='name'>이하늘님</strong> 마이페이지{' '}
-          <span id="ckMypg" onClick={() => nav('/mypage')}>바로가기 {'>'}</span>
-        </p>
-        <button className="my-page-btn" onClick={() => nav('/login')}>로그인</button>
+
+        {/* ✅ 로그인 상태 */}
+        {user ? (
+          <>
+            <p id='p1'>반갑습니다.</p>
+            <p id='p2'>
+              <strong id='name'>{user.username}님</strong> 마이페이지{' '}
+              <span id="ckMypg" onClick={() => nav('/mypage')}>바로가기 {'>'}</span>
+            </p>
+            <button className="my-page-btn" onClick={handleLogout}>로그아웃</button>
+          </>
+        ) : (
+          // ✅ 비로그인 상태
+          <>
+            <p id='p1'>반갑습니다.</p>
+            <p id='p2'>
+              <strong id='name'>귀어로드</strong>{' '}
+              <span id="ckMypg">회원가입 하러가기{'>'}</span>
+            </p>
+            <button className="my-page-btn" onClick={() => nav('/login')}>로그인</button>
+          </>
+        )}
+
+
       </div>
 
       <div className="sidebar-body">

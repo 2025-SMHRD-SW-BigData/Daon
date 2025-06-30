@@ -21,7 +21,8 @@ const Login = () => {
           // 로그인 성공 시 사용자 정보 저장
           setUser({
             user_id: res.data.user_id,
-            username: res.data.username
+            username: res.data.username,
+            nickname : res.data.nickname
           });
           alert('로그인 성공!');
           nav('/');
