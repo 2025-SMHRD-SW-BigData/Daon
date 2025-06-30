@@ -1,0 +1,32 @@
+.fish_qualification {
+    text-align: left;
+    font-size: 20px;
+    color: #555;
+    padding: 10px 40px 0 40px;
+    font-weight: bold;
+    margin-bottom: 0%;
+}
+.fish_head{
+    text-align: left;
+    padding: 10px 40px 0 40px;
+    color: #2167B8;
+    font-size: 22px;
+    font-weight: bold;
+}
+.fish_body_font{
+    text-align: left;
+    padding: 10px 40px 0 40px;
+    color: #2167B8;
+    font-size: 17px;
+     font-weight: bold
+}
+.pdf-btn{
+     
+    background-color: #6CB8FF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer
+  
+}
