@@ -12,7 +12,7 @@ import MyPage from './component/MyPage';
 import CommunityPage from './component/CommunityPage';
 import PostDetail from './component/PostDetail';
 import CommunityWrite from './component/CommunityWrite';
-import { CommunityProvider } from './context/CommunityContext';
+
 import YouthSupport from './component/YouthSupport';
 import Fish_licensedfishery from './component/Fish_licensedfishery';
 import Fish_reported from './component/Fish_reported';
@@ -22,7 +22,6 @@ import Fish_fishingboat from './component/Fish_fishingboat';
 
 function App() {
   return (
-    <CommunityProvider>
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/map' element={<Map2 />} />
@@ -43,7 +42,6 @@ function App() {
         <Route path="/youthsupport" element={<YouthSupport />} />
 
       </Routes>
-    </CommunityProvider>
   );
 }
 
