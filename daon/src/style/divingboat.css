@@ -1,4 +1,4 @@
-/* purseine.css */
+/* divingboat.css - 잠수기어선 스타일 */
 
 .page-title {
   font-size: 20px;
@@ -16,19 +16,21 @@
   color: #3b82f6;
   font-weight: bold;
   text-align: left;
+  border-bottom: 2px solid #4f81bd;
+  padding-bottom: 4px;
 }
 
-.purseine-container {
+.divingboat-container {
   padding: 16px;
 }
 
-.purseine-img {
+.divingboat-img {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 20px;
 }
 
-.purseine-info {
+.divingboat-info {
   background-color: #f6faff;
   padding: 16px;
   border-radius: 10px;
@@ -39,19 +41,23 @@
   text-align: left;
 }
 
-.purseine-info p {
+.divingboat-info p {
   margin-bottom: 12px;
 }
 
-.purseine-note {
-  padding-left: 12px;
+.divingboat-note {
+  margin-top: 12px;
 }
 
-.purseine-note p {
-  margin-bottom: 6px;
+.divingboat-note p {
+  margin-bottom: 8px;
+  text-indent: 0;
+  padding-left: 0;
+  text-align: left;
+  line-height: 1.6;
 }
 
-.purseine-btn {
+.divingboat-btn {
   display: block;
   margin: 0 auto 40px;
   padding: 10px 20px;

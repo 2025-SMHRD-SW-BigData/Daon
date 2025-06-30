@@ -1,0 +1,66 @@
+/* purseine.css */
+
+.page-title {
+  font-size: 20px;
+  padding-left: 16px;
+  margin: 16px 0 6px;
+  color: #333;
+  font-weight: bold;
+}
+
+.section-hash {
+  font-size: 16px;
+  padding-left: 16px;
+  margin-bottom: 12px;
+  color: #4f81bd;
+  font-weight: bold;
+  border-bottom: 2px solid #4f81bd;
+  padding-bottom: 4px;
+}
+
+.purseine-container {
+  padding: 16px;
+}
+
+.purseine-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.purseine-info {
+  background-color: #f6faff;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  text-align: left;
+}
+
+.purseine-note p {
+  margin-top: 6px;
+  text-align: left;
+}
+
+.purseine-btn {
+  display: block;
+  margin: 0 auto 40px;
+  padding: 10px 20px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.blue {
+  color: #3b82f6;
+}
