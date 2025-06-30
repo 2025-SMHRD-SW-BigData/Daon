@@ -1,0 +1,90 @@
+/* trapboat.css */
+
+.page-title {
+  font-size: 20px;
+  padding-left: 16px;
+  margin: 16px 0 6px;
+  color: #333;
+  font-weight: bold;
+  text-align: left;
+}
+
+.section-hash {
+  font-size: 16px;
+  padding-left: 16px;
+  margin-bottom: 12px;
+  color: #4f81bd;
+  font-weight: bold;
+  text-align: left;
+}
+
+.trapboat-container {
+  padding: 16px;
+  text-align: left;
+}
+
+.trapboat-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.trapboat-info {
+  background-color: #f6faff;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  text-align: left;
+}
+
+.trapboat-info p,
+.trapboat-info ul,
+.trapboat-info li,
+.trapboat-note {
+  text-align: left;
+}
+
+.trapboat-note {
+  margin-top: 10px;
+  padding-left: 12px;
+}
+
+.trapboat-note li {
+  margin-bottom: 6px;
+  list-style-type: none;
+  position: relative;
+  padding-left: 16px;
+}
+
+.trapboat-note li::before {
+  content: '\2022';
+  color: #3b82f6;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.trapboat-btn {
+  display: block;
+  margin: 0 auto 40px;
+  padding: 10px 20px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.blue {
+  color: #3b82f6;
+}

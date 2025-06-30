@@ -1,0 +1,57 @@
+.page-title {
+  font-size: 20px;
+  padding-left: 16px;
+  margin: 16px 0 6px;
+  color: #333;
+  font-weight: bold;
+}
+
+.section-hash {
+  font-size: 16px;
+  padding-left: 16px;
+  margin-bottom: 12px;
+  color: #4f81bd;
+  font-weight: bold;
+}
+
+.longline-container {
+  padding: 16px;
+}
+
+.longline-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.longline-info {
+  background-color: #f6faff;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  text-align: left;
+}
+
+.longline-btn {
+  display: block;
+  margin: 0 auto 40px;
+  padding: 10px 20px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.blue {
+  color: #3b82f6;
+}

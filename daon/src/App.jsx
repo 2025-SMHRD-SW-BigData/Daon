@@ -26,6 +26,14 @@ import Fish_reported from './component/Fish_reported';
 import FIsh_permitfishery from './component/FIsh_permitfishery';
 import Fish_fishingboat from './component/Fish_fishingboat';
 
+import Gillnet from './component/Gillnet';
+import Longline from './component/Longline';
+import Trawl from './component/Trawl';
+import Pairtrawl from './component/PairTrawl';
+import Trapboat from './component/Trapboat';
+import DivingBoat from './component/DivingBoat';
+import Purseine from './component/Purseine';
+
 import './App.css';
 
 function App() {
@@ -54,6 +62,16 @@ function App() {
       <Route path="/youthsupport" element={<YouthSupport />} />
       <Route path="/startupsupport" element={<StartUpSupport />} />
       <Route path="/housingloan" element={<HousingLoan />} />
+
+      {/* 어선정보 관련 페이지 */}
+      <Route path="/gillnet" element={<Gillnet />} />
+      <Route path="/longline" element={<Longline />} />
+      <Route path="/trawl" element={<Trawl />} />
+      <Route path="/pairtrawl" element={<Pairtrawl />} />
+      <Route path="/trapboat" element={<Trapboat />} />
+      <Route path="/divingBoat" element={<DivingBoat />} />
+      <Route path="/purseine" element={<Purseine />} />
+
     </Routes>
   );
 }
