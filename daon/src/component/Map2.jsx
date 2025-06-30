@@ -1,15 +1,20 @@
+// ✅ Map2.jsx - SearchBox 통합 버전
+
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';
 import Header from './Header';
+import SearchBox from './SearchBox';
 
-const Map = ({ searchText = '' }) => {
+const Map2 = () => {
   const mapElement = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
   const infoWindowsRef = useRef([]);
   const [village, setVillage] = useState([]);
+  const [searchText, setSearchText] = useState('');
 
+  // 데이터 로드
   useEffect(() => {
     axios.get('/fishing_village.json')
       .then((res) => {
@@ -40,9 +45,9 @@ const Map = ({ searchText = '' }) => {
       .catch(console.error);
   }, []);
 
+  // 지도 생성
   useEffect(() => {
     if (!window.naver || !mapElement.current) return;
-
     if (!mapRef.current) {
       mapRef.current = new window.naver.maps.Map(mapElement.current, {
         center: new window.naver.maps.LatLng(36.5, 127.5),
@@ -51,6 +56,7 @@ const Map = ({ searchText = '' }) => {
     }
   }, []);
 
+  // 마커 표시
   useEffect(() => {
     if (!mapRef.current) return;
 
@@ -66,16 +72,26 @@ const Map = ({ searchText = '' }) => {
       });
 
       const infoWindow = new window.naver.maps.InfoWindow({
-        content: `
-          <div style="padding:10px; font-size:13px; line-height:1.5; max-width:250px;">
-            <strong style="font-size:14px;">📍 ${v.name}</strong><br/>
-            <b>주소:</b> ${v.address || '정보 없음'}<br/>
-            <b>주요 관광지:</b> ${v.info || '없음'}<br/>
-            <b>인근 해변:</b> ${v.beaches || '없음'}<br/>
-            ${v.photo ? `<img src="${v.photo}" alt="${v.name} 전경" style="width:100%; margin-top:8px;" />` : ''}
-          </div>
-        `
-      });
+  content: `
+    <div style="
+      padding:8px;
+      font-size:12px;
+      line-height:1.4;
+      max-width:160px;
+    ">
+      <strong style="font-size:13px;">📍 ${v.name}</strong><br/>
+      <b>주소:</b> ${v.address || '정보 없음'}<br/>
+      <b>주요 관광지:</b> ${v.info || '없음'}<br/>
+      <b>인근 해변:</b> ${v.beaches || '없음'}<br/>
+      ${
+        v.photo
+          ? `<img src="${v.photo}" alt="${v.name} 전경" style="width:100%; margin-top:6px;" />`
+          : ''
+      }
+    </div>
+  `
+});
+
 
       window.naver.maps.Event.addListener(marker, 'click', () => {
         infoWindowsRef.current.forEach(iw => iw.close());
@@ -87,6 +103,7 @@ const Map = ({ searchText = '' }) => {
     });
   }, [village]);
 
+  // 검색 시 마커로 이동
   useEffect(() => {
     if (!mapRef.current || village.length === 0) return;
 
@@ -98,9 +115,7 @@ const Map = ({ searchText = '' }) => {
     }
 
     const lowerSearch = searchText.trim().toLowerCase();
-
     let foundIndex = village.findIndex(v => v.name.toLowerCase() === lowerSearch);
-
     if (foundIndex === -1) {
       foundIndex = village.findIndex(v => v.name.toLowerCase().includes(lowerSearch));
     }
@@ -118,34 +133,20 @@ const Map = ({ searchText = '' }) => {
   }, [searchText, village]);
 
   return (
-
-
-    <div className='phon_size'>
+    <div className="phon_size">
       <div className="scroll-area">
-       
-        
-        <Header></Header>
-        
-        <br />
+        <Header />
+        <SearchBox setSearchText={setSearchText} />
         <div
           id="map"
           ref={mapElement}
-          style={{ width: '90%', height: '90%' }}
+          style={{ width: '90%', height: '80vh', margin: '0 auto' }}
         />
-
-        <div style={{
-          padding: '50px',
-        }}>
-        </div>
+        <div style={{ padding: '50px' }} />
+        <NavBar />
       </div>
-
-      <NavBar />
-
     </div>
-
-
-
   );
 };
 
-export default Map;
+export default Map2;

@@ -1,6 +1,5 @@
-// ✅ Main.jsx - 리팩토링 후 (SearchBox 분리 적용)
-
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom'; // ✅ useNavigate 추가
 import '../style/main.css';
 import mapImg from '../assets/map.png';
 import comuImg from '../assets/comu.png';
@@ -17,6 +16,10 @@ const Main = () => {
   const [searchText, setSearchText] = useState('');
   const [villageList, setVillageList] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
+
+  const location = useLocation();
+  const isMapPage = location.pathname === '/map';
+  const navigate = useNavigate(); // ✅ useNavigate 훅 사용
 
   useEffect(() => {
     axios.get('/fishing_village.json')
@@ -64,35 +67,23 @@ const Main = () => {
   };
 
   return (
-
     <div className="phon_size">
-
       <div className="scroll-area">
-
-
         <Header />
-      <div className="scroll-area">
 
-        <SearchBox setSearchText={setSearchText} />
+        {isMapPage && <SearchBox setSearchText={setSearchText} />}
 
         <div className="map-container">
-          {Map ? (
-            <Map height={200} searchText={searchText} />
-          ) : (
-            <div className="map-fallback">
-              <img src={mapImg} alt="map" className="map-img" />
-              <div className="fallback-text">어촌 정보 탐색 지도</div>
-            </div>
-          )}
+          <div className="map-fallback" onClick={() => navigate('/map')} style={{ cursor: 'pointer' }}>
+            <img src={mapImg} alt="map" className="map-img" />
+            <div className="fallback-text styled-label">어촌 정보 탐색 지도</div>
+          </div>
         </div>
 
         <InfoCards />
-
         <CommunitySection />
       </div>
-
       <NavBar />
-    </div>
     </div>
   );
 };

@@ -562,3 +562,9 @@
  }
 
  
+ .styled-label {
+    color: #66A5ED;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
