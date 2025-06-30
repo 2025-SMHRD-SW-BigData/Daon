@@ -29,11 +29,11 @@
 }
 
 .loan-info {
-  background-color: #f6faff;
+  /* background-color: #f6faff; */
   padding: 16px;
   border-radius: 10px;
   margin-bottom: 20px;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.6;
   color: #333;
   text-align: left;

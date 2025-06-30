@@ -9,8 +9,10 @@ const HomeHouse = () => {
       <Header />
       <div className="scroll-area">
         <div className="house-container">
-          <h2 className="page-title">지원금 및 정책</h2>
-          <h3 className="section-hash"># 귀어인의 집</h3>
+          <h2 className="page-title" style={{fontSize:'19px'}}>지원금 및 정책</h2>
+          
+          <hr />
+          <h3 className="section-hash" style={{fontSize:'24px', fontWeight:'revert'}}># 귀어인의 집</h3>
 
           <img
             src="/UIimages/귀어인의집.jpg"
@@ -19,8 +21,8 @@ const HomeHouse = () => {
           />
 
           <div className="house-box">
-            <p><span className="bold blue">대상 :</span> 어촌 이주를 희망하는 귀어인</p>
-            <p><span className="bold blue">내용 :</span> 1년간 임대 숙소 제공<br /> (월 약 20만 원, 공과금 별도)</p>
+            <p style={{marginBottom :'15px'}}><span className="bold blue" >대상 :</span> 어촌 이주를 희망하는 귀어인</p>
+            <p style={{marginBottom :'15px'}}><span className="bold blue">내용 :</span> 1년간 임대 숙소 제공<br /> (월 약 20만 원, 공과금 별도)</p>
             <p>추가 이용자가 없을 경우엔 <span className="blue underline">연장도 가능</span></p>
 
             <p className="house-desc">
