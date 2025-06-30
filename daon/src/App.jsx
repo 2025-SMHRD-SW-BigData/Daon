@@ -13,14 +13,11 @@ import CommunityPage from './component/CommunityPage';
 import PostDetail from './component/PostDetail';
 import CommunityWrite from './component/CommunityWrite';
 import { CommunityProvider } from './context/CommunityContext';
-
-import Fish_자격 from './component/Fish_reported';
-
 import YouthSupport from './component/YouthSupport';
-
-
-import './App.css';
+import Fish_licensedfishery from './component/Fish_licensedfishery';
 import Fish_reported from './component/Fish_reported';
+import FIsh_permitfishery from './component/FIsh_permitfishery';
+import './App.css';
 
 function App() {
   return (
@@ -37,6 +34,8 @@ function App() {
         <Route path='/community/write' element={<CommunityWrite />} />
 
         <Route path='/reportfishery' element={<Fish_reported />} />
+        <Route path='/licensedfishery' element={<Fish_licensedfishery />} />
+        <Route path='/permitfishery' element={<FIsh_permitfishery />} />
         
 
         <Route path="/youthsupport" element={<YouthSupport />} />
