@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../context/UserContext';
 import axios from 'axios';
 import Header from './Header';
 import NavBar from './NavBar';
 import '../style/communitypage.css';
+
+
 
 const CommunityPage = () => {
   const [posts, setPosts] = useState([]); // 서버에서 받아온 게시글 상태
@@ -11,10 +14,13 @@ const CommunityPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 5;
   const navigate = useNavigate();
+  const { user } = useContext(UserContext); // ✅ 로그인 여부 확인
+
 
   // 서버에서 게시글 데이터 불러오기 (컴포넌트 마운트 시)
   useEffect(() => {
-    axios.get('http://192.168.219.45:3003/community/view') // 서버 API 주소에 맞게 변경
+    axios
+      .get('http://192.168.219.45:3003/community/view') // 서버 API 주소에 맞게 변경
       .then(res => {
         // console.log('데이터 받아오는중')
         setPosts(res.data);
@@ -36,6 +42,15 @@ const CommunityPage = () => {
 
   const handlePageClick = (pageNum) => {
     setCurrentPage(pageNum);
+  };
+  // 글쓰기 버튼 클릭 시
+   const handleWriteClick = () => {
+    if (!user) {
+      alert('로그인 후 글쓰기가 가능합니다.');
+      navigate('/login')
+    } else {
+      navigate('/community/write');
+    }
   };
 
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
@@ -109,7 +124,7 @@ const CommunityPage = () => {
           )}
 
           <div style={{ textAlign: 'right', marginTop: '10px' }}>
-            <button onClick={() => navigate('/community/write')} className="primary-button">
+            <button onClick={handleWriteClick} className="primary-button">
               글쓰기
             </button>
           </div>

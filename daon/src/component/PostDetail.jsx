@@ -125,6 +125,22 @@ const PostDetail = () => {
             >
               댓글 등록
             </button>
+            <br />
+            <button
+              onClick={()=>{navigate('/community')}}
+              style={{
+                marginTop: '8px',
+                padding: '8px 16px',
+                backgroundColor: '#995A12',
+                color: 'white',
+                border: 'none',
+                borderRadius: '6px',
+                cursor: 'pointer',
+                fontWeight: 'bold'
+              }}
+            >
+              목록
+            </button>
           </div>
         </div>
         <NavBar />

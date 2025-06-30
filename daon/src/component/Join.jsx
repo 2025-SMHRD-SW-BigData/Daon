@@ -28,7 +28,7 @@ const Join = () => {
     return;
   }
    try {
-const response = await axios.post('http://192.168.219.45:3003/api/join', {
+const response = await axios.post('http://192.168.219.45:3003/user/join', {
   user_id: formData.user_id,
   password: formData.password,
   confirmPassword: formData.confirmPassword, 

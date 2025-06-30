@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router();
+const jwt = require('jsonwebtoken');
+const secretKey = 'your-secret-key';
 
 const cors = require('cors');
 
@@ -9,33 +11,61 @@ const mysql = require('mysql2')
 
 // DB 연결 정보
 let conn = mysql.createConnection({
-    host: 'project-db-campus.smhrd.com',
-    port: 3307,
-    user: 'campus_25SW_BigData_p2_1',
-    password: 'smhrd1',
-    database: 'campus_25SW_BigData_p2_1'
+  host: 'project-db-campus.smhrd.com',
+  port: 3307,
+  user: 'campus_25SW_BigData_p2_1',
+  password: 'smhrd1',
+  database: 'campus_25SW_BigData_p2_1'
 });
 
 conn.connect(err => {
   if (err) {
-    console.error('DB 연결 실패:', err);
+    console.error('유저 라우터 DB 연결 실패:', err);
   } else {
-    console.log('DB 연결 성공');
+    console.log('유저 라우터 DB 연결 성공');
   }
 });
 
 router.use(cors());
 
 router.post('/login', (req, res) => {
-    console.log(req.body)
+  const { user_id, password } = req.body;
 
-   
-})
+  const sql = 'SELECT * FROM users WHERE user_id = ? AND password = ?';
+  
+  conn.query(sql, [user_id, password], (err, rows) => {
+    if (err) {
+      console.error('로그인 쿼리 오류:', err);
+      return res.status(500).json({ success: false, message: '서버 오류' });
+    }
+
+    if (rows.length > 0) {
+       const user = rows[0];
+
+      // JWT 토큰 생성 (선택 사항)
+      const token = jwt.sign({ user_id }, secretKey, { expiresIn: '1h' });
+
+       // 로그인 성공 시 사용자 정보와 토큰을 응답
+      res.status(200).json({
+        success: true,
+        message: '로그인 성공',
+        token,
+        user_id: user.user_id,
+        username: user.username,
+        nickname: user.nickname,
+        role: user.role
+      });
+
+    } else {
+      res.status(401).json({ success: false, message: '아이디 또는 비밀번호가 일치하지 않습니다.' });
+    }
+  });
+});
 
 // 회원가입
 
 router.post('/join', (req, res) => {
-  console.log('회원가입 요청 데이터:', req.body); 
+  console.log('회원가입 요청 데이터:', req.body);
   const { user_id, password, confirmPassword, username, nickname, phone_number, role } = req.body;
 
   // 1. 필수 입력값 체크

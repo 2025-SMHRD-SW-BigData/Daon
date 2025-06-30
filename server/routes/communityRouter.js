@@ -21,9 +21,9 @@ let conn = mysql.createConnection({
 // DB 연결 시도 및 연결 성공/실패 여부 콘솔 출력
 conn.connect(err => {
     if (err) {
-        console.error('DB 연결 실패:', err); // 실패 시 에러 메시지 출력
+        console.error('커뮤니티 라우터 DB 연결 실패:', err); // 실패 시 에러 메시지 출력
     } else {
-        console.log('DB 연결 성공');        // 성공 시 메시지 출력
+        console.log('커뮤니티 라우터 DB 연결 성공');        // 성공 시 메시지 출력
     }
 });
 

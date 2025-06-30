@@ -20,7 +20,7 @@ const Chatbot = () => {
 
     // 2. 서버에 메시지 전송
     axios
-      .post('http://192.168.219.45:3003/ask', { message: msg })
+      .post('http://192.168.219.45:3003/chatbot/ask', { message: msg })
       .then((res) => {
         const botMessage = { sender: 'bot', text: res.data.reply };
         setMessages(prev => [...prev, botMessage]);

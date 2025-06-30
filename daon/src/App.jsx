@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { UserContext } from './context/UserContext';
 
 // 페이지 컴포넌트
 import Main from './component/Main';
@@ -29,32 +30,38 @@ import Fish_fishingboat from './component/Fish_fishingboat';
 import './App.css';
 
 function App() {
+  const [user, setUser] = useState(null);
+
   return (
-    <Routes>
-      <Route path='/' element={<Main />} />
-      <Route path='/map' element={<Map2 />} />
-      <Route path='/join' element={<Join />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/chatbot' element={<Chatbot />} />
-      <Route path='/mypage' element={<MyPage />} />
-      <Route path='/community' element={<CommunityPage />} />
-      <Route path='/community/:id' element={<PostDetail />} />
-      <Route path='/community/write' element={<CommunityWrite />} />
+    <UserContext.Provider value={{ user, setUser }}>
 
-      {/* 어업 관련 페이지 */}
-      <Route path='/reportfishery' element={<Fish_reported />} />
-      <Route path='/licensedfishery' element={<Fish_licensedfishery />} />
-      <Route path='/permitfishery' element={<FIsh_permitfishery />} />
-      <Route path='/fishingboat' element={<Fish_fishingboat />} />
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='/map' element={<Map2 />} />
+        <Route path='/join' element={<Join />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/chatbot' element={<Chatbot />} />
+        <Route path='/mypage' element={<MyPage />} />
+        <Route path='/community' element={<CommunityPage />} />
+        <Route path='/community/:id' element={<PostDetail />} />
+        <Route path='/community/write' element={<CommunityWrite />} />
 
-      {/* 정책지원 관련 페이지 */}
-      <Route path="/homehouse" element={<HomeHouse />} />
-      <Route path="/fischool" element={<FiSchool />} />
-      <Route path="/youthboat" element={<YouthBoat />} />
-      <Route path="/youthsupport" element={<YouthSupport />} />
-      <Route path="/startupsupport" element={<StartUpSupport />} />
-      <Route path="/housingloan" element={<HousingLoan />} />
-    </Routes>
+        {/* 어업 관련 페이지 */}
+        <Route path='/reportfishery' element={<Fish_reported />} />
+        <Route path='/licensedfishery' element={<Fish_licensedfishery />} />
+        <Route path='/permitfishery' element={<FIsh_permitfishery />} />
+        <Route path='/fishingboat' element={<Fish_fishingboat />} />
+
+        {/* 정책지원 관련 페이지 */}
+        <Route path="/homehouse" element={<HomeHouse />} />
+        <Route path="/fischool" element={<FiSchool />} />
+        <Route path="/youthboat" element={<YouthBoat />} />
+        <Route path="/youthsupport" element={<YouthSupport />} />
+        <Route path="/startupsupport" element={<StartUpSupport />} />
+        <Route path="/housingloan" element={<HousingLoan />} />
+
+      </Routes>
+    </UserContext.Provider>
   );
 }
 
