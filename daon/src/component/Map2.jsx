@@ -1,5 +1,3 @@
-// ✅ Map2.jsx - SearchBox 통합 버전
-
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';

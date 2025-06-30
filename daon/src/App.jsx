@@ -13,6 +13,8 @@ import CommunityPage from './component/CommunityPage';
 import PostDetail from './component/PostDetail';
 import CommunityWrite from './component/CommunityWrite';
 import { CommunityProvider } from './context/CommunityContext';
+import HomeHouse from './component/HomeHouse';
+import FiSchool from './component/FiSchool';
 
 import Fish_자격 from './component/Fish_reported';
 
@@ -37,8 +39,9 @@ function App() {
         <Route path='/community/write' element={<CommunityWrite />} />
 
         <Route path='/reportfishery' element={<Fish_reported />} />
-        
 
+        <Route path="/homehouse" element={<HomeHouse />} />
+        <Route path="/fischool" element={<FiSchool />} />
         <Route path="/youthsupport" element={<YouthSupport />} />
 
       </Routes>
