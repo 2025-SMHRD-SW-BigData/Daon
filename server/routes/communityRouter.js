@@ -63,7 +63,11 @@ router.get('/view', (req, res) => {
 // 댓글 가져오기
 router.get('/comments/:post_id', (req, res) => {
     const postId = req.params.post_id;
-    const sql = 'SELECT * FROM comment WHERE post_id = ? ORDER BY created_at ASC';
+    const sql = `SELECT c.comment_id, c.content, c.user_id, u.nickname
+                FROM comment c INNER JOIN users u 
+                ON c.user_id = u.user_id
+                WHERE c.post_id = ?
+                ORDER BY c.created_at ASC`;
 
     conn.query(sql, [postId], (err, rows) => {
         if (err) {
@@ -76,9 +80,14 @@ router.get('/comments/:post_id', (req, res) => {
 
 // 댓글 등록
 router.post('/comments', (req, res) => {
-    const { post_id, content } = req.body;
-    const user_id ="dlwlsdn"
+    const { post_id, user_id, content } = req.body;
+
+    if (!user_id) {
+        return res.status(400).json({ message: '로그인 후 이용해주세요.' });
+    }
+
     const sql = 'INSERT INTO comment (post_id, user_id, content) VALUES (?, ?, ?)';
+
     conn.query(sql, [post_id, user_id, content], (err, result) => {
         if (err) {
             console.error('댓글 등록 에러:', err);
