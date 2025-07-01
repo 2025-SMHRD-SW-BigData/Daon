@@ -83,7 +83,8 @@ router.post('/comments', (req, res) => {
     const { post_id, user_id, content } = req.body;
 
     if (!user_id) {
-        return res.status(400).json({ message: '로그인 후 이용해주세요.' });
+        return res.status(401).json({ message: '로그인이 필요합니다.' });
+
     }
 
     const sql = 'INSERT INTO comment (post_id, user_id, content) VALUES (?, ?, ?)';

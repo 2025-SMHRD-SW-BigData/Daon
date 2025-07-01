@@ -35,6 +35,10 @@ const PostDetail = () => {
   }, [post?.post_id]);
 
   const handleCommentSubmit = () => {
+    if (!user) {
+      alert('댓글을 작성하려면 로그인이 필요합니다.');
+      return;
+    }
     if (!commentInput.trim()) return;
 
     const newComment = {
