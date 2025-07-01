@@ -39,7 +39,7 @@ const PostDetail = () => {
 
     const newComment = {
       post_id: post.post_id, // 🔽 어떤 게시글의 댓글인지 식별
-      author: '익명', // 나중에 로그인 유저명으로 대체
+      user_id: user.user_id, // 나중에 로그인 유저명으로 대체
       content: commentInput.trim(),
     };
 
@@ -135,7 +135,7 @@ const PostDetail = () => {
                     marginBottom: '12px',
                     lineHeight: '1.7',
                   }}>
-                    <strong style={{ display: 'block', marginBottom: '6px' }}>{comment.author}</strong>
+                    <strong style={{ display: 'block', marginBottom: '6px' }}>{comment.nickname}</strong>
                     <span>{comment.content}</span>
                   </li>
                 ))}
