@@ -14,6 +14,7 @@ import CommunityPage from './component/CommunityPage';
 import PostDetail from './component/PostDetail';
 import CommunityWrite from './component/CommunityWrite';
 
+import PolicyCategory from './component/PolicyCategory';
 
 import HomeHouse from './component/HomeHouse';
 import FiSchool from './component/FiSchool';
@@ -35,14 +36,21 @@ import Trapboat from './component/Trapboat';
 import DivingBoat from './component/DivingBoat';
 import Purseine from './component/Purseine';
 
+import VesselCategory from './component/VesselCategory';
+import TransitionSplash from './component/TransitionSplash'; // ✅ 출항 로딩페이지
+
 import './App.css';
 
 function App() {
   const [user, setUser] = useState(null);
+
   return (
     <UserContext.Provider value={{ user, setUser }}>
-
       <Routes>
+        {/* ✅ 출항 애니메이션용 페이지 */}
+        <Route path='/splash' element={<TransitionSplash />} />
+
+        {/* 기본 메인 페이지 */}
         <Route path='/' element={<Main />} />
         <Route path='/map' element={<Map2 />} />
         <Route path='/join' element={<Join />} />
@@ -60,6 +68,8 @@ function App() {
         <Route path='/fishingboat' element={<Fish_fishingboat />} />
 
         {/* 정책지원 관련 페이지 */}
+        <Route path="/policyinfo" element={<PolicyCategory />} />
+        
         <Route path="/homehouse" element={<HomeHouse />} />
         <Route path="/fischool" element={<FiSchool />} />
         <Route path="/youthboat" element={<YouthBoat />} />
@@ -68,6 +78,7 @@ function App() {
         <Route path="/housingloan" element={<HousingLoan />} />
 
         {/* 어선정보 관련 페이지 */}
+        <Route path="/vesselcategory" element={<VesselCategory />} />
         <Route path="/gillnet" element={<Gillnet />} />
         <Route path="/longline" element={<Longline />} />
         <Route path="/trawl" element={<Trawl />} />
@@ -75,7 +86,6 @@ function App() {
         <Route path="/trapboat" element={<Trapboat />} />
         <Route path="/divingBoat" element={<DivingBoat />} />
         <Route path="/purseine" element={<Purseine />} />
-
       </Routes>
     </UserContext.Provider>
   );

@@ -16,8 +16,8 @@
   color: #4f81bd;
   font-weight: bold;
   text-align: left;
-  border-bottom: 2px solid #4f81bd; /* 가로선 추가 */
-  padding-bottom: 4px; /* 텍스트 아래 간격 */
+  border-bottom: 2px solid #4f81bd;
+  padding-bottom: 4px;
 }
 
 .pairtrawl-container {
