@@ -98,7 +98,29 @@ router.post('/comments', (req, res) => {
     });
 });
 
+// 게시글 및 해당 댓글 삭제 라우터
+router.delete('/delete/:post_id', (req, res) => {
+    const postId = req.params.post_id;
+    const deleteCommentsSql = 'DELETE FROM comment WHERE post_id = ?';
+    const deletePostSql = 'DELETE FROM post WHERE post_id = ?';
 
+    // 1. 댓글 먼저 삭제
+    conn.query(deleteCommentsSql, [postId], (err, result) => {
+        if (err) {
+            console.error('댓글 삭제 중 에러:', err);
+            return res.status(500).json({ message: '댓글 삭제 실패' });
+        }
+        // 2. 댓글 삭제가 끝난 후 게시글 삭제
+        conn.query(deletePostSql, [postId], (err, result) => {
+            if (err) {
+                console.error('게시글 삭제 중 에러:', err);
+                return res.status(500).json({ message: '게시글 삭제 실패' });
+            }
+
+            res.status(200).json({ message: '게시글과 댓글이 모두 삭제되었습니다.' });
+        });
+    });
+});
 
 // 해당 라우터 모듈을 외부에서 사용할 수 있도록 export
 module.exports = router;
