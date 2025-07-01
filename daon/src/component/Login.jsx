@@ -33,7 +33,7 @@ const Login = () => {
             alert('로그인 성공!');
             nav('/');
           } else {
-            alert('아이디 또는 비밀번호가 일치하지 않습니다.');
+            alert(res.data.message || '아이디 또는 비밀번호가 일치하지 않습니다.');
           }
         })
         .catch((error) => {

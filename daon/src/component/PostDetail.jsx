@@ -117,14 +117,15 @@ const PostDetail = () => {
                 style={{
                   cursor: 'pointer',
                   color: 'red',
-                  fontWeight: 'bold'
+                  fontWeight: 'bold',
+                  fontSize : '12px'
                 }}
               >
-                삭제 ❌
+                글삭제 ❌
               </span>
             </div>
           )}
-
+  댓글
           {/* 댓글 목록 */}
           <div style={{ marginTop: '20px' }}>
             {comments.length === 0 ? (
