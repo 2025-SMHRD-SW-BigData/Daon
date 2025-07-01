@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header';
 import NavBar from './NavBar';
 import '../style/communitywrite.css';
+import { UserContext } from '../context/UserContext';
 
 const CommunityWrite = () => {
   const navigate = useNavigate();
+
+  const { user } = useContext(UserContext);
 
   // 게시글 입력 상태값
   const [form, setForm] = useState({
     title: '',
     content: '',
-    author: '', // 나중에 로그인된 사용자 이름으로 대체 예정
+    author: user.user_id, // 나중에 로그인된 사용자 이름으로 대체 예정
     region: '전체지역',
   });
 
@@ -71,6 +74,7 @@ const CommunityWrite = () => {
               <option>경상남도</option>
               <option>제주특별자치도</option>
             </select>
+            <br />
             <input
               type="text"
               name="title"
@@ -79,22 +83,17 @@ const CommunityWrite = () => {
               onChange={handleChange}
               required
             />
+            <br />
             <textarea
               name="content"
               placeholder="내용"
               value={form.content}
               onChange={handleChange}
               required
-              rows={6}
+              rows={20}
+              style={{width:'300px'}}
             />
-            <input
-              type="text"
-              name="author"
-              placeholder="작성자"
-              value={form.author}
-              onChange={handleChange}
-              required
-            />
+            <br />
             <button type="submit" className="submit-btn">등록</button>
           </form>
         </div>
