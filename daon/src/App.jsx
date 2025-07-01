@@ -41,6 +41,8 @@ import Purseine from './component/Purseine';
 import VesselCategory from './component/VesselCategory';
 import TransitionSplash from './component/TransitionSplash'; // ✅ 출항 로딩페이지
 
+import CompareVillage from './component/CompareVillage'; // 정착 비교 페이지
+
 import './App.css';
 
 function App() {
@@ -90,6 +92,9 @@ function App() {
         <Route path="/trapboat" element={<Trapboat />} />
         <Route path="/divingBoat" element={<DivingBoat />} />
         <Route path="/purseine" element={<Purseine />} />
+
+        {/* 정착지 비교 관련 페이지 */}
+        <Route path="/compare" element={<CompareVillage />} />
       </Routes>
     </UserContext.Provider>
   );

@@ -8,7 +8,7 @@ const InfoCards = () => {
   const nav = useNavigate();
 
   const infoMap = {
-    '어촌 정보 탐색': '/farminginfo',
+    '정착지 후보 비교': '/compare',
     '어선 정보': '/vesselcategory', 
     '지원금 및 정책': '/policyinfo',
     '어업 자격': '/licenseinfo',
