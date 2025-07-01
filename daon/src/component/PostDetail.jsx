@@ -85,8 +85,8 @@ const PostDetail = () => {
 
   return (
     <div className="phon_size">
-      <div className="scroll-area">
         <Header />
+      <div className="scroll-area">
         <div className="community-container">
           <h2 className="community-title">{post.title}</h2>
           <div className="post-meta">{post.user_id} · {new Date(post.created_at).toLocaleString('ko-KR', {
