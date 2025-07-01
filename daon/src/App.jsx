@@ -16,6 +16,8 @@ import CommunityWrite from './component/CommunityWrite';
 
 import PolicyCategory from './component/PolicyCategory';
 
+
+import LicenseInfo from './component/LicenseInfo';
 import HomeHouse from './component/HomeHouse';
 import FiSchool from './component/FiSchool';
 import YouthBoat from './component/youthboat';
@@ -62,6 +64,8 @@ function App() {
         <Route path='/community/write' element={<CommunityWrite />} />
 
         {/* 어업 관련 페이지 */}
+        <Route path="/licenseinfo" element={<LicenseInfo />} />
+
         <Route path='/reportfishery' element={<Fish_reported />} />
         <Route path='/licensedfishery' element={<Fish_licensedfishery />} />
         <Route path='/permitfishery' element={<FIsh_permitfishery />} />
@@ -69,7 +73,7 @@ function App() {
 
         {/* 정책지원 관련 페이지 */}
         <Route path="/policyinfo" element={<PolicyCategory />} />
-        
+
         <Route path="/homehouse" element={<HomeHouse />} />
         <Route path="/fischool" element={<FiSchool />} />
         <Route path="/youthboat" element={<YouthBoat />} />
