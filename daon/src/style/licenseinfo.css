@@ -1,15 +1,18 @@
-/* licenseinfo.css - 어업 자격 중간 페이지 전용 스타일 */
+/* licenseinfo.css - 어업 자격 중간 페이지 전용 스타일 (통일된 디자인 적용) */
 
 .license-container {
-  padding: 20px;
+  padding: 16px;
   text-align: center;
+  background-color: #ffffff;
+  min-height: 100vh;
 }
 
 .license-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
-  color: #2d6cdf;
-  margin-bottom: 20px;
+  color: #3b82f6; 
+  text-align: center;
+  margin: 16px 0 12px;
 }
 
 .license-btn {
@@ -28,6 +31,15 @@
 }
 
 .license-btn:hover {
-  background-color: #2d6cdf;
+  background-color: #66a5ed;
   color: white;
+}
+
+.license-btn:active {
+  transform: scale(0.98);
+}
+
+.license-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(102, 165, 237, 0.4);
 }
