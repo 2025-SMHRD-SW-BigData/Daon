@@ -4,7 +4,7 @@ import Header from './Header';
 import NavBar from './NavBar';
 import '../style/trawl.css';
 import useFavorite from '../hooks/useFavorite';
-
+import RecommendList from './RecommendList';
 
 const Trawl = () => {
     const pageTitle = '저인망어선';
@@ -27,8 +27,7 @@ const Trawl = () => {
                                 color: '#f0c420',
                                 cursor: 'pointer',
                                 transition: 'transform 0.2s'
-                            }}>{isFavorite ? '★' : '☆'}
-                        </button>
+                            }}>{isFavorite ? '★' : '☆'}</button>
                     </h2>
                     <h3 className="section-hash">저인망어선</h3>
 
@@ -65,6 +64,9 @@ const Trawl = () => {
                             <b>슬립웨이:</b> 그물 양망 ~ 투하 시 이동되는 경사로<br />
                             <b>윈치 드럼:</b> 그물을 조작하고 조절하는 데에 이용
                         </p>
+
+                        {/* ✅ 추천 어항 리스트 삽입 */}
+                        <RecommendList vesselType="저인망" />
                     </div>
 
                     <a

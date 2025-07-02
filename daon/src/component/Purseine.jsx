@@ -4,6 +4,7 @@ import Header from './Header';
 import NavBar from './NavBar';
 import '../style/purseine.css';
 import useFavorite from '../hooks/useFavorite';
+import RecommendList from './RecommendList';
 
 const Purseine = () => {
     const pageTitle = '면허어업';
@@ -26,8 +27,7 @@ const Purseine = () => {
                                 color: '#f0c420',
                                 cursor: 'pointer',
                                 transition: 'transform 0.2s'
-                            }}>{isFavorite ? '★' : '☆'}
-                        </button>
+                            }}>{isFavorite ? '★' : '☆'}</button>
                     </h2>
                     <h3 className="section-hash">선망어선</h3>
 
@@ -64,6 +64,9 @@ const Purseine = () => {
                             <p><span className="bold">편망 릴 :</span> 유압으로 파워블록, 그물 설치에 고정</p>
                             <p><span className="bold">전자장비 :</span> 어군탐지기, 소나, 레이더, GPS 장비 일체</p>
                         </div>
+
+                        {/* ✅ 추천 어항 리스트 삽입 */}
+                        <RecommendList vesselType="선망" />
                     </div>
 
                     <a

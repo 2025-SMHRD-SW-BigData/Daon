@@ -1,8 +1,8 @@
-// CompareVillage.jsx - 필드 매핑 수정 + 중복 제거 + 3개 제한 + UI 고정 완성형
 import React, { useState, useEffect } from 'react';
 import '../style/comparevillage.css';
 import Header from './Header';
 import NavBar from './NavBar';
+import rawData from '../data/filtered_village_data_clean.json';
 
 const CompareVillage = () => {
   const [villageData, setVillageData] = useState([]);
@@ -10,22 +10,17 @@ const CompareVillage = () => {
   const [groupedVillages, setGroupedVillages] = useState({});
 
   useEffect(() => {
-    fetch('/filtered_village_data_clean.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setVillageData(data);
-
-        const grouped = {};
-        data.forEach((village) => {
-          const name = village.FSHNG_PRT_NM;
-          const group = getInitialConsonant(name[0]);
-          if (!grouped[group]) grouped[group] = [];
-          if (!grouped[group].includes(name)) {
-            grouped[group].push(name);
-          }
-        });
-        setGroupedVillages(grouped);
-      });
+    setVillageData(rawData);
+    const grouped = {};
+    rawData.forEach((village) => {
+      const name = village.FSHNG_PRT_NM;
+      const group = getInitialConsonant(name[0]);
+      if (!grouped[group]) grouped[group] = [];
+      if (!grouped[group].includes(name)) {
+        grouped[group].push(name);
+      }
+    });
+    setGroupedVillages(grouped);
   }, []);
 
   const getInitialConsonant = (char) => {

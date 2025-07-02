@@ -1,0 +1,979 @@
+[
+  {
+    "FSHNG_PRT_NM": "격포항",
+    "FP_ADDR_DNL": "전라북도 부안군 변산면 격포항길 64-7",
+    "EDU_FCLTY_CNT": "7",
+    "PBLC_FCLTY_CNT": "4",
+    "NRB_FP_DIST": "2.9",
+    "VESSEL_TYPE": [
+      "통발",
+      "자망"
+    ]
+  },
+  {
+    "FSHNG_PRT_NM": "위도항",
+    "FP_ADDR_DNL": "전라북도 부안군 위도면 위도로 30",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "1.4",
+    "VESSEL_TYPE": ["통발", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "구계항",
+    "FP_ADDR_DNL": "경상북도 영덕군 남정면 구계1길 6-7",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "4.3",
+    "VESSEL_TYPE": ["통발", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "구시포항",
+    "FP_ADDR_DNL": "전라북도 고창군 상하면 구시포해변길 84",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "8.5",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "구산항",
+    "FP_ADDR_DNL": "경상북도 울진군 기성면 구산봉산로 126-4",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "5.4",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "저동항",
+    "FP_ADDR_DNL": "경상북도 울릉군 울릉읍 봉래1길 19-11",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "6.6",
+    "VESSEL_TYPE": ["자망", "정치망"]
+  },
+  {
+    "FSHNG_PRT_NM": "전장포항",
+    "FP_ADDR_DNL": "전라남도 신안군 임자면 전장포길 908",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "11.6",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "공현진항",
+    "FP_ADDR_DNL": "강원도 고성군 죽왕면 공현진해변길 78-1",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "2",
+    "VESSEL_TYPE": [
+      "정치망",
+      "자망"
+    ]
+  },
+  {
+    "FSHNG_PRT_NM": "광암항",
+    "FP_ADDR_DNL": "경상남도 창원시 마산합포구 진동면 해양관광로 164-22",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "1",
+    "NRB_FP_DIST": "1.6",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "구조라항",
+    "FP_ADDR_DNL": "경상남도 거제시 일운면 구조라로 49",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "3.5",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "국동항",
+    "FP_ADDR_DNL": "전라남도 여수시 어항단지로 24",
+    "EDU_FCLTY_CNT": "4",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "1",
+    "VESSEL_TYPE": [
+      "권현망",
+      "자망"
+    ]
+  },
+  {
+    "FSHNG_PRT_NM": "계마항",
+    "FP_ADDR_DNL": "전라남도 영광군 홍농읍 계마길 31-59",
+    "EDU_FCLTY_CNT": "4",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "11.2",
+    "VESSEL_TYPE": ["통발", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "홍원항",
+    "FP_ADDR_DNL": "충청남도 서천군 서면 홍원길 130-7",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "7.1",
+    "VESSEL_TYPE": [
+      "통발",
+      "자망"
+    ]
+  },
+  {
+    "FSHNG_PRT_NM": "회진항",
+    "FP_ADDR_DNL": "전라남도 장흥군 회진면 회진선창길 28",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "4.1",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "가거도항",
+    "FP_ADDR_DNL": "전라남도 신안군 도초면 가거도로 5-11",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "40.8",
+    "VESSEL_TYPE": 
+      ["통발", "잠수기", "자망"
+    ]
+  },
+  {
+    "FSHNG_PRT_NM": "감포항",
+    "FP_ADDR_DNL": "경상북도 경주시 감포읍 감포로 151",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "5.1",
+    "VESSEL_TYPE": 
+      ["통발", "자망"
+    ]
+  },
+  {
+    "FSHNG_PRT_NM": "강릉항",
+    "FP_ADDR_DNL": "강원도 강릉시 창해로14번길 51-26",
+    "EDU_FCLTY_CNT": "15",
+    "PBLC_FCLTY_CNT": "4",
+    "NRB_FP_DIST": "2.5",
+    "VESSEL_TYPE": 
+      ["자망", "정치망"
+    ]
+  },
+  {
+    "FSHNG_PRT_NM": "거진항",
+    "FP_ADDR_DNL": "강원도 고성군 거진읍 거진항길 70",
+    "EDU_FCLTY_CNT": "6",
+    "PBLC_FCLTY_CNT": "4",
+    "NRB_FP_DIST": "1.2",
+    "VESSEL_TYPE": ["자망", "정치망"]
+  },
+  {
+    "FSHNG_PRT_NM": "안마항",
+    "FP_ADDR_DNL": "전라남도 완도군 생일면 산양길 57-2",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "25.4",
+    "VESSEL_TYPE": ["정치망", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "개야도항",
+    "FP_ADDR_DNL": "전라남도 진도군 조도면 거차로 14",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "24.7",
+     "VESSEL_TYPE": ["자망", "정치망"]
+  },
+  {
+    "FSHNG_PRT_NM": "우이도항",
+    "FP_ADDR_DNL": "전라남도 신안군 도초면 우이도로 897-13",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "26.8",
+    "VESSEL_TYPE": ["잠수기", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "모항항",
+    "FP_ADDR_DNL": "전라북도 부안군 변산면 모항길 81",
+    "EDU_FCLTY_CNT": "7",
+    "PBLC_FCLTY_CNT": "4",
+    "NRB_FP_DIST": "1.8",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "무창포항",
+    "FP_ADDR_DNL": "충청남도 보령시 웅천읍 열린바다2길 25",
+    "EDU_FCLTY_CNT": "5",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "2.1",
+    "VESSEL_TYPE": ["통발", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "안흥항",
+    "FP_ADDR_DNL": "충청남도 태안군 근흥면 안흥외항로 111",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "6.5",
+    "VESSEL_TYPE": ["통발", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "축산항",
+    "FP_ADDR_DNL": "경상북도 영덕군 축산면 축산항구길 96",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "1.4",
+    "VESSEL_TYPE": ["통발", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "장고항",
+    "FP_ADDR_DNL": "충청남도 서천군 비인면 장산로 1257",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "11.8",
+    "VESSEL_TYPE": ["통발", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "남당항",
+    "FP_ADDR_DNL": "충청남도 홍성군 서부면 남당항로213번길 13",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "6.5",
+    "VESSEL_TYPE": ["통발", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "오천항",
+    "FP_ADDR_DNL": "충청남도 보령시 오천면 충청수영로 739",
+    "EDU_FCLTY_CNT": "4",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "3.8",
+    "VESSEL_TYPE": ["통발", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "외연도항",
+    "FP_ADDR_DNL": "충청남도 보령시 오천면 외연도로 327-45",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "52.8",
+    "VESSEL_TYPE": ["통발", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "어청도항",
+    "FP_ADDR_DNL": "전라북도 군산시 옥도면 어청도로 171",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "72.1",
+    "VESSEL_TYPE": ["통발", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "연도항(전북)",
+    "FP_ADDR_DNL": "전라북도 군산시 옥도면 연도로 51",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "33.8",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "말도항",
+    "FP_ADDR_DNL": "전라북도 군산시 옥도면 말도로 43",
+    "EDU_FCLTY_CNT": "0",
+    "PBLC_FCLTY_CNT": "1",
+    "NRB_FP_DIST": "52.1",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "도장항",
+    "FP_ADDR_DNL": "전라남도 신안군 도초면 도창리 396-6",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "13.6",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "다대포항",
+    "FP_ADDR_DNL": "부산광역시 사하구 다대로605번길 67",
+    "EDU_FCLTY_CNT": "104",
+    "PBLC_FCLTY_CNT": "9",
+    "NRB_FP_DIST": "11.6",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "아야진항",
+    "FP_ADDR_DNL": "강원도 고성군 토성면 아야진해변길 88",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "7.3",
+    "VESSEL_TYPE": ["정치망", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "대변항",
+    "FP_ADDR_DNL": "부산광역시 기장군 기장읍 기장해안로 623",
+    "EDU_FCLTY_CNT": "8",
+    "PBLC_FCLTY_CNT": "5",
+    "NRB_FP_DIST": "1",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "천성항",
+    "FP_ADDR_DNL": "부산광역시 강서구 가덕해안로 761",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "2.2",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "남애항",
+    "FP_ADDR_DNL": "강원도 양양군 현남면 매포길 29-10",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "1",
+    "VESSEL_TYPE": ["정치망", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "어유정항",
+    "FP_ADDR_DNL": "인천광역시 강화군 삼산면 어류정길177번길 117",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "2.2",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "소래포구항",
+    "FP_ADDR_DNL": "인천광역시 남동구 장도로 67",
+    "EDU_FCLTY_CNT": "160",
+    "PBLC_FCLTY_CNT": "39",
+    "NRB_FP_DIST": "6.4",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "선진포항",
+    "FP_ADDR_DNL": "인천광역시 옹진군 대청면 대청로 22-2",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "2.8",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "정자항",
+    "FP_ADDR_DNL": "울산광역시 북구 정자1길 60-12",
+    "EDU_FCLTY_CNT": "85",
+    "PBLC_FCLTY_CNT": "32",
+    "NRB_FP_DIST": "3.2",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "방어진항",
+    "FP_ADDR_DNL": "울산광역시 동구 성끝4길 1",
+    "EDU_FCLTY_CNT": "61",
+    "PBLC_FCLTY_CNT": "29",
+    "NRB_FP_DIST": "1.2",
+    "VESSEL_TYPE": ["선망", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "진두항",
+    "FP_ADDR_DNL": "인천광역시 옹진군 영흥면 내리",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "5.4",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "수품항",
+    "FP_ADDR_DNL": "전라남도 완도군 금일읍 척찬길 29",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "2.8",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "서망항",
+    "FP_ADDR_DNL": "전라북도 군산시 옥도면 연도서망길 12",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "33.8",
+    "VESSEL_TYPE": ["연승", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "서거차항",
+    "FP_ADDR_DNL": "전라남도 진도군 조도면 거차로 62",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "42.7",
+    "VESSEL_TYPE": ["잠수기", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "초평항",
+    "FP_ADDR_DNL": "충청남도 보령시 오천면 보령머드로 905",
+    "EDU_FCLTY_CNT": "4",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "2.1",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "어란진항",
+    "FP_ADDR_DNL": "전라남도 해남군 송지면 어란길 119",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "5.3",
+    "VESSEL_TYPE": ["연승", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "송도항",
+    "FP_ADDR_DNL": "전라남도 완도군 송곡길 14",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "4",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "마량항",
+    "FP_ADDR_DNL": "전라남도 강진군 마량면 미항로 142",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "7.4",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "득암항",
+    "FP_ADDR_DNL": "전라남도 영암군 삼호읍 삼호룡정길 75",
+    "EDU_FCLTY_CNT": "4",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "6.4",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "사동항(전남)",
+    "FP_ADDR_DNL": "전라남도 여수시 남면 나발길 13",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "11.1",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "덕적도항",
+    "FP_ADDR_DNL": "인천광역시 옹진군 덕적면 덕적북로518번길 77",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "5.8",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "궁촌항",
+    "FP_ADDR_DNL": "강원도 삼척시 근덕면 궁촌항구길 66",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "0.7",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "장호항",
+    "FP_ADDR_DNL": "강원도 삼척시 근덕면 삼척로 2154-6",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "1.1",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "임원항",
+    "FP_ADDR_DNL": "강원도 삼척시 원덕읍 임원항구길 20",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "6.9",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "삼길포항",
+    "FP_ADDR_DNL": "충청남도 서산시 대산읍 삼길포1로 50",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "10.7",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "현포항",
+    "FP_ADDR_DNL": "경상북도 울릉군 북면 현포항길 210-6",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "6.1",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "남양항",
+    "FP_ADDR_DNL": "경상남도 창원시 마산합포구 구산면 해양로 1298",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "1.3",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "외포항",
+    "FP_ADDR_DNL": "경상남도 통영시 산양읍 산양일주로 1368",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "9.9",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "능포항",
+    "FP_ADDR_DNL": "경상남도 거제시 능포로 243-7",
+    "EDU_FCLTY_CNT": "6",
+    "PBLC_FCLTY_CNT": "4",
+    "NRB_FP_DIST": "3.7",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "지세포항",
+    "FP_ADDR_DNL": "경상남도 거제시 일운면 지세포해안로 145",
+    "EDU_FCLTY_CNT": "4",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "2.8",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "다대다포항",
+    "FP_ADDR_DNL": "경상남도 거제시 남부면 다대동부1길 55-3",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "3.3",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "삼덕항",
+    "FP_ADDR_DNL": "경상남도 거제시 일운면 삼덕로 20-6",
+    "EDU_FCLTY_CNT": "4",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "8",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "대포근포항",
+    "FP_ADDR_DNL": "경상남도 고성군 삼산면 근포길 123",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "6.1",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "궁평항",
+    "FP_ADDR_DNL": "경기도 화성시 서신면 궁평항로 1069-7",
+    "EDU_FCLTY_CNT": "4",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "5.5",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "대진항(강원)",
+    "FP_ADDR_DNL": "강원도 고성군 현내면 대진항길 49",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "0.4",
+    "VESSEL_TYPE": ["정치망", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "대포항",
+    "FP_ADDR_DNL": "강원도 속초시 대포항희망길 59",
+    "EDU_FCLTY_CNT": "6",
+    "PBLC_FCLTY_CNT": "4",
+    "NRB_FP_DIST": "1.5",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "수산항",
+    "FP_ADDR_DNL": "강원도 양양군 손양면 수산리 83-1",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "5.4",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "사천진항",
+    "FP_ADDR_DNL": "강원도 강릉시 연곡면 해안로 1282",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "6.8",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "덕산항",
+    "FP_ADDR_DNL": "강원도 삼척시 원덕읍 덕산항구길 80",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "15.6",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "금진항",
+    "FP_ADDR_DNL": "강원도 강릉시 옥계면 헌화로 455-3",
+    "EDU_FCLTY_CNT": "4",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "2",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "노량항",
+    "FP_ADDR_DNL": "경상남도 통영시 산양읍 산양일주로 1172",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "3.3",
+    "VESSEL_TYPE": ["권현망", "연승", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "김녕항",
+    "FP_ADDR_DNL": "제주특별자치도 제주시 구좌읍 일주동로 3120",
+    "EDU_FCLTY_CNT": "5",
+    "PBLC_FCLTY_CNT": "4",
+    "NRB_FP_DIST": "3.7",
+    "VESSEL_TYPE": ["잠수기", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "도두항",
+    "FP_ADDR_DNL": "제주특별자치도 제주시 도두항길 14",
+    "EDU_FCLTY_CNT": "8",
+    "PBLC_FCLTY_CNT": "5",
+    "NRB_FP_DIST": "0.9",
+    "VESSEL_TYPE": ["잠수기", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "신양항",
+    "FP_ADDR_DNL": "제주특별자치도 제주시 추자면 추자로 576-4",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "26",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "모슬포항",
+    "FP_ADDR_DNL": "제주특별자치도 서귀포시 대정읍 하모항구로 44",
+    "EDU_FCLTY_CNT": "6",
+    "PBLC_FCLTY_CNT": "4",
+    "NRB_FP_DIST": "4.6",
+    "VESSEL_TYPE": ["선망", "연승", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "위미항",
+    "FP_ADDR_DNL": "제주특별자치도 서귀포시 남원읍 위미해안로 194",
+    "EDU_FCLTY_CNT": "4",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "5.9",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "능양항",
+    "FP_ADDR_DNL": "경상남도 거제시 남부면 저구연길 17",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "6.4",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "대보항",
+    "FP_ADDR_DNL": "경상북도 포항시 북구 송라면 동해대로 4105",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "5.2",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "대진항",
+    "FP_ADDR_DNL": "경상북도 포항시 북구 송라면 대진길 105-29",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "2.9",
+    "VESSEL_TYPE": ["통발", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "청산도항",
+    "FP_ADDR_DNL": "전라남도 완도군 청산면 관청길 6",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "19.8",
+    "VESSEL_TYPE": ["잠수기", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "소안항",
+    "FP_ADDR_DNL": "전라남도 완도군 소안면 소안로 40",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "14.5",
+    "VESSEL_TYPE": ["잠수기", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "여서항",
+    "FP_ADDR_DNL": "전라남도 완도군 보길면 부황리 636-2",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "28.4",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "돌산항",
+    "FP_ADDR_DNL": "전라남도 여수시 돌산읍 돌산로 3777",
+    "EDU_FCLTY_CNT": "6",
+    "PBLC_FCLTY_CNT": "4",
+    "NRB_FP_DIST": "1.1",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "이목항",
+    "FP_ADDR_DNL": "전라남도 여수시 삼산면 거문군도대1길 121",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "29.2",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "남포항",
+    "FP_ADDR_DNL": "전라남도 여수시 삼산면 거문군도남1길 6",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "30.7",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "낭도항",
+    "FP_ADDR_DNL": "전라남도 여수시 남면 장지해안길 15",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "12.7",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "녹동항",
+    "FP_ADDR_DNL": "전라남도 고흥군 도양읍 녹동남촌3길 75",
+    "EDU_FCLTY_CNT": "5",
+    "PBLC_FCLTY_CNT": "4",
+    "NRB_FP_DIST": "4.7",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "물건항",
+    "FP_ADDR_DNL": "경상남도 남해군 미조면 미송로 303",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "8.9",
+    "VESSEL_TYPE": ["연승", "통발", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "미조항",
+    "FP_ADDR_DNL": "경상남도 남해군 미조면 미조리 757",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "1.5",
+    "VESSEL_TYPE": ["권현망", "통발", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "발포항",
+    "FP_ADDR_DNL": "전라남도 고흥군 도덕면 남열길 158",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "7.9",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "장목항",
+    "FP_ADDR_DNL": "경상남도 거제시 장목면 장목항1길 49",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "2.6",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "호두항",
+    "FP_ADDR_DNL": "경상남도 거제시 사등면 호두로 53",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "4.1",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "맥전포항",
+    "FP_ADDR_DNL": "경상남도 거제시 연초면 현포로 42-1",
+    "EDU_FCLTY_CNT": "4",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "3.2",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "매물도항",
+    "FP_ADDR_DNL": "경상남도 통영시 한산면 매죽리 263-13",
+    "EDU_FCLTY_CNT": "0",
+    "PBLC_FCLTY_CNT": "1",
+    "NRB_FP_DIST": "17.8",
+    "VESSEL_TYPE": ["자망", "잠수기"]
+  },
+  {
+    "FSHNG_PRT_NM": "원전항",
+    "FP_ADDR_DNL": "경상남도 통영시 욕지면 원산길 14",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "22.3",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "욕지항",
+    "FP_ADDR_DNL": "경상남도 통영시 욕지면 욕지일주로 132",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "18.3",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "신수항",
+    "FP_ADDR_DNL": "경상남도 사천시 신수서길 1-48",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "1.2",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "보옥항",
+    "FP_ADDR_DNL": "경상남도 고성군 삼산면 두포2길 22",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "7.2",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "연도항(전남)",
+    "FP_ADDR_DNL": "전라남도 여수市 삼산면 매물도길 153", 
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "23.3",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "초도항",
+    "FP_ADDR_DNL": "전라남도 여수市 삼산면 초도로 292",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "18.9",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "죽변항",
+    "FP_ADDR_DNL": "경상북도 울진군 죽변면 죽변중앙로 198",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "1.2",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "양포항",
+    "FP_ADDR_DNL": "경상북도 포항시 남구 장기면 양포항구길 38",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "4",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "여호항",
+    "FP_ADDR_DNL": "전라남도 여수시 삼산면 여호리 635",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "27.6",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "연도항",
+    "FP_ADDR_DNL": "경상남도 통영시 한산면 연도길 55",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "10",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "오산항",
+    "FP_ADDR_DNL": "경상남도 통영시 산양읍 산양일주로 3661",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "3.1",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "사동항(경북)",
+    "FP_ADDR_DNL": "경상북도 울릉군 울릉읍 사동1길 15-4",
+    "EDU_FCLTY_CNT": "3",
+    "PBLC_FCLTY_CNT": "3",
+    "NRB_FP_DIST": "3.7",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "대진항(경북)",
+    "FP_ADDR_DNL": "경상북도 울진군 온정면 직산리 330",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "10.2",
+    "VESSEL_TYPE": ["통발", "자망"]
+  },
+  {
+    "FSHNG_PRT_NM": "울도항",
+    "FP_ADDR_DNL": "경상북도 포항시 남구 장기면 모포리 648-1",
+    "EDU_FCLTY_CNT": "0",
+    "PBLC_FCLTY_CNT": "1",
+    "NRB_FP_DIST": "10.4",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "원평항",
+    "FP_ADDR_DNL": "경상북도 포항시 남구 장기면 원산리 1040-6",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "6.7",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "읍천항",
+    "FP_ADDR_DNL": "경상북도 경주시 감포읍 읍천리 395-11",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "0.5",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "장봉항",
+    "FP_ADDR_DNL": "인천광역시 옹진군 북도면 장봉로 693-1",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "23.9",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "풍남항",
+    "FP_ADDR_DNL": "전라남도 신안군 비금면 풍남리 840-17",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "13.4",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "시산항",
+    "FP_ADDR_DNL": "전라남도 무안군 운남면 해안서로 364",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "11.9",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "오천항(전남)",
+    "FP_ADDR_DNL": "전라남도 여수시 돌산읍 돌산로 3377",
+    "EDU_FCLTY_CNT": "6",
+    "PBLC_FCLTY_CNT": "4",
+    "NRB_FP_DIST": "2.7",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "사동항",
+    "FP_ADDR_DNL": "경상남도 창원시 마산합포구 구산면 구산로 532",
+    "EDU_FCLTY_CNT": "2",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "8.9"
+  },
+  {
+    "FSHNG_PRT_NM": "안도항",
+    "FP_ADDR_DNL": "전라남도 여수시 남면 앤돌길 45",
+    "EDU_FCLTY_CNT": "1",
+    "PBLC_FCLTY_CNT": "2",
+    "NRB_FP_DIST": "17.2",
+    "VESSEL_TYPE": ["자망", "통발"]
+  },
+  {
+    "FSHNG_PRT_NM": "하효항",
+    "FP_ADDR_DNL": "제주특별자치도 서귀포시 하효중앙로 76",
+    "EDU_FCLTY_CNT": "5",
+    "PBLC_FCLTY_CNT": "4",
+    "NRB_FP_DIST": "0.5",
+    "VESSEL_TYPE": ["자망", "통발"]
+  }
+]
