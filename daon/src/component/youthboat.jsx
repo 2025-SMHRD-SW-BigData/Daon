@@ -2,8 +2,13 @@ import React from 'react';
 import Header from './Header';
 import NavBar from './NavBar';
 import '../style/youthboat.css';
+import useFavorite from '../hooks/useFavorite';
+
 
 const YouthBoat = () => {
+  const pageTitle = '청년어선임대사업';
+  const { isFavorite, toggleFavorite } = useFavorite(pageTitle);
+
   const triggerDownload = () => {
     const link = document.createElement('a');
     link.href = '/pdf/어선청년임대사업 시행지침.pdf';
@@ -19,7 +24,21 @@ const YouthBoat = () => {
 
       <div className="scroll-area">
         <div className="boat-container">
-          <h2 className="page-title">청년 어선임대사업</h2>
+          <h2 style={{ display: 'flex', justifyContent: 'space-between' }} className="page-title">
+            청년 어선임대사업
+            <button
+              onClick={toggleFavorite}
+              style={{
+                background: 'none',
+                border: 'none',
+                fontSize: '22px',
+                color: '#f0c420',
+                cursor: 'pointer',
+                transition: 'transform 0.2s'
+              }}>{isFavorite ? '★' : '☆'}
+            </button>
+          </h2>
+
           <h3 className="section-hash">청년 어선임대사업</h3>
 
           <img
