@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import NavBar from './NavBar'
 import '../style/idfind.css'
@@ -6,6 +6,19 @@ import axios from 'axios'
 
 
 const Id_find = () => {
+
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [resId, setResId] = useState('');
+    const [errM, setErrM] = useState('');
+
+    const handleFindId = () => {
+
+        axios.post('http://localhost:3003/user/find-id')
+    }
+
+
+
     return (
         <div style={{
             width: '390px',
@@ -18,7 +31,7 @@ const Id_find = () => {
             borderRadius: '24px',
             border: '1px solid #ccc',
             backgroundColor: '#fff',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.1)'    
+            boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
 
         }}>
             <Header></Header>
@@ -32,9 +45,9 @@ const Id_find = () => {
             <p className='id-body'>휴대폰번호</p>
             <input className='inputname' type="text" placeholder='휴대폰번호' />
 
-            <button className='idbtn'>아이디 찾기</button>
+            <button onClick className='idbtn'>아이디 찾기</button>
 
-<NavBar></NavBar>
+            <NavBar></NavBar>
 
         </div >
 

@@ -137,4 +137,19 @@ router.delete(`/community/delete/:post_id`, (req, res) => {
   });
 })
 
+router.post('/find-id',(req,res)=>{
+  const { name,phone}=req.body;
+  if(!name || !phone){
+    return res.status(400).json({error:'이름과 휴대폰번호를 입력하세요.'});
+  }
+  conn.query('SELECT user_user_id FROM users WHERE username =? AND phone_number =?',[name,phone],(err,rows)=>{
+    if(err){
+      console.error('아이디 찾기 쿼리 실패:',err);
+      return res.status(500).json({error:'서버 오류'});
+    }
+
+  })
+})
+
+
 module.exports = router;
