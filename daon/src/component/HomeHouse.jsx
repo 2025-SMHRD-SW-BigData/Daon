@@ -32,8 +32,11 @@ const HomeHouse = () => {
 
 
   const handlerFavorite = () => {
-    if (!user?.user_id) return;
-
+    if (!user?.user_id) {
+      alert('즐겨찾기를 원하시면 로그인 해주세요.')
+      
+      return;
+    }
     axios
       .post(`http://192.168.219.45:3003/favorite`, {
         user_id: user.user_id,
