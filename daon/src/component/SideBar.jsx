@@ -4,7 +4,6 @@ import '../style/Sidebar.css';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
 
-
 // 메뉴와 연동 경로 매핑
 const routeMap = {
   '귀어인의 집': '/homehouse',
@@ -23,20 +22,18 @@ const routeMap = {
   '통발어선': '/trapboat',
   '잠수기어선': '/divingboat',
   '선망어선': '/purseine',
-  '어장 위치': '/location',
-  '해양 환경': '/marineenv',
-  '지역 특성': '/regionfeature',
   '면허어업': '/licensedfishery',
   '허가어업': '/permitfishery',
   '신고어업': '/reportfishery',
   '낚시어선업': '/fishingboat',
   '자격증': '/certificate',
+  '정착지 후보 비교': '/compare',
 };
 
 const menuData = [
   {
-    category: '어촌 정보 탐색',
-    subItems: ['어장 위치', '해양 환경', '지역 특성'],
+    category: '정착지 후보',
+    subItems: ['정착지 후보 비교'],
   },
   {
     category: '어선 정보',
@@ -48,7 +45,7 @@ const menuData = [
   },
   {
     category: '어업 자격',
-    subItems: ['면허어업', '허가어업', '신고어업', '낚시어선업', ],
+    subItems: ['면허어업', '허가어업', '신고어업', '낚시어선업', '자격증'],
   },
   {
     category: '커뮤니티',
@@ -107,7 +104,6 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
             <button className="my-page-btn" onClick={() => nav('/login')}>로그인</button>
           </>
         )}
-
 
       </div>
 
