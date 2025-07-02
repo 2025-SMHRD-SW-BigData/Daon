@@ -18,9 +18,9 @@ const VesselCategory = () => {
       <div className="vessel-wrapper">
         <h2 className="vessel-title">어선 정보</h2>
         <div className="vessel-buttons">
-          <button onClick={() => handleNavigate('/trawl')} className="vessel-btn">자망어선</button>
+          <button onClick={() => handleNavigate('/trawl')} className="vessel-btn">저인망어선</button>
           <button onClick={() => handleNavigate('/longline')} className="vessel-btn">연승어선</button>
-          <button onClick={() => handleNavigate('/gillnet')} className="vessel-btn">저인망어선</button>
+          <button onClick={() => handleNavigate('/gillnet')} className="vessel-btn">자망어선</button>
           <button onClick={() => handleNavigate('/pairtrawl')} className="vessel-btn">권현망어선</button>
           <button onClick={() => handleNavigate('/purseine')} className="vessel-btn">통발어선</button>
           <button onClick={() => handleNavigate('/trapboat')} className="vessel-btn">잠수기어선</button>
