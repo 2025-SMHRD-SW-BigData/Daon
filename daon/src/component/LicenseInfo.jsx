@@ -3,11 +3,11 @@ import React from 'react';
 import Header from './Header';
 import NavBar from './NavBar';
 import '../style/licenseinfo.css';
+import { useNavigate } from 'react-router-dom';
 
 const LicenseInfo = () => {
-    const handleClick = (path) => {
-        window.location.href = path;
-    };
+    const nav = useNavigate();
+
 
     return (
         <div className="phon_size">
@@ -16,10 +16,10 @@ const LicenseInfo = () => {
             <div className="license-container">
                 <h2 className="license-title">어업 자격</h2>
 
-                <button className="license-btn" onClick={() => handleClick('/licensedfishery')}>면허어업</button>
-                <button className="license-btn" onClick={() => handleClick('/permitfishery')}>허가어업</button>
-                <button className="license-btn" onClick={() => handleClick('/reportfishery')}>신고어업</button>
-                <button className="license-btn" onClick={() => handleClick('/fishingboat')}>낚시어선업</button>
+                <button className="license-btn" onClick={() => nav('/licensedfishery')}>면허어업</button>
+                <button className="license-btn" onClick={() => nav('/permitfishery')}>허가어업</button>
+                <button className="license-btn" onClick={() => nav('/reportfishery')}>신고어업</button>
+                <button className="license-btn" onClick={() => nav('/fishingboat')}>낚시어선업</button>
             </div>
 
             <NavBar />

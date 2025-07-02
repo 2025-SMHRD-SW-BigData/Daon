@@ -14,8 +14,25 @@ const Id_find = () => {
 
     const handleFindId = () => {
 
-        axios.post('http://localhost:3003/user/find-id')
+        if(!name||!phone){
+            setErrM('이름과 휴대폰 번호를 모두 입력하세요.');
+            return;
+        }
+
+        axios.post('http://localhost:3003/user/find-id',{name:name,phone:phone})
+    .then((res)=>{
+        if (res.data.id){
+            alert('아이디는:'+ res.data.id)
+        }else{
+            alert('일치하는 회원 정보가 없습니다.');
+        }
+    })
+    .catch((err)=>{
+        console.error(err);
+        alert('서버 오류');
+    })
     }
+    
 
 
 
@@ -41,11 +58,11 @@ const Id_find = () => {
             <div className="id-head">아이디 찾기</div>
             <br />
             <p className='id-body'>이름</p>
-            <input className='inputname' type="text" placeholder='이름' />
+            <input className='inputname' type="text" placeholder='이름' value={name} onChange={(e)=>setName(e.target.value)}/>
             <p className='id-body'>휴대폰번호</p>
-            <input className='inputname' type="text" placeholder='휴대폰번호' />
+            <input className='inputname' type="text" placeholder='휴대폰번호' value={phone} onChange={(e)=>setPhone(e.target.value)}/>
 
-            <button onClick className='idbtn'>아이디 찾기</button>
+            <button onClick={handleFindId} className='idbtn'>아이디 찾기</button>
 
             <NavBar></NavBar>
 

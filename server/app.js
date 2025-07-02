@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // 라우터 등록
-app.use('/user',userRouter);
+app.use('/user',userRouter); //http:/loclaasd:포트번호/user/find-id
 app.use('/chatbot',chatbotRouter);
 app.use('/community',communityRouter)
 app.use('/',favoriteRouter)

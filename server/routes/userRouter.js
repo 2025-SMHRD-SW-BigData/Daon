@@ -148,6 +148,12 @@ router.post('/find-id',(req,res)=>{
       return res.status(500).json({error:'서버 오류'});
     }
 
+    if (rows.length>0){
+      return res.status(200).json({id:rows[0].user_id})
+    }else {
+      return res.status(200).json({id:null});
+    }
+
   })
 })
 
