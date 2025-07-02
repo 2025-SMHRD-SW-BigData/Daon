@@ -1,7 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Header from './Header'
-import '../style/idfind.css'
 import NavBar from './NavBar'
+import '../style/idfind.css'
+import axios from 'axios'
+
+
 const Id_find = () => {
     return (
         <div style={{
@@ -15,6 +18,8 @@ const Id_find = () => {
             borderRadius: '24px',
             border: '1px solid #ccc',
             backgroundColor: '#fff',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.1)'    
+
         }}>
             <Header></Header>
 

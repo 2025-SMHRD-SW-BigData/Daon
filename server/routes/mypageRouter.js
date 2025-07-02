@@ -34,18 +34,30 @@ router.get('/data', (req, res) => {
                  FROM favorites f INNER JOIN user_favorites u
                  ON f.favorite_id = u.favorite_id
                  WHERE u.user_id = ?`;
+    const userSql = `SELECT *
+                    FROM users
+                    WHERE user_id=?`
 
-    conn.query(sql, [user_id], (err, result) => {
+    conn.query(sql, [user_id], (err, favoriteResult) => {
 
         if (err) {
             console.error('즐겨찾기 조회 실패:', err);
             return res.status(500).json({ message: '서버 에러' });
         }
+        conn.query(userSql, [user_id], (err, userResult) => {
+            if (err) {
+                console.error('유저정보 가져오기 실패:', err);
+                return res.status(500).json({ message: '서버 에러' });
+            }
 
-        return res.status(200).json({ 
-            message: '즐겨찾기 조회 성공',
-            favorites: result //즐겨찾기 목록 다 반환해주는건가?
-         });
+            return res.status(200).json({
+                message: '유저정보',
+                favorites : favoriteResult,
+                userData: userResult //유저정보 가져와!
+            });
+        });
+
+
     });
 })
 

@@ -21,50 +21,50 @@ const Main = () => {
   const isMapPage = location.pathname === '/map';
   const navigate = useNavigate(); // ✅ useNavigate 훅 사용
 
-  useEffect(() => {
-    axios.get('/fishing_village.json')
-      .then(res => {
-        const rawData = Array.isArray(res.data) ? res.data : [res.data];
-        const nameSet = new Set();
-        const uniquePorts = rawData.filter(item => {
-          const name = item.FSHNG_PRT_NM?.trim();
-          if (nameSet.has(name)) return false;
-          nameSet.add(name);
-          return true;
-        }).map(item => item.FSHNG_PRT_NM.trim());
-        setVillageList(uniquePorts);
-      })
-      .catch(console.error);
-  }, []);
+  // useEffect(() => {
+  //   axios.get('/fishing_village.json')
+  //     .then(res => {
+  //       const rawData = Array.isArray(res.data) ? res.data : [res.data];
+  //       const nameSet = new Set();
+  //       const uniquePorts = rawData.filter(item => {
+  //         const name = item.FSHNG_PRT_NM?.trim();
+  //         if (nameSet.has(name)) return false;
+  //         nameSet.add(name);
+  //         return true;
+  //       }).map(item => item.FSHNG_PRT_NM.trim());
+  //       setVillageList(uniquePorts);
+  //     })
+  //     .catch(console.error);
+  // }, []);
 
-  useEffect(() => {
-    if (inputValue.trim() === '') {
-      setSuggestions([]);
-      return;
-    }
-    const input = inputValue.trim();
-    const filtered = villageList.filter(name =>
-      name.toLowerCase().includes(input.toLowerCase())
-    );
-    setSuggestions(filtered.slice(0, 10));
-  }, [inputValue, villageList]);
+  // useEffect(() => {
+  //   if (inputValue.trim() === '') {
+  //     setSuggestions([]);
+  //     return;
+  //   }
+  //   const input = inputValue.trim();
+  //   const filtered = villageList.filter(name =>
+  //     name.toLowerCase().includes(input.toLowerCase())
+  //   );
+  //   setSuggestions(filtered.slice(0, 10));
+  // }, [inputValue, villageList]);
 
-  const handleSelectSuggestion = (name) => {
-    setInputValue(name);
-    setSearchText(name);
-    setSuggestions([]);
-  };
+  // const handleSelectSuggestion = (name) => {
+  //   setInputValue(name);
+  //   setSearchText(name);
+  //   setSuggestions([]);
+  // };
 
-  const doSearch = () => {
-    setSearchText(inputValue.trim());
-    setSuggestions([]);
-  };
+  // const doSearch = () => {
+  //   setSearchText(inputValue.trim());
+  //   setSuggestions([]);
+  // };
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      doSearch();
-    }
-  };
+  // const handleKeyDown = (e) => {
+  //   if (e.key === 'Enter') {
+  //     doSearch();
+  //   }
+  // };
 
   return (
     <div className="phon_size">

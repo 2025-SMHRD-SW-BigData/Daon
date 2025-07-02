@@ -1,4 +1,4 @@
-import Reac, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Header from './Header'
 import '../style/mypage.css'
 import '../style/main.css'
@@ -13,6 +13,7 @@ const MyPage = () => {
     const { user } = useContext(UserContext);
     const [favorites, setFavorites] = useState([]);
     const navigate = useNavigate();
+    const [userInfo,setUserInfo] = useState();
 
     useEffect(() => {
         if (!user?.user_id) {
@@ -26,12 +27,14 @@ const MyPage = () => {
             })
             .then((res) => {
                 setFavorites(res.data.favorites)
+                setUserInfo(res.data.userData[0])
+                // console.log(userInfo.nickname)
                 // console.log(res.data.favorites[0])
             })
             .catch((error) => {
                 console.log('마이페이지 정보 조회 중 오류 발생', error)
             })
-    }, [])
+    }, [user])
 
 
     return (
@@ -47,7 +50,7 @@ const MyPage = () => {
                 <div className='mypage'>마이페이지</div>
                 <div className='hr_style'><hr /></div>
 
-                <Mypageimage></Mypageimage>
+                <Mypageimage  nickname={userInfo?.nickname}></Mypageimage>
 
 
                 <div className='hr_style'><hr /></div>
@@ -59,8 +62,7 @@ const MyPage = () => {
                     width: '300px',
                     margin: 'auto',
                     borderRadius: '10px',
-                    borderColor: '#66A5ED',
-                    border: '1px solid #000',
+                    border: '1px solid #66A5ED',
                     padding: '10px'
                 }}>
                     {favorites.length === 0 ? (
