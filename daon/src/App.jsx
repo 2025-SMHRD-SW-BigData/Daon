@@ -13,6 +13,7 @@ import MyPage from './component/MyPage';
 import CommunityPage from './component/CommunityPage';
 import PostDetail from './component/PostDetail';
 import CommunityWrite from './component/CommunityWrite';
+import Id_find from './component/Id_find';
 
 import PolicyCategory from './component/PolicyCategory';
 
@@ -64,6 +65,7 @@ function App() {
         <Route path='/community' element={<CommunityPage />} />
         <Route path='/community/:id' element={<PostDetail />} />
         <Route path='/community/write' element={<CommunityWrite />} />
+        <Route path='/idfind' element={<Id_find />} />
 
         {/* 어업 관련 페이지 */}
         <Route path="/licenseinfo" element={<LicenseInfo />} />
