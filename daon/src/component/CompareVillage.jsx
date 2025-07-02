@@ -1,4 +1,4 @@
-// CompareVillage.jsx - 중복 항구명 제거 및 버튼 디자인 개선 반영
+// CompareVillage.jsx - 필드 매핑 수정 + 중복 제거 + 3개 제한 + UI 고정 완성형
 import React, { useState, useEffect } from 'react';
 import '../style/comparevillage.css';
 import Header from './Header';
@@ -48,6 +48,7 @@ const CompareVillage = () => {
   };
 
   const selectedData = villageData.filter((v) => selectedVillages.includes(v.FSHNG_PRT_NM));
+  const selectedNames = [...new Set(selectedData.map(v => v.FSHNG_PRT_NM))].slice(0, 3);
 
   return (
     <div className="phon_size">
@@ -78,14 +79,14 @@ const CompareVillage = () => {
           ))}
         </div>
 
-        {selectedData.length > 0 && (
+        {selectedNames.length > 0 && (
           <div className="compare-table-area">
             <h4>📊 항목별 비교</h4>
-            <table className="compare-table">
+            <table className="compare-table limited-columns">
               <thead>
                 <tr>
                   <th>항목</th>
-                  {[...new Set(selectedData.map(v => v.FSHNG_PRT_NM))].map((name, idx) => (
+                  {selectedNames.map((name, idx) => (
                     <th key={idx}>{name}</th>
                   ))}
                 </tr>
@@ -93,21 +94,24 @@ const CompareVillage = () => {
               <tbody>
                 <tr>
                   <td>교육시설 수</td>
-                  {selectedData.map((v, idx) => (
-                    <td key={idx}>{v.education || 'N/A'}</td>
-                  ))}
+                  {selectedNames.map((name, idx) => {
+                    const data = selectedData.find((v) => v.FSHNG_PRT_NM === name);
+                    return <td key={idx}>{data?.EDU_FCLTY_CNT || 'N/A'}</td>;
+                  })}
                 </tr>
                 <tr>
                   <td>공공시설 수</td>
-                  {selectedData.map((v, idx) => (
-                    <td key={idx}>{v.public || 'N/A'}</td>
-                  ))}
+                  {selectedNames.map((name, idx) => {
+                    const data = selectedData.find((v) => v.FSHNG_PRT_NM === name);
+                    return <td key={idx}>{data?.PBLC_FCLTY_CNT || 'N/A'}</td>;
+                  })}
                 </tr>
                 <tr>
                   <td>항구 거리 (km)</td>
-                  {selectedData.map((v, idx) => (
-                    <td key={idx}>{v.distance || 'N/A'}</td>
-                  ))}
+                  {selectedNames.map((name, idx) => {
+                    const data = selectedData.find((v) => v.FSHNG_PRT_NM === name);
+                    return <td key={idx}>{data?.NRB_FP_DIST || 'N/A'}</td>;
+                  })}
                 </tr>
               </tbody>
             </table>
