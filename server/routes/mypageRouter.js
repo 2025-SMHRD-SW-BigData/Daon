@@ -39,11 +39,10 @@ router.get('/data', (req, res) => {
 
         if (err) {
             console.error('즐겨찾기 조회 실패:', err);
-            return res.status(500).json({ success: false, message: '서버 에러' });
+            return res.status(500).json({ message: '서버 에러' });
         }
 
         return res.status(200).json({ 
-            success:true,
             message: '즐겨찾기 조회 성공',
             favorites: result //즐겨찾기 목록 다 반환해주는건가?
          });

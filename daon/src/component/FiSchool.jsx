@@ -2,8 +2,12 @@ import React from 'react';
 import Header from './Header';
 import NavBar from './NavBar';
 import '../style/fischool.css';
+import useFavorite from '../hooks/useFavorite';
 
 const FiSchool = () => {
+  const pageTitle = '면허어업';
+  const { isFavorite, toggleFavorite } = useFavorite(pageTitle);
+
   const triggerDownload = () => {
     const link = document.createElement('a');
     link.href = '/pdf/귀어학교_시행지침.pdf';
@@ -18,8 +22,22 @@ const FiSchool = () => {
       <Header />
 
       <div className="scroll-area">
-        <div className="school-container">
-          <h2 className="page-title">귀어학교</h2>
+        <div className="school-container" >
+          <div style={{display:'flex',justifyContent:'space-between'}}>
+
+            <h2 className="page-title">귀어학교</h2>
+            <button
+              onClick={toggleFavorite}
+              style={{
+                background: 'none',
+                border: 'none',
+                fontSize: '22px',
+                color: '#f0c420',
+                cursor: 'pointer',
+                transition: 'transform 0.2s'
+              }}>{isFavorite ? '★' : '☆'}
+            </button>
+          </div>
           <hr />
           <h3 className="section-hash">귀어가 체질</h3>
 
