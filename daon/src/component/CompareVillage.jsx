@@ -1,117 +1,112 @@
-// 수정된 CompareVillage.jsx
-
-import React, { useEffect, useState } from 'react';
-import Papa from 'papaparse';
+// CompareVillage.jsx - 중복 항구명 제거 및 버튼 디자인 개선 반영
+import React, { useState, useEffect } from 'react';
+import '../style/comparevillage.css';
 import Header from './Header';
 import NavBar from './NavBar';
-import '../style/comparevillage.css';
 
 const CompareVillage = () => {
-  const [villageList, setVillageList] = useState([]);
+  const [villageData, setVillageData] = useState([]);
   const [selectedVillages, setSelectedVillages] = useState([]);
   const [groupedVillages, setGroupedVillages] = useState({});
 
-  // CSV 로드 및 초성 기준 정렬
   useEffect(() => {
-    Papa.parse('/filtered_village_data.csv', {
-      header: true,
-      download: true,
-      complete: (result) => {
-        const validData = result.data.filter(v => v.FSHNG_PRT_NM?.trim());
-        setVillageList(validData);
-        groupByInitial(validData);
-      },
-    });
+    fetch('/filtered_village_data_clean.json')
+      .then((res) => res.json())
+      .then((data) => {
+        setVillageData(data);
+
+        const grouped = {};
+        data.forEach((village) => {
+          const name = village.FSHNG_PRT_NM;
+          const group = getInitialConsonant(name[0]);
+          if (!grouped[group]) grouped[group] = [];
+          if (!grouped[group].includes(name)) {
+            grouped[group].push(name);
+          }
+        });
+        setGroupedVillages(grouped);
+      });
   }, []);
 
-  // 초성별 그룹화
-  const groupByInitial = (list) => {
-    const groups = {};
-    list.forEach((item) => {
-      const name = item.FSHNG_PRT_NM.trim();
-      const initial = getInitialConsonant(name[0]);
-      if (!groups[initial]) groups[initial] = [];
-      if (!groups[initial].some(v => v.FSHNG_PRT_NM === name)) {
-        groups[initial].push(item);
-      }
-    });
-    setGroupedVillages(groups);
-  };
-
   const getInitialConsonant = (char) => {
+    const consonants = [
+      'ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ',
+      'ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'
+    ];
     const code = char.charCodeAt(0) - 44032;
-    const initialIndex = Math.floor(code / 588);
-    const initials = ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
-    return initials[initialIndex] || char;
+    if (code < 0 || code > 11171) return char;
+    const index = Math.floor(code / 588);
+    return consonants[index];
   };
 
-  const handleSelect = (village) => {
-    if (selectedVillages.find(v => v.FSHNG_PRT_NM === village.FSHNG_PRT_NM)) return;
-    if (selectedVillages.length >= 3) return alert('최대 3개까지 비교할 수 있습니다.');
-    setSelectedVillages([...selectedVillages, village]);
+  const toggleVillage = (village) => {
+    if (selectedVillages.includes(village)) {
+      setSelectedVillages(selectedVillages.filter((v) => v !== village));
+    } else if (selectedVillages.length < 3) {
+      setSelectedVillages([...selectedVillages, village]);
+    }
   };
+
+  const selectedData = villageData.filter((v) => selectedVillages.includes(v.FSHNG_PRT_NM));
 
   return (
-    <div className="compare-container phon_size">
+    <div className="phon_size">
       <Header />
-      <div className="scroll-area">
-        <h2 className="title">정착지 후보 비교</h2>
-        <p className="subtitle">어촌을 선택해 비교해보세요 (최대 3개)</p>
+      <div className="compare-container">
+        <h3 className="compare-title">정착지 후보 비교</h3>
+        <p className="compare-desc">어촌을 선택해 비교해보세요 (최대 3개)</p>
+        <p className="selected-villages">
+          선택된 어촌: {selectedVillages.join(', ') || '없음'}
+        </p>
 
-        <div className="scrollable-list">
-          {Object.keys(groupedVillages).sort().map((initial, idx) => (
-            <div key={idx} className="village-group">
-              <h4>{initial}</h4>
-              <div className="village-buttons">
-                {groupedVillages[initial].map((v, i) => (
-                  <button key={i} className="village-button" onClick={() => handleSelect(v)}>
-                    {v.FSHNG_PRT_NM.trim()}
+        <div className="village-scroll-area">
+          {Object.keys(groupedVillages).sort((a, b) => a.localeCompare(b, 'ko-KR')).map((initial) => (
+            <div key={initial}>
+              <div className="initial-header">{initial}</div>
+              <div className="village-button-group">
+                {groupedVillages[initial].map((name) => (
+                  <button
+                    key={name}
+                    className={`village-button ${selectedVillages.includes(name) ? 'selected' : ''}`}
+                    onClick={() => toggleVillage(name)}
+                  >
+                    {name}
                   </button>
                 ))}
               </div>
             </div>
           ))}
         </div>
-      </div>
 
-      <div className="fixed-result">
-        <h3>선택된 어촌</h3>
-        <ul>
-          {selectedVillages.length === 0 && <li>선택된 항목이 없습니다.</li>}
-          {selectedVillages.map((v, idx) => (
-            <li key={idx}>{v.FSHNG_PRT_NM} - {v.FP_ADDR_DNL || '주소 없음'}</li>
-          ))}
-        </ul>
-
-        {selectedVillages.length >= 2 && (
-          <div className="compare-table">
-            <h3>📊 항목별 비교</h3>
-            <table>
+        {selectedData.length > 0 && (
+          <div className="compare-table-area">
+            <h4>📊 항목별 비교</h4>
+            <table className="compare-table">
               <thead>
                 <tr>
                   <th>항목</th>
-                  {selectedVillages.map((v, i) => (
-                    <th key={i}>{v.FSHNG_PRT_NM}</th>
+                  {[...new Set(selectedData.map(v => v.FSHNG_PRT_NM))].map((name, idx) => (
+                    <th key={idx}>{name}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>교육시설 수</td>
-                  {selectedVillages.map((v, i) => (
-                    <td key={i}>{v.EDU_FCLTY_CNT || 'N/A'}</td>
+                  {selectedData.map((v, idx) => (
+                    <td key={idx}>{v.education || 'N/A'}</td>
                   ))}
                 </tr>
                 <tr>
                   <td>공공시설 수</td>
-                  {selectedVillages.map((v, i) => (
-                    <td key={i}>{v.PBLC_FCLTY_CNT || 'N/A'}</td>
+                  {selectedData.map((v, idx) => (
+                    <td key={idx}>{v.public || 'N/A'}</td>
                   ))}
                 </tr>
                 <tr>
                   <td>항구 거리 (km)</td>
-                  {selectedVillages.map((v, i) => (
-                    <td key={i}>{v.NRB_FP_DIST || 'N/A'}</td>
+                  {selectedData.map((v, idx) => (
+                    <td key={idx}>{v.distance || 'N/A'}</td>
                   ))}
                 </tr>
               </tbody>
@@ -119,7 +114,6 @@ const CompareVillage = () => {
           </div>
         )}
       </div>
-
       <NavBar />
     </div>
   );
