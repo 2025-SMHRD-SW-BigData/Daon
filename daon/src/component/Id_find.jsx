@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import '../style/idfind.css'
+import NavBar from './NavBar'
 const Id_find = () => {
     return (
         <div style={{
@@ -25,6 +26,10 @@ const Id_find = () => {
             <input className='inputname' type="text" placeholder='이름' />
             <p className='id-body'>휴대폰번호</p>
             <input className='inputname' type="text" placeholder='휴대폰번호' />
+
+            <button className='idbtn'>아이디 찾기</button>
+
+<NavBar></NavBar>
 
         </div >
 
