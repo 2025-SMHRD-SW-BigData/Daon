@@ -74,7 +74,6 @@ function App() {
         <Route path='/licensedfishery' element={<Fish_licensedfishery />} />
         <Route path='/permitfishery' element={<FIsh_permitfishery />} />
         <Route path='/fishingboat' element={<Fish_fishingboat />} />
-        {/*여기까지 진행중*/}
 
         {/* 정책지원 관련 페이지 */}
         <Route path="/policyinfo" element={<PolicyCategory />} />
@@ -88,6 +87,7 @@ function App() {
 
         {/* 어선정보 관련 페이지 */}
         <Route path="/vesselcategory" element={<VesselCategory />} />
+
         <Route path="/gillnet" element={<Gillnet />} />
         <Route path="/longline" element={<Longline />} />
         <Route path="/trawl" element={<Trawl />} />
@@ -95,6 +95,7 @@ function App() {
         <Route path="/trapboat" element={<Trapboat />} />
         <Route path="/divingBoat" element={<DivingBoat />} />
         <Route path="/purseine" element={<Purseine />} />
+        {/*여기까지 진행중*/}
 
         {/* 정착지 비교 관련 페이지 */}
         <Route path="/compare" element={<CompareVillage />} />
