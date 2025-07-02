@@ -105,7 +105,8 @@ const PostDetail = () => {
             textAlign: 'left',
             lineHeight: '1.6',
             fontSize: '15px',
-            color: '#333'
+            color: '#333',
+            whiteSpace:'pre-line'
           }}>{post.content || '내용 없음'}</p>
 
           <hr />

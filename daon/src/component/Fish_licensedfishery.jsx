@@ -6,7 +6,7 @@ import NavBar from './NavBar'
 import useFavorite from '../hooks/useFavorite';
 
 const Fish_licensedfishery = () => {
-  const pageTitle = '어업자격';
+  const pageTitle = '면허어업';
   const { isFavorite, toggleFavorite } = useFavorite(pageTitle);
 
   return (
