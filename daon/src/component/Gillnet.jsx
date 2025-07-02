@@ -3,15 +3,33 @@ import React from 'react';
 import Header from './Header';
 import NavBar from './NavBar';
 import '../style/gillnet.css';
+import useFavorite from '../hooks/useFavorite';
+
 
 const Gillnet = () => {
+    const pageTitle = '자망어선';
+    const { isFavorite, toggleFavorite } = useFavorite(pageTitle);
+
     return (
         <div className="phon_size">
             <Header />
 
             <div className="scroll-area">
                 <div className="gillnet-container">
-                    <h2 className="page-title">어선 정보</h2>
+                    <h2 style={{display:'flex',justifyContent:'space-between'}} className="page-title">
+                        어선 정보
+                        <button
+                            onClick={toggleFavorite}
+                            style={{
+                                background: 'none',
+                                border: 'none',
+                                fontSize: '22px',
+                                color: '#f0c420',
+                                cursor: 'pointer',
+                                transition: 'transform 0.2s'
+                            }}>{isFavorite ? '★' : '☆'}
+                        </button>
+                    </h2>
                     <h3 className="section-hash">자망어선</h3>
 
                     <img

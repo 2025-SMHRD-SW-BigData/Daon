@@ -2,8 +2,12 @@ import React from 'react';
 import Header from './Header';
 import NavBar from './NavBar';
 import '../style/housingloan.css';
+import useFavorite from '../hooks/useFavorite';
 
 const HousingLoan = () => {
+  const pageTitle = '주택구입자금지원';
+  const { isFavorite, toggleFavorite } = useFavorite(pageTitle);
+
   const triggerDownload = () => {
     const link = document.createElement('a');
     link.href = '/pdf/창업_및_주택지원.pdf';
@@ -19,7 +23,20 @@ const HousingLoan = () => {
 
       <div className="scroll-area">
         <div className="loan-container">
-          <h2 className="page-title">귀어인 주택구입자금지원</h2>
+          <h2  style={{display:'flex',justifyContent:'space-between'}} className="page-title">
+            귀어인 주택구입자금지원
+            <button
+              onClick={toggleFavorite}
+              style={{
+                background: 'none',
+                border: 'none',
+                fontSize: '22px',
+                color: '#f0c420',
+                cursor: 'pointer',
+                transition: 'transform 0.2s'
+              }}>{isFavorite ? '★' : '☆'}
+            </button>
+          </h2>
           <h3 className="section-hash">주택구입 지원</h3>
 
           <img
