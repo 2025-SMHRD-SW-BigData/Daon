@@ -3,9 +3,13 @@ import Header from './Header'
 import '../style/fish자격.css'
 import '../style/main.css'
 import NavBar from './NavBar'
+import useFavorite from '../hooks/useFavorite';
 
 
 const Fish_fishingboat = () => {
+    const pageTitle = '낚시어선업';
+    const { isFavorite, toggleFavorite } = useFavorite(pageTitle);
+
     return (
 
 
@@ -20,7 +24,20 @@ const Fish_fishingboat = () => {
 
                 <Header></Header>
 
-                <div className='fish_qualification'>어업 자격</div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }} className='fish_qualification'>
+                    어업 자격
+                    <button
+                        onClick={toggleFavorite}
+                        style={{
+                            background: 'none',
+                            border: 'none',
+                            fontSize: '22px',
+                            color: '#f0c420',
+                            cursor: 'pointer',
+                            transition: 'transform 0.2s'
+                        }}>{isFavorite ? '★' : '☆'}
+                    </button>
+                </div>
                 <div className='hr_style'><hr /></div>
                 <h2 className='fish_head'># 낚시어선업</h2>
                 <p style={{
@@ -55,7 +72,7 @@ const Fish_fishingboat = () => {
                     textAlign: 'left',
                     fontSize: '15px',
                 }}>낚시어선업신고서 | 어선검사증서사본 | 해기사면허증사본 <br />
-                전문교육 이수증 | 설비 명세서 | 안전성 검사증서</p>
+                    전문교육 이수증 | 설비 명세서 | 안전성 검사증서</p>
 
                 <p className='fish_body_font'> <span style={{ fontSize: '10px', marginRight: '6px' }}> ▼ </span> 신청방법 및 절차</p>
 

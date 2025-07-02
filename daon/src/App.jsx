@@ -70,10 +70,11 @@ function App() {
         {/* 어업 관련 페이지 */}
         <Route path="/licenseinfo" element={<LicenseInfo />} />
 
-        <Route path='/reportfishery' element={<Fish_reported />} />
+        <Route path='/reportfishery' element={<Fish_reported />} /> 
         <Route path='/licensedfishery' element={<Fish_licensedfishery />} />
         <Route path='/permitfishery' element={<FIsh_permitfishery />} />
         <Route path='/fishingboat' element={<Fish_fishingboat />} />
+        {/*여기까지 진행중*/}
 
         {/* 정책지원 관련 페이지 */}
         <Route path="/policyinfo" element={<PolicyCategory />} />

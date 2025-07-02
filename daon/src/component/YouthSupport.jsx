@@ -2,8 +2,13 @@ import React from 'react';
 import Header from './Header';
 import NavBar from './NavBar';
 import '../style/YouthSupport.css';
+import useFavorite from '../hooks/useFavorite';
+
 
 const YouthSupport = () => {
+  const pageTitle = '청년어촌정착지원';
+  const { isFavorite, toggleFavorite } = useFavorite(pageTitle);
+
   const triggerDownload = () => {
     const link = document.createElement('a');
     link.href = '/pdf/청년어촌정착지원사업.pdf';
@@ -18,7 +23,20 @@ const YouthSupport = () => {
       <Header />
       <div className="scroll-area">
         <div className="support-container">
-          <h2 className="page-title">청년어촌정착지원 사업</h2>
+          <h2 className="page-title" style={{display:'flex',justifyContent:'space-between'}}>
+            청년어촌정착지원 사업
+            <button
+              onClick={toggleFavorite}
+              style={{
+                background: 'none',
+                border: 'none',
+                fontSize: '22px',
+                color: '#f0c420',
+                cursor: 'pointer',
+                transition: 'transform 0.2s'
+              }}>{isFavorite ? '★' : '☆'}
+            </button>
+          </h2>
 
           <img
             src="/UIimages/청년어촌정착.png"

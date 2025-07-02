@@ -2,55 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import NavBar from './NavBar';
 import '../style/homehouse.css';
-import axios from 'axios';
-import { UserContext } from '../context/UserContext';
-import { useContext } from 'react';
+import useFavorite from '../hooks/useFavorite';
 
 const HomeHouse = () => {
-  const [isFavorite, setIsFavorite] = useState(false);
-  const { user } = useContext(UserContext);
+  const pageTitle = '귀어인의 집';
+  const { isFavorite, toggleFavorite } = useFavorite(pageTitle);
 
-  const pageTitle = '귀어인의 집'; // 즐겨찾기 구분용 제목
   
-  useEffect(() => {
-    if (!user?.user_id) return;
-
-    axios
-      .get(`http://192.168.219.45:3003/favorite`, {
-        params:{
-        user_id: user.user_id,
-        page_title: pageTitle
-      }
-      })
-      .then((res) => {
-        setIsFavorite(res.data.isFavorite); // true or false
-      })
-      .catch((error) => {
-        console.log('즐겨찾기 조회 실패:', error);
-      });
-  }, [user]);
-
-
-  const handlerFavorite = () => {
-    if (!user?.user_id) {
-      alert('즐겨찾기를 원하시면 로그인 해주세요.')
-      
-      return;
-    }
-    axios
-      .post(`http://192.168.219.45:3003/favorite`, {
-        user_id: user.user_id,
-        page_title: pageTitle
-      })
-      .then((res) => {
-        setIsFavorite(res.data.isFavorite); // 등록 성공 시 토글
-      })
-      .catch((error) => {
-        console.log('즐겨찾기 등록 실패:', error);
-      });
-  };
-
-
   return (
     <div className="phon_size">
       <Header />
@@ -70,7 +28,7 @@ const HomeHouse = () => {
               지원금 및 정책
             </h2>
             <button
-              onClick={handlerFavorite}
+              onClick={toggleFavorite}
               style={{
                 background: 'none',
                 border: 'none',
