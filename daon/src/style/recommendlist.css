@@ -1,0 +1,38 @@
+/* src/style/recommendlist.css */
+
+.recommend-container {
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+.recommend-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #1f78d1;
+}
+
+.recommend-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.recommend-item {
+  padding: 6px 0;
+  font-size: 0.95rem;
+  border-bottom: 1px dashed #ccc;
+  color: #333;
+}
+
+.recommend-item strong {
+  color: #000;
+}
+
+.recommend-empty {
+  color: #999;
+  font-style: italic;
+  padding: 6px 0;
+}

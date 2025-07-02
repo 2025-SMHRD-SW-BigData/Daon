@@ -4,7 +4,7 @@ import Header from './Header';
 import NavBar from './NavBar';
 import '../style/longline.css';
 import useFavorite from '../hooks/useFavorite';
-
+import RecommendList from './RecommendList';
 
 const Longline = () => {
     const pageTitle = '연승어선';
@@ -27,8 +27,7 @@ const Longline = () => {
                                 color: '#f0c420',
                                 cursor: 'pointer',
                                 transition: 'transform 0.2s'
-                            }}>{isFavorite ? '★' : '☆'}
-                        </button>
+                            }}>{isFavorite ? '★' : '☆'}</button>
                     </h2>
                     <h3 className="section-hash">연승어선</h3>
 
@@ -48,7 +47,11 @@ const Longline = () => {
                             <b>모릿줄 및 아릿줄:</b> 낚시 바늘이 달린 긴 줄<br />
                             <b>양승기:</b> 투입한 줄을  회수하는 장비. 전동유압식<br />
                             <b>양승보조롤러:</b> 줄을 부드럽게 회수하도록 도움<br />
-                            <b>사이드드럼:</b> 어구의 정리와 보관</p>
+                            <b>사이드드럼:</b> 어구의 정리와 보관
+                        </p>
+
+                        {/* ✅ 추천 어항 리스트 삽입 */}
+                        <RecommendList vesselType="연승" />
                     </div>
 
                     <a

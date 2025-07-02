@@ -4,7 +4,7 @@ import Header from './Header';
 import NavBar from './NavBar';
 import '../style/trapboat.css';
 import useFavorite from '../hooks/useFavorite';
-
+import RecommendList from './RecommendList';
 
 const TrapBoat = () => {
     const pageTitle = '통발어선';
@@ -27,8 +27,7 @@ const TrapBoat = () => {
                                 color: '#f0c420',
                                 cursor: 'pointer',
                                 transition: 'transform 0.2s'
-                            }}>{isFavorite ? '★' : '☆'}
-                        </button>
+                            }}>{isFavorite ? '★' : '☆'}</button>
                     </h2>
                     <h3 className="section-hash">통발어선</h3>
 
@@ -65,6 +64,9 @@ const TrapBoat = () => {
                             <p><span className="bold">양승기 :</span> 통발을 효율적으로 끌어올림</p>
                             <p><span className="bold">롤러 </span> 통발과 통발이 달린 줄을 부드럽게 회수</p>
                         </div>
+
+                        {/* ✅ 추천 어항 리스트 삽입 */}
+                        <RecommendList vesselType="통발" />
                     </div>
 
                     <a

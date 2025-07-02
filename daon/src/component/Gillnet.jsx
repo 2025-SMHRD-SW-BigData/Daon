@@ -4,7 +4,7 @@ import Header from './Header';
 import NavBar from './NavBar';
 import '../style/gillnet.css';
 import useFavorite from '../hooks/useFavorite';
-
+import RecommendList from './RecommendList';
 
 const Gillnet = () => {
     const pageTitle = '자망어선';
@@ -27,8 +27,7 @@ const Gillnet = () => {
                                 color: '#f0c420',
                                 cursor: 'pointer',
                                 transition: 'transform 0.2s'
-                            }}>{isFavorite ? '★' : '☆'}
-                        </button>
+                            }}>{isFavorite ? '★' : '☆'}</button>
                     </h2>
                     <h3 className="section-hash">자망어선</h3>
 
@@ -65,6 +64,9 @@ const Gillnet = () => {
                             <b>윈치:</b> 부표 및 무게줄 설치 및 회수하는 크레인<br />
                             <b>부표, 밧줄, 그물 부속:</b> 그물의 설치와 유지
                         </p>
+
+                        {/* ✅ 추천 어항 리스트 삽입 */}
+                        <RecommendList vesselType="자망" />
                     </div>
 
                     <a

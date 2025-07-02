@@ -4,9 +4,10 @@ import Header from './Header';
 import NavBar from './NavBar';
 import '../style/divingboat.css';
 import useFavorite from '../hooks/useFavorite';
+import RecommendList from './RecommendList';
 
 const DivingBoat = () => {
-    const pageTitle = '면허어업';
+    const pageTitle = '잠수기어선';
     const { isFavorite, toggleFavorite } = useFavorite(pageTitle);
 
     return (
@@ -26,8 +27,7 @@ const DivingBoat = () => {
                                 color: '#f0c420',
                                 cursor: 'pointer',
                                 transition: 'transform 0.2s'
-                            }}>{isFavorite ? '★' : '☆'}
-                        </button>
+                            }}>{isFavorite ? '★' : '☆'}</button>
                     </h2>
                     <h3 className="section-hash">잠수기어선</h3>
 
@@ -64,6 +64,9 @@ const DivingBoat = () => {
                             <p><span className="bold">다이버 텔레폰 :</span> 잠수부와 유무선 통신. 비상 시 신호줄로 대체</p>
                             <p><span className="bold">엄블리컬 케이블 :</span> 공기호스, 통신선, 전원선 등을 일체화</p>
                         </div>
+
+                        {/* ✅ 추천 어항 리스트 삽입 */}
+                        <RecommendList vesselType="잠수기" />
                     </div>
 
                     <a
