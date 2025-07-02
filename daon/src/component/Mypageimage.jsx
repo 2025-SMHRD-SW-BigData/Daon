@@ -1,4 +1,4 @@
-import Reac, { useState } from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import '../style/mypage.css'
 import '../style/main.css'
@@ -8,6 +8,7 @@ import '../style/main.css'
 const Mypageimage = ({ nickname }) => {
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
+
   const imageChange = (e) => {
     const file = e.target.files[0];
 

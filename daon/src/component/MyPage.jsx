@@ -50,7 +50,7 @@ const MyPage = () => {
                 <div className='mypage'>마이페이지</div>
                 <div className='hr_style'><hr /></div>
 
-                <Mypageimage nickname={userInfo.nickname}></Mypageimage>
+                <Mypageimage  nickname={userInfo?.nickname}></Mypageimage>
 
 
                 <div className='hr_style'><hr /></div>
@@ -62,8 +62,7 @@ const MyPage = () => {
                     width: '300px',
                     margin: 'auto',
                     borderRadius: '10px',
-                    borderColor: '#66A5ED',
-                    border: '1px solid #000',
+                    border: '1px solid #66A5ED',
                     padding: '10px'
                 }}>
                     {favorites.length === 0 ? (
