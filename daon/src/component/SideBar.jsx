@@ -26,7 +26,6 @@ const routeMap = {
   '허가어업': '/permitfishery',
   '신고어업': '/reportfishery',
   '낚시어선업': '/fishingboat',
-  '자격증': '/certificate',
   '정착지 후보 비교': '/compare',
 };
 
@@ -45,7 +44,7 @@ const menuData = [
   },
   {
     category: '어업 자격',
-    subItems: ['면허어업', '허가어업', '신고어업', '낚시어선업', '자격증'],
+    subItems: ['면허어업', '허가어업', '신고어업', '낚시어선업'],
   },
   {
     category: '커뮤니티',
