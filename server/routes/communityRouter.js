@@ -122,5 +122,57 @@ router.delete('/delete/:post_id', (req, res) => {
     });
 });
 
+
+//내 게시글 댓글알림
+router.post('/comments/notice', (req, res) => {
+    const { user_id } = req.body
+
+    const sql = `SELECT c.comment_id, c.content
+                 FROM post p 
+                JOIN comment c ON p.post_id = c.post_id
+                 WHERE p.user_id = ?        -- 내가 작성한 글
+                 AND c.user_id != ?       -- 남이 단 댓글
+                 AND c.checked = FALSE
+                 ORDER BY c.created_at ASC
+    `;
+    conn.query(sql, [user_id, user_id], (err, result) => {
+        if (err) {
+            console.error('업뎃된 댓글 조회 중 에러:', err);
+            return res.status(500).json({ message: '업뎃 댓글 조회 실패' });
+        } else {
+            res.status(200).json({ result: result });
+        }
+
+    })
+
+})
+
+// 댓글 알림 확인 처리 (알림창 닫을 때)
+router.post('/comments/notice/clear', (req, res) => {
+    const { user_id } = req.body;
+
+    const sql = `
+        UPDATE comment
+        JOIN (
+            SELECT c.comment_id
+            FROM post p 
+            JOIN comment c ON p.post_id = c.post_id
+            WHERE p.user_id = ?
+              AND c.user_id != ? 
+              AND c.checked = FALSE
+        ) AS sub ON comment.comment_id = sub.comment_id
+        SET comment.checked = TRUE;
+    `;
+
+
+    conn.query(sql, [user_id,user_id], (err, result) => {
+        if (err) {
+            console.error('알림 확인 처리 실패:', err);
+            return res.status(500).json({ message: '알림 상태 변경 실패' });
+        }
+        res.status(200).json({ message: '알림 확인됨' });
+    });
+});
+
 // 해당 라우터 모듈을 외부에서 사용할 수 있도록 export
 module.exports = router;

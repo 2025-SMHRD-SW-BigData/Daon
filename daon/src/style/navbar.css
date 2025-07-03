@@ -1,10 +1,13 @@
 .footer-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 8px 0;
-  background-color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 390px;
+  z-index: 10;
+  background-color: white;
   border-top: 1px solid #ccc;
+<<<<<<< Updated upstream
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
 
   /* ✅ NAVER 로고 위에 고정 배치 */
@@ -13,6 +16,8 @@
   left: 0;
   width: 100%;
   z-index: 9999;
+=======
+>>>>>>> Stashed changes
 }
 
 .nav-item {
@@ -40,4 +45,32 @@
   text-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
 }
 
+.notifications-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.notifications-popup {
+  position: absolute;
+  bottom: 40px;
+  right: 0;
+  width: 200px;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 10px;
+  z-index: 20;
+}
+
+.notifications-popup > div {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.notifications-popup > div:last-child {
+  border-bottom: none;
+}
 /* fixed 위치 설정은 NavBar 컴포넌트 인라인 스타일에서 처리 */
