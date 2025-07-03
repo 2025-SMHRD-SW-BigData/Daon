@@ -158,4 +158,4 @@ const Map2 = () => {
   );
 };
 
-export default Map2;
+export default Map2;// UI 소폭 수정 (커밋 노출용)
