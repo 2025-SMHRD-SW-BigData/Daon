@@ -148,7 +148,7 @@ const Map2 = () => {
         ref={mapElement}
         style={{
           width: 'calc(100% - 24px)',
-          height: 'calc(100vh - 420px)', // ✅ 지도 높이 줄임
+          height: '500px', //'calc(100vh - 420px)', // ✅ 지도 높이 줄임
           margin: '12px auto',
           borderRadius: '12px'
         }}
@@ -158,4 +158,4 @@ const Map2 = () => {
   );
 };
 
-export default Map2;// UI 소폭 수정 (커밋 노출용)
+export default Map2;
