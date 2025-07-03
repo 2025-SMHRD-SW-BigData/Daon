@@ -13,7 +13,7 @@ const routeMap = {
   '청년어촌정착지원': '/youthsupport',
   '주택구입자금지원': '/housingloan',
   '지역 게시판': '/community',
-  '전문 정착상담사': '/consult',
+  '전문 정착상담사': '/questions',
   'AI챗봇': '/chatbot',
   '자망어선': '/gillnet',
   '연승어선': '/longline',

@@ -10,6 +10,7 @@ const chatbotRouter = require('./routes/chatbotRouter');
 const communityRouter = require('./routes/communityRouter');
 const favoriteRouter = require('./routes/favoriteRouter');
 const mypageRouter = require('./routes/mypageRouter');
+const questionRouter = require('./routes/questionRouter');
 
 
 
@@ -26,7 +27,7 @@ app.use('/chatbot',chatbotRouter);
 app.use('/community',communityRouter)
 app.use('/',favoriteRouter)
 app.use('/mypage',mypageRouter)
-
+app.use('/api', questionRouter);
 
 // 서버 실행
 app.listen(3003, () => {

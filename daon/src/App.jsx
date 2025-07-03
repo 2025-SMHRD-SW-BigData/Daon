@@ -45,6 +45,11 @@ import TransitionSplash from './component/TransitionSplash'; // ✅ 출항 로�
 
 import CompareVillage from './component/CompareVillage'; // 정착 비교 페이지
 
+import QuestionList from './component/QuestionList';
+import QuestionForm from './component/QuestionForm';
+import QuestionDetail from './component/QuestionDetail';
+
+
 import './App.css';
 
 function App() {
@@ -101,6 +106,12 @@ function App() {
 
         {/* 정착지 비교 관련 페이지 */}
         <Route path="/compare" element={<CompareVillage />} />
+      
+        {/* 전문정착상담가 Q&A */}
+      <Route path='/questions' element={<QuestionList user={user} />} />
+<Route path='/question/new' element={<QuestionForm user={user} />} />
+<Route path='/question/:id' element={<QuestionDetail user={user} />} />
+      
       </Routes>
     </UserContext.Provider>
   );
