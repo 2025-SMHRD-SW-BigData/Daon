@@ -1,22 +1,19 @@
+/* 개선된 navbar.css */
 .footer-nav {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 390px;
-  z-index: 10;
+  z-index: 9999;
   background-color: white;
   border-top: 1px solid #ccc;
-
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
 
-  /* ✅ NAVER 로고 위에 고정 배치 */
-  /* position: fixed; */
-  bottom: 0;
-  /* left: 0; */
-  width: 100%; 
-  z-index: 9999;
-
+  display: flex;           /* 아이템 가로 정렬 */
+  justify-content: space-around; /* 일정한 간격으로 배치 */
+  align-items: center;     /* 수직 정렬 */
+  height: 60px;            /* 높이 고정 */
 }
 
 .nav-item {
@@ -27,6 +24,8 @@
   color: #666;
   cursor: pointer;
   transition: color 0.2s ease, text-shadow 0.2s ease;
+  width: 60px;             /* 아이템 너비 고정으로 간격 균등화 */
+  text-align: center;
 }
 
 .nav-item i {
@@ -35,8 +34,8 @@
 }
 
 .nav-item:hover {
-  color: #007BFF; /* 파란색 */
-  text-shadow: 0 0 5px rgba(0, 123, 255, 0.6); /* 빛나는 느낌 */
+  color: #007BFF;
+  text-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
 }
 
 .nav-item.active {
@@ -72,4 +71,3 @@
 .notifications-popup > div:last-child {
   border-bottom: none;
 }
-/* fixed 위치 설정은 NavBar 컴포넌트 인라인 스타일에서 처리 */
