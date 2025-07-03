@@ -1,15 +1,65 @@
-.community-container select,
-.community-container input,
-.community-container textarea {
-  font-size: 15px;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  width: 100%;
-  box-sizing: border-box;
+/* communitywrite.css */
+
+.community-write-container {
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 
-.community-container textarea {
+.community-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1f78d1;
+}
+
+.write-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.write-form select,
+.write-form input,
+.write-form textarea {
+  padding: 10px;
+  font-size: 0.95em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
   resize: none;
-  line-height: 1.6;
+}
+
+.write-form textarea {
+  height: 200px; /* 내용 입력창 세로값 조정 */
+}
+
+.write-form select:focus,
+.write-form input:focus,
+.write-form textarea:focus {
+  border-color: #1f78d1;
+  outline: none;
+  box-shadow: 0 0 4px rgba(31, 120, 209, 0.4);
+}
+
+.submit-btn {
+  margin-top: 10px;
+  background-color: #1f78d1;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #155a9e;
 }

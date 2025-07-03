@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header';
@@ -8,27 +8,22 @@ import { UserContext } from '../context/UserContext';
 
 const CommunityWrite = () => {
   const navigate = useNavigate();
-
   const { user } = useContext(UserContext);
 
-  // 게시글 입력 상태값
   const [form, setForm] = useState({
     title: '',
     content: '',
-    author: user.user_id, // 나중에 로그인된 사용자 이름으로 대체 예정
+    author: user.user_id,
     region: '전체지역',
   });
 
-  // 입력값 변경 시 실행
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  // 폼 제출 시 실행
   const handleSubmit = (e) => {
     e.preventDefault();
-
     axios
       .post('http://192.168.219.45:3003/community/write', form)
       .then(() => {
@@ -39,21 +34,16 @@ const CommunityWrite = () => {
         alert('등록 실패');
         console.error(err);
       });
-  }
-
+  };
 
   return (
     <div className="phon_size">
+      <Header />
       <div className="scroll-area">
-        <Header />
-
         <div className="community-write-container">
-          <h2 className="community-title">글쓰기</h2>
-
-          {/* 지역 선택 */}
-
-          {/* 글쓰기 폼 */}
+          <h2 className="community-title">커뮤니티 글쓰기</h2>
           <form onSubmit={handleSubmit} className="write-form">
+            <label className="form-label">지역 선택</label>
             <select name="region" value={form.region} onChange={handleChange}>
               <option>전체지역</option>
               <option>서울특별시</option>
@@ -74,32 +64,32 @@ const CommunityWrite = () => {
               <option>경상남도</option>
               <option>제주특별자치도</option>
             </select>
-            <br />
+
+            <label className="form-label">제 목</label>
             <input
               type="text"
               name="title"
-              placeholder="제목"
+              placeholder="제목을 입력하세요"
               value={form.title}
               onChange={handleChange}
               required
             />
-            <br />
+
+            <label className="form-label">내 용</label>
             <textarea
               name="content"
-              placeholder="내용"
+              placeholder="내용을 입력하세요"
               value={form.content}
               onChange={handleChange}
               required
-              rows={20}
-              style={{width:'300px'}}
+              rows={10}
             />
-            <br />
-            <button type="submit" className="submit-btn">등록</button>
+
+            <button type="submit" className="submit-btn">등 록</button>
           </form>
         </div>
-
-        <NavBar />
       </div>
+      <NavBar />
     </div>
   );
 };

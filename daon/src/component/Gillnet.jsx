@@ -20,7 +20,7 @@ const Gillnet = () => {
                         어선 정보
                         <button
                             onClick={toggleFavorite}
-                            style={{
+                      d      style={{
                                 background: 'none',
                                 border: 'none',
                                 fontSize: '22px',
