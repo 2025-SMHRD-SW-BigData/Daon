@@ -14,32 +14,33 @@ const Id_find = () => {
 
     const handleFindId = () => {
 
-        if(!name || !phone){
+        if (!name || !phone) {
             setErrM('이름과 휴대폰 번호를 모두 입력하세요.');
             setResId('');
             return;
         }
 
-        axios.post('http://localhost:3003/user/find-id',{name:name,phone:phone})
-    .then((res)=>{
-        if (res.data.id){
-           setResId(res.data.id);
-           setErrM('');
-            // alert('아이디는:'+ res.data.id)
+        axios
+            .post('http://localhost:3003/user/find-id', { name: name, phone: phone })
+            .then((res) => {
+                if (res.data.id) {
+                    setResId(res.data.id);
+                    setErrM('');
+                    // alert('아이디는:'+ res.data.id)
 
-        }else{
-            setResId('');
-            setErrM('일치하는 회원 정보가 없습니다')
-            // alert('일치하는 회원 정보가 없습니다.');
-        }
-    })
-    .catch((err)=>{
-        console.error(err);
-        setResId('');
-        setErrM('서버 오류가 발생했습니')
-    })
+                } else {
+                    setResId('');
+                    setErrM('일치하는 회원 정보가 없습니다')
+                    // alert('일치하는 회원 정보가 없습니다.');
+                }
+            })
+            .catch((err) => {
+                console.error(err);
+                setResId('');
+                setErrM('서버 오류가 발생했습니다')
+            })
     }
-    
+
 
 
 
@@ -65,25 +66,25 @@ const Id_find = () => {
             <div className="id-head">아이디 찾기</div>
             <br />
             <p className='id-body'>이름</p>
-            <input className='inputname' type="text" placeholder='이름' value={name} onChange={(e)=>setName(e.target.value)}/>
+            <input className='inputname' type="text" placeholder='이름' value={name} onChange={(e) => setName(e.target.value)} />
             <p className='id-body'>휴대폰번호</p>
-            <input className='inputname' type="text" placeholder='휴대폰번호' value={phone} onChange={(e)=>setPhone(e.target.value)}/>
+            <input className='inputname' type="text" placeholder='휴대폰번호' value={phone} onChange={(e) => setPhone(e.target.value)} />
 
             <button onClick={handleFindId} className='idbtn'>아이디 찾기</button>
 
-{/* 결과 아이디 표시 */}
-      {resId && (
-        <p style={{ color: 'green', textAlign: 'center', marginTop: '20px' }}>
-          아이디: <strong>{resId}</strong>
-        </p>
-      )}
+            {/* 결과 아이디 표시 */}
+            {resId && (
+                <p style={{ color: 'green', textAlign: 'center', marginTop: '20px' }}>
+                    아이디: <strong>{resId}</strong>
+                </p>
+            )}
 
-      {/* 에러 메시지 표시 */}
-      {errM && (
-        <p style={{ color: 'red', textAlign: 'center', marginTop: '10px' }}>
-          {errM}
-        </p>
-      )}
+            {/* 에러 메시지 표시 */}
+            {errM && (
+                <p style={{ color: 'red', textAlign: 'center', marginTop: '10px' }}>
+                    {errM}
+                </p>
+            )}
 
             <NavBar></NavBar>
 
