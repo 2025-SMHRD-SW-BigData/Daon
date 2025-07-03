@@ -28,7 +28,8 @@ const Login = () => {
             setUser({
               user_id: res.data.user_id,
               username: res.data.username,
-              nickname: res.data.nickname
+              nickname: res.data.nickname,
+              role: res.data.role
             });
             alert('로그인 성공!');
             nav('/');
@@ -88,9 +89,9 @@ const Login = () => {
         <button type="button" onClick={handleLogin} className="join-button">로그인</button>
 
         <div style={{ marginTop: '30px', textAlign: 'center', fontSize: '14px' }}>
-          <span style={{ color: '#999', cursor: 'pointer', marginRight: '8px', marginLeft: '-10px' }}  onClick={() => nav('/idfind')}>아이디 찾기</span>
+          <span style={{ color: '#999', cursor: 'pointer', marginRight: '8px', marginLeft: '-10px' }} onClick={() => nav('/idfind')}>아이디 찾기</span>
           <span style={{ color: '#999' }}> | </span>
-          <span style={{ color: '#999', cursor: 'pointer', marginLeft: '8px' }} onClick={()=>nav('/pwfind')}>비밀번호 찾기</span>
+          <span style={{ color: '#999', cursor: 'pointer', marginLeft: '8px' }} onClick={() => nav('/pwfind')}>비밀번호 찾기</span>
           <span style={{ color: '#999', marginLeft: '8px' }}> | </span>
           <span style={{ color: '#999', cursor: 'pointer', marginLeft: '8px' }} onClick={() => nav('/join')}>회원가입</span>
         </div>

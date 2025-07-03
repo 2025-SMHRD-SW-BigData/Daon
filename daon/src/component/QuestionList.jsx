@@ -1,4 +1,3 @@
-
 // ✅ 수정된 QuestionList.jsx (localhost 기반)
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -10,29 +9,23 @@ const QuestionList = ({ user }) => {
   const [questions, setQuestions] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!user) return;
+useEffect(() => {
+  if (!user) return;
 
-    const url = `http://localhost:3003/api/questions?user_id=${user.user_id}`;
-    console.log('[QuestionList] Fetching from:', url);
+  // 임시로 role 강제 주입해서 테스트
+  const role = user.role || 'counselor'; // 👈 테스트용
 
-    fetch(url)
-      .then(async res => {
-        console.log('[QuestionList] 서버 응답 상태:', res.status);
-        const text = await res.text();
-        console.log('[QuestionList] 서버 응답 본문:', text);
+  const url = `http://localhost:3003/api/questions?user_id=${user.user_id}&role=${role}`;
+  console.log('📡 요청 URL:', url);
 
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        return JSON.parse(text);
-      })
-      .then(data => setQuestions(Array.isArray(data) ? data : []))
-      .catch(err => {
-        console.error('[QuestionList] Fetch error:', err);
-        setQuestions([]);
-      });
-  }, [user]);
+  fetch(url)
+    .then(res => res.json())
+    .then(data => setQuestions(Array.isArray(data) ? data : []))
+    .catch(err => {
+      console.error(err);
+      setQuestions([]);
+    });
+}, [user]);
 
   return (
     <div className="phon_size">
