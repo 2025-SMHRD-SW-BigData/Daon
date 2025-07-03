@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useContext } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Header from './Header'
 import '../style/mypage.css'
 import '../style/main.css'
@@ -9,6 +9,33 @@ import { UserContext } from '../context/UserContext';
 const Mypageimage = ({ nickname }) => {
   const { user } = useContext(UserContext); // ✅ 이건 반드시 함수 안에서 써야 함
   const userId = user?.user_id;
+
+  const [isEditing, setIsEditing] = useState(false); // 수정 중인지
+  const [editNickname, setEditNickname] = useState(nickname || ''); // 닉네임 입력 상태
+
+  const handleEditToggle = () => {
+    setIsEditing(!isEditing);
+  };
+
+  const handleNicknameChange = (e) => {
+    setEditNickname(e.target.value);
+  };
+
+  const handleSaveNickname = () => {
+    setIsEditing(false);
+    // ✅ 저장 로직: localStorage 또는 서버 요청 가능
+    localStorage.setItem(`mypage_nickname_${userId}`, editNickname);
+  };
+
+  useEffect(() => {
+    if (!userId) return;
+    const savedNick = localStorage.getItem(`mypage_nickname_${userId}`);
+    if (savedNick) {
+      setEditNickname(savedNick);
+    }
+  }, [userId]);
+
+
 
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
@@ -22,14 +49,14 @@ const Mypageimage = ({ nickname }) => {
     });
 
 
-const imageChange = async (e) => {
+  const imageChange = async (e) => {
     const file = e.target.files[0];
     if (!file || !userId) return;
 
-     setImage(file);
+    setImage(file);
     const base64 = await toBase64(file);
     setPreview(base64);
- // 사용자별로 저장
+    // 사용자별로 저장
     localStorage.setItem(`mypage_profile_preview_${userId}`, base64);
   }
   useEffect(() => {
@@ -43,9 +70,9 @@ const imageChange = async (e) => {
   }, [userId]); // userId 바뀌면 재실행
 
   const clearImage = () => {
-  localStorage.removeItem('mypage_profile_preview');
-  setPreview(null);
-};
+    localStorage.removeItem('mypage_profile_preview');
+    setPreview(null);
+  };
 
 
   return (
@@ -71,9 +98,42 @@ const imageChange = async (e) => {
         )}
         <div style={{ marginLeft: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           {/* 닉네임 */}
-          <label style={{ marginBottom: '8px' }}>
-            닉네임:{nickname}
 
+          {/* 닉네임 영역 */}
+          <label style={{ marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
+            닉네임:
+            {isEditing ? (
+              <>
+                <input
+                  type="text"
+                  value={editNickname}
+                  onChange={handleNicknameChange}
+                  style={{
+                    marginLeft: '8px',
+                    padding: '4px',
+                    border: '1px solid #ccc',
+                    borderRadius: '4px',
+                    width: '100px'
+                  }}
+                />
+                <button
+                  onClick={handleSaveNickname}
+                  style={{ marginLeft: '8px', fontSize: '12px',borderRadius:'10px', width:'30px',height:'30px',backgroundColor : '#66A5ED',color:'white' }}
+                >
+                  저장
+                </button>
+              </>
+            ) : (
+              <>
+                <span style={{ marginLeft: '8px', fontWeight: 'bold' }}>{editNickname}</span>
+                <button
+                  onClick={handleEditToggle}
+                  style={{ marginLeft: '8px', fontSize: '12px',borderRadius:'10px', width:'30px',height:'30px',backgroundColor : '#66A5ED',color:'white' }}
+                >
+                  수정
+                </button>
+              </>
+            )}
           </label>
 
           {/* 관심지역 */}
@@ -117,9 +177,9 @@ const imageChange = async (e) => {
       <label className='label_style' htmlFor='fileImage'
       >이미지 선택</label>
 
- {preview && (
+      {preview && (
         <button
-          style={{alignSelf: 'flex-start',display: 'block', width:'100px', fontSize:'10px', marginTop: '10px', marginLeft: '20px',borderRadius:'5px' }}
+          style={{ alignSelf: 'flex-start', display: 'block', width: '100px', fontSize: '10px', marginTop: '10px', marginLeft: '20px', borderRadius: '5px' }}
           onClick={clearImage}
         >
           이미지 초기화
