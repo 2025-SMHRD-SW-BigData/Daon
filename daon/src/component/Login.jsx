@@ -6,6 +6,9 @@ import Header from './Header';
 import { UserContext } from '../context/UserContext';
 import axios from 'axios';
 import boatVideo from '../assets/boat-sail.mp4';
+import '../style/header.css';
+
+
 
 const Login = () => {
   const { setUser } = useContext(UserContext);
