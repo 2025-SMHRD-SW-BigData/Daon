@@ -40,7 +40,7 @@ const Fish_reported = () => {
         <h2 className='fish_head'># 신고어업</h2>
         <p style={{
           fontSize: '15px',
-          paddingTop: '10px'
+          padding: '10px 10px 0 40px'
         }}>소규모 어업 활동을 하려는 사람이 허가나 면허없이,<br />
           관할 행정기관에 '신고'만 하면 할 수 있는 어업 형태
         </p>
