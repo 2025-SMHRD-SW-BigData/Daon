@@ -1,0 +1,43 @@
+/* ==========================================
+   📁 style/headerlayout.css
+   ✅ 모든 페이지 공통 Header 하단 레이아웃 정렬 전용 CSS
+   ========================================== */
+
+/* header 아래 콘텐츠가 시작될 때 일정한 여백을 주는 공통 레이아웃 */
+.header-layout {
+  margin-top: 60px; /* Header 높이에 맞춰 여백 확보 */
+  box-sizing: border-box;
+  padding: 0 16px;
+  width: 100%;
+  max-width: 390px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 모바일 뷰에서도 일관되게 적용되도록 하는 사이즈 기준 */
+.phon_size {
+  width: 390px;
+  height: 844px;
+  margin: 0 auto;
+  border-radius: 24px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 페이지 내 스크롤 영역 구성용 클래스 */
+.scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 60px; /* NavBar 공간 확보 */
+}
+
+/* 예외 상황 시 마진 제거용 (ex. splash 페이지 등) */
+.no-header {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}

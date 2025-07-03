@@ -148,7 +148,7 @@ const Map2 = () => {
         ref={mapElement}
         style={{
           width: 'calc(100% - 24px)',
-          height: '500px', //'calc(100vh - 420px)', // ✅ 지도 높이 줄임
+          height: 'calc(100vh - 350px)', // ✅ 지도 높이 줄임
           margin: '12px auto',
           borderRadius: '12px'
         }}

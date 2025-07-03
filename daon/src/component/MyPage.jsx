@@ -28,6 +28,8 @@ const MyPage = () => {
             .then((res) => {
                 setFavorites(res.data.favorites)
                 setUserInfo(res.data.userData[0])
+                // console.log(userInfo.nickname)
+                // console.log(res.data.favorites[0])
             })
             .catch((error) => {
                 console.log('마이페이지 정보 조회 중 오류 발생', error)
@@ -49,6 +51,7 @@ const MyPage = () => {
                 <div className='hr_style'><hr /></div>
 
                 <Mypageimage  nickname={userInfo?.nickname}></Mypageimage>
+
 
                 <div className='hr_style'><hr /></div>
 
@@ -85,6 +88,18 @@ const MyPage = () => {
                 </div>
                 오늘 날짜: {new Date().toLocaleDateString('ko-KR')}
                 <div className='hr_style'><hr /></div>
+                <p className='mypage'>정책알림</p>
+                <br />
+                <br />
+                <div style={{
+                    width: '300px',
+                    height: '100px',
+                    border: '1px solid #000',
+                    margin: 'auto',
+                    borderRadius: '10px',
+                    borderColor: '#66A5ED'
+                }}></div>
+                오늘 날짜: {new Date().toLocaleDateString('ko-KR')}
                 <NavBar></NavBar>
             </div>
         </div>
