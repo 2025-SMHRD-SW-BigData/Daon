@@ -8,6 +8,7 @@
   padding: 12px;
   border-radius: 20px;
   margin-bottom: 20px;
+  border: 2px solid white; /* ✅ 흰색 테두리 */
 }
 
 .info-card {
@@ -21,4 +22,13 @@
   color: #66A5ED;
   height: 80px;
   text-align: center;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+.info-card:hover {
+  background-color: #66A5ED;
+  color: white;
+  border: 2px solid white; /* ✅ hover 시 흰색 테두리 */
 }

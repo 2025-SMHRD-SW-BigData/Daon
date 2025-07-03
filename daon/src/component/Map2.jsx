@@ -1,3 +1,4 @@
+// Map2.jsx - 지도 높이 줄여 NAVER UI가 지도와 NavBar 사이에 들어가도록 조정한 최종본
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';
@@ -12,7 +13,27 @@ const Map2 = () => {
   const [village, setVillage] = useState([]);
   const [searchText, setSearchText] = useState('');
 
-  // 데이터 로드
+  // NAVER UI 재배치 (로고 및 거리축척)
+  useEffect(() => {
+    const repositionUI = () => {
+      const logo = document.querySelector('.noprint');
+      const scale = document.querySelector('.map_scale');
+
+      if (logo) {
+        logo.style.bottom = '72px';
+        logo.style.right = '12px';
+      }
+      if (scale) {
+        scale.style.bottom = '100px';
+        scale.style.right = '12px';
+      }
+    };
+
+    const observer = new MutationObserver(repositionUI);
+    observer.observe(document.body, { childList: true, subtree: true });
+    repositionUI();
+  }, []);
+
   useEffect(() => {
     axios.get('/fishing_village.json')
       .then((res) => {
@@ -43,21 +64,21 @@ const Map2 = () => {
       .catch(console.error);
   }, []);
 
-  // 지도 생성
   useEffect(() => {
     if (!window.naver || !mapElement.current) return;
     if (!mapRef.current) {
       mapRef.current = new window.naver.maps.Map(mapElement.current, {
         center: new window.naver.maps.LatLng(36.5, 127.5),
         zoom: 7,
+        logoControl: true,
+        mapDataControl: true,
+        scaleControl: true
       });
     }
   }, []);
 
-  // 마커 표시
   useEffect(() => {
     if (!mapRef.current) return;
-
     markersRef.current.forEach(marker => marker.setMap(null));
     markersRef.current = [];
     infoWindowsRef.current = [];
@@ -71,24 +92,15 @@ const Map2 = () => {
 
       const infoWindow = new window.naver.maps.InfoWindow({
         content: `
-    <div style="
-      padding:8px;
-      font-size:12px;
-      line-height:1.4;
-      max-width:160px;
-    ">
-      <strong style="font-size:13px;">📍 ${v.name}</strong><br/>
-      <b>주소:</b> ${v.address || '정보 없음'}<br/>
-      <b>주요 관광지:</b> ${v.info || '없음'}<br/>
-      <b>인근 해변:</b> ${v.beaches || '없음'}<br/>
-      ${v.photo
-            ? `<img src="${v.photo}" alt="${v.name} 전경" style="width:100%; margin-top:6px;" />`
-            : ''
-          }
-    </div>
-  `
+          <div style="padding:8px; font-size:12px; line-height:1.4; max-width:160px;">
+            <strong style="font-size:13px;">📍 ${v.name}</strong><br/>
+            <b>주소:</b> ${v.address || '정보 없음'}<br/>
+            <b>주요 관광지:</b> ${v.info || '없음'}<br/>
+            <b>인근 해변:</b> ${v.beaches || '없음'}<br/>
+            ${v.photo ? `<img src="${v.photo}" alt="${v.name} 전경" style="width:100%; margin-top:6px; border-radius:6px;" />` : ''}
+          </div>
+        `
       });
-
 
       window.naver.maps.Event.addListener(marker, 'click', () => {
         infoWindowsRef.current.forEach(iw => iw.close());
@@ -100,10 +112,8 @@ const Map2 = () => {
     });
   }, [village]);
 
-  // 검색 시 마커로 이동
   useEffect(() => {
     if (!mapRef.current || village.length === 0) return;
-
     if (!searchText || searchText.trim() === '') {
       mapRef.current.setCenter(new window.naver.maps.LatLng(36.5, 127.5));
       mapRef.current.setZoom(7);
@@ -132,16 +142,18 @@ const Map2 = () => {
   return (
     <div className="phon_size">
       <Header />
-      <div className="scroll-area">
-        <SearchBox setSearchText={setSearchText} />
-        <div
-          id="map"
-          ref={mapElement}
-          style={{ width: '90%', height: '80vh', margin: '0 auto' }}
-        />
-        <div style={{ padding: '50px' }} />
-        <NavBar />
-      </div>
+      <SearchBox setSearchText={setSearchText} />
+      <div
+        id="map"
+        ref={mapElement}
+        style={{
+          width: 'calc(100% - 24px)',
+          height: 'calc(100vh - 420px)', // ✅ 지도 높이 줄임
+          margin: '12px auto',
+          borderRadius: '12px'
+        }}
+      />
+      <NavBar />
     </div>
   );
 };
