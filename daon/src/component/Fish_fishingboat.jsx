@@ -42,9 +42,12 @@ const Fish_fishingboat = () => {
                 <h2 className='fish_head'># 낚시어선업</h2>
                 <p style={{
                     fontSize: '14px',
-                    paddingTop: '10px'
+                    paddingTop: '10px',
+                    padding : '10px 0px 0px 50px',
+                    textAlign : 'left'
+                   
                 }}>낚시어선업이란 낚시 체험을 원하는 일반인을 태우고,<br />
-                    요금을 받고 바다에서 낚시 활동을 할 수 있도록 운영하는 업 <br />
+                    요금을 받고 바다에서 낚시 활동을 할 수 있도록 <br />운영하는 업 <br />
                     관련 법에 따라 등록해야만 합법적으로 운영
                 </p>
                 <br />

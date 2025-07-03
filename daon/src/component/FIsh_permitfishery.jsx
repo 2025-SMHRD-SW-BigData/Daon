@@ -41,8 +41,9 @@ const FIsh_permitfishery = () => {
         <h2 className='fish_head'># 허가어업</h2>
         <p style={{
           fontSize: '15px',
-          paddingTop: '10px'
-        }}>수산자원을 보호하고 조절하기 위해,일정한 어업을<br />
+          padding: '10px 10px 0 50px',
+          textAlign : 'left'
+        }}>수산자원을 보호하고 조절하기 위해, <br />일정한 어업을
           하기전에 국가 또는 지자체의 허가를 받아야 하는 어업
         </p>
         <br />

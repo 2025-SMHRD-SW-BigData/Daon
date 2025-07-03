@@ -38,7 +38,9 @@ const Fish_licensedfishery = () => {
         <h2 className='fish_head'># 면허어업</h2>
         <p style={{
           fontSize: '15px',
-          paddingTop: '10px'
+          padding: '10px 0px 0 50px',
+          textAlign :"left"
+
         }}>일정 지역에 고정된 구조물(예:양식장,정착망 등)을<br />
           설치해 지속적인 어업을 할 경우 독점적 권리를 부여받는 면허
         </p>
