@@ -1,38 +1,40 @@
-/* src/style/recommendlist.css */
+/* recommendlist.css - "▼ 방식" 스타일에 맞춘 토글 버튼 스타일 적용 */
 
-.recommend-container {
-  padding: 16px;
-  background-color: #f9f9f9;
+.recommend-box {
+  background-color: #f2f7fd;
+  border: 1px solid #d1e3f8;
   border-radius: 8px;
-  margin-top: 12px;
+  padding: 12px;
+  margin-top: 16px;
 }
 
-.recommend-title {
+.recommend-toggle-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
   font-weight: bold;
-  font-size: 1.1rem;
-  margin-bottom: 8px;
+  font-size: 1rem;
   color: #1f78d1;
+  cursor: pointer;
+  padding: 4px 0;
+  margin-bottom: 6px;
+}
+
+.recommend-toggle-btn:hover {
+  text-decoration: underline;
 }
 
 .recommend-list {
   list-style: none;
-  padding-left: 0;
-  margin: 0;
+  padding-left: 12px;
+  margin-top: 6px;
 }
 
 .recommend-item {
-  padding: 6px 0;
+  padding: 4px 0;
   font-size: 0.95rem;
-  border-bottom: 1px dashed #ccc;
   color: #333;
-}
-
-.recommend-item strong {
-  color: #000;
-}
-
-.recommend-empty {
-  color: #999;
-  font-style: italic;
-  padding: 6px 0;
+  border-bottom: 1px dashed #ccc;
 }

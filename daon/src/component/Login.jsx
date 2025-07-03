@@ -90,7 +90,7 @@ const Login = () => {
         <div style={{ marginTop: '30px', textAlign: 'center', fontSize: '14px' }}>
           <span style={{ color: '#999', cursor: 'pointer', marginRight: '8px', marginLeft: '-10px' }}  onClick={() => nav('/idfind')}>아이디 찾기</span>
           <span style={{ color: '#999' }}> | </span>
-          <span style={{ color: '#999', cursor: 'pointer', marginLeft: '8px' }}>비밀번호 찾기</span>
+          <span style={{ color: '#999', cursor: 'pointer', marginLeft: '8px' }} onClick={()=>nav('/pwfind')}>비밀번호 찾기</span>
           <span style={{ color: '#999', marginLeft: '8px' }}> | </span>
           <span style={{ color: '#999', cursor: 'pointer', marginLeft: '8px' }} onClick={() => nav('/join')}>회원가입</span>
         </div>

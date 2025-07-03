@@ -157,5 +157,24 @@ router.post('/find-id',(req,res)=>{
   })
 })
 
+router.post('/find-pw',(req,res)=>{
+  const { name,id} =req.body
+  if(!name || !id){
+return res.status(400).json({error:'이름과 아이디를 입력하세요.'});
+  }
+  conn.query('SELECT password FROM users WHERE username =? AND user_id =? ',[name,id],(err,rows)=>{
+    if(err){
+      console.error('비밀번호 찾기 쿼리 실패:',err);
+      return res.status(500).json({error:'서버 오류'})
+    }
+    if (rows.length>0){
+      return res.status(200).json({pw : rows[0].password})
+    }
+    else {
+      return res.status(200).json({pw:null});
+    }
+  })
+})
+
 
 module.exports = router;
