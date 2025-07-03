@@ -1,24 +1,53 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect,useContext } from 'react'
 import Header from './Header'
 import '../style/mypage.css'
 import '../style/main.css'
+import { UserContext } from '../context/UserContext';
 
 
 
 const Mypageimage = ({ nickname }) => {
+  const { user } = useContext(UserContext); // ✅ 이건 반드시 함수 안에서 써야 함
+  const userId = user?.user_id;
+
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
 
-  const imageChange = (e) => {
+  const toBase64 = (file) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+
+
+const imageChange = async (e) => {
     const file = e.target.files[0];
+    if (!file || !userId) return;
 
-    if (!file) return;
-
-    setImage(file);
-    setPreview(URL.createObjectURL(file));
+     setImage(file);
+    const base64 = await toBase64(file);
+    setPreview(base64);
+ // 사용자별로 저장
+    localStorage.setItem(`mypage_profile_preview_${userId}`, base64);
   }
+  useEffect(() => {
+    if (!userId) return;
+    const savedPreview = localStorage.getItem(`mypage_profile_preview_${userId}`);
+    if (savedPreview) {
+      setPreview(savedPreview);
+    } else {
+      setPreview(null); // 없으면 초기화
+    }
+  }, [userId]); // userId 바뀌면 재실행
 
- 
+  const clearImage = () => {
+  localStorage.removeItem('mypage_profile_preview');
+  setPreview(null);
+};
+
+
   return (
     <div>
       <p className='profile_text' >프로필 사진 업로드</p>
@@ -44,7 +73,7 @@ const Mypageimage = ({ nickname }) => {
           {/* 닉네임 */}
           <label style={{ marginBottom: '8px' }}>
             닉네임:{nickname}
-           
+
           </label>
 
           {/* 관심지역 */}
@@ -87,6 +116,16 @@ const Mypageimage = ({ nickname }) => {
         style={{ display: 'none' }} />
       <label className='label_style' htmlFor='fileImage'
       >이미지 선택</label>
+
+ {preview && (
+        <button
+          style={{alignSelf: 'flex-start',display: 'block', width:'100px', fontSize:'10px', marginTop: '10px', marginLeft: '20px',borderRadius:'5px' }}
+          onClick={clearImage}
+        >
+          이미지 초기화
+        </button>
+      )}
+
     </div>
   )
 }
