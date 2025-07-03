@@ -20,7 +20,7 @@ const Id_find = () => {
             return;
         }
 
-        axios.post('http://localhost:3003/user/find-id',{name:name,phone:phone})
+        axios.post('/user/find-id', { name, phone })
     .then((res)=>{
         if (res.data.id){
            setResId(res.data.id);
