@@ -22,16 +22,17 @@
 }
 
 .label_style {
-    display: inline-block;
-    background-color: #2D9CDB;
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 10px;
-    font-weight: bold;
-    margin-top:0;
-    display:flex;
-    width: 100px;
-    margin-left: 20px;
+  display: flex;
+  justify-content: center;  /* ⬅️ 수평 중앙 정렬 */
+  align-items: center;      /* ⬅️ 수직 중앙 정렬 */
+  background-color: #2D9CDB;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: bold;
+  width: 100px;
+  height: 30px; /* ⬅️ 버튼 높이 명시해주면 align-items가 더 정확하게 작동 */
+  margin-left: 20px;
 }

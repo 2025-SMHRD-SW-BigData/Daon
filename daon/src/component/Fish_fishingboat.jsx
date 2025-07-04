@@ -93,7 +93,7 @@ const Fish_fishingboat = () => {
           </div>
 
           <button
-            className="pdf-btn"
+            className="pdf-btn"  style={{ marginLeft: '60px' }}
             onClick={() => {
               const link = document.createElement('a');
               link.href = '/pdf/낚시어선업.pdf';
