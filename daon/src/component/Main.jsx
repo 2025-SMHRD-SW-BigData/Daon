@@ -1,22 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom'; // ✅ useNavigate 추가
+import { useLocation, useNavigate } from 'react-router-dom';
 import '../style/main.css';
 import mapImg from '../assets/map.png';
-import comuImg from '../assets/comu.png';
 import Header from './Header';
 import NavBar from './NavBar';
-import Map from './Map';
-import axios from 'axios';
 import SearchBox from './SearchBox';
 import InfoCards from './InfoCards';
 import CommunitySection from './CommunitySection';
 
 const Main = () => {
-  const [inputValue, setInputValue] = useState('');
   const [searchText, setSearchText] = useState('');
-  const [villageList, setVillageList] = useState([]);
-  const [suggestions, setSuggestions] = useState([]);
-
   const location = useLocation();
   const isMapPage = location.pathname === '/map';
   const navigate = useNavigate(); // ✅ useNavigate 훅 사용
@@ -68,13 +61,19 @@ const Main = () => {
 
   return (
     <div className="phon_size">
-      <div className="scroll-area">
-        <Header />
+      {/* ✅ Header는 스크롤 제외 고정 영역 */}
+      <Header />
 
+      {/* ✅ scroll-area 내부만 스크롤 가능 */}
+      <div className="scroll-area">
         {isMapPage && <SearchBox setSearchText={setSearchText} />}
 
         <div className="map-container">
-          <div className="map-fallback" onClick={() => navigate('/map')} style={{ cursor: 'pointer' }}>
+          <div
+            className="map-fallback"
+            onClick={() => navigate('/map')}
+            style={{ cursor: 'pointer' }}
+          >
             <img src={mapImg} alt="map" className="map-img" />
             <div className="fallback-text styled-label">어촌 정보 탐색 지도</div>
           </div>
@@ -83,6 +82,8 @@ const Main = () => {
         <InfoCards />
         <CommunitySection />
       </div>
+
+      {/* ✅ 하단 NavBar 고정 */}
       <NavBar />
     </div>
   );

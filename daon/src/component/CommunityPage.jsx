@@ -1,12 +1,11 @@
-import React, { useState, useEffect,useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
 import axios from 'axios';
 import Header from './Header';
 import NavBar from './NavBar';
 import '../style/communitypage.css';
-
-
+import '../style/headerlayout.css';
 
 const CommunityPage = () => {
   const [posts, setPosts] = useState([]); // 서버에서 받아온 게시글 상태
@@ -15,7 +14,6 @@ const CommunityPage = () => {
   const postsPerPage = 5;
   const navigate = useNavigate();
   const { user } = useContext(UserContext); // ✅ 로그인 여부 확인
-
 
   // 서버에서 게시글 데이터 불러오기 (컴포넌트 마운트 시)
   useEffect(() => {
@@ -43,8 +41,9 @@ const CommunityPage = () => {
   const handlePageClick = (pageNum) => {
     setCurrentPage(pageNum);
   };
+
   // 글쓰기 버튼 클릭 시
-   const handleWriteClick = () => {
+  const handleWriteClick = () => {
     if (!user) {
       alert('로그인 후 글쓰기가 가능합니다.');
       navigate('/login')
@@ -57,8 +56,10 @@ const CommunityPage = () => {
 
   return (
     <div className="phon_size">
-      <div className="scroll-area">
-        <Header />
+
+      <Header />
+
+      <div className="scroll-area header-layout">
         <div className="community-container">
           <div className="community-header">
             <h2 className="community-title">커뮤니티 게시판</h2>
@@ -129,8 +130,9 @@ const CommunityPage = () => {
             </button>
           </div>
         </div>
-        <NavBar />
       </div>
+
+      <NavBar />
     </div>
   );
 };

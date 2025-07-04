@@ -1,70 +1,65 @@
-import React, { useState, useContext, useEffect } from 'react'
-import Header from './Header'
-import '../style/mypage.css'
-import '../style/main.css'
-import Mypageimage from './Mypageimage'
-import NavBar from './NavBar'
-import TodayDate from './TodayDate'
-import { UserContext } from '../context/UserContext'
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+// ✅ Header는 scroll-area 바깥에 위치시켜 고정하고, 나머지를 스크롤 처리
+import React, { useState, useContext, useEffect } from 'react';
+import Header from './Header';
+import '../style/mypage.css';
+import '../style/main.css';
+import Mypageimage from './Mypageimage';
+import NavBar from './NavBar';
+import { UserContext } from '../context/UserContext';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const MyPage = () => {
     const { user } = useContext(UserContext);
     const [favorites, setFavorites] = useState([]);
+    const [userInfo, setUserInfo] = useState();
     const navigate = useNavigate();
-    const [userInfo,setUserInfo] = useState();
 
     useEffect(() => {
         if (!user?.user_id) {
-            alert('로그인 후 마이페이지에 접속해주세요')
-            navigate('/')
+            alert('로그인 후 마이페이지에 접속해주세요');
+            navigate('/');
             return;
         }
         axios
             .get('http://localhost:3003/mypage/data', {
-                params: { user_id: user.user_id }
+                params: { user_id: user.user_id },
             })
             .then((res) => {
-                setFavorites(res.data.favorites)
-                setUserInfo(res.data.userData[0])
-                // console.log(userInfo.nickname)
-                // console.log(res.data.favorites[0])
+                setFavorites(res.data.favorites);
+                setUserInfo(res.data.userData[0]);
             })
             .catch((error) => {
-                console.log('마이페이지 정보 조회 중 오류 발생', error)
-            })
-    }, [user])
-
+                console.log('마이페이지 정보 조회 중 오류 발생', error);
+            });
+    }, [user]);
 
     return (
-        <div className='phon_size'>
+        <div className="phon_size">
+            {/* ✅ 헤더는 스크롤 영역 밖에 고정 */}
+            <Header />
 
-            <div style={{
-                flex: 1,
-                overflowY: 'scroll',
-                paddingBottom: '100px', // NavBar 가려지지 않도록 여유 공간 확보
-                boxSizing: 'border-box'
-            }}>
-                <Header></Header>
-                <div className='mypage'>마이페이지</div>
-                <div className='hr_style'><hr /></div>
+            {/* ✅ 스크롤 처리 영역 */}
+            <div className="scroll-area">
+                <div className="mypage">마이페이지</div>
+                <div className="hr_style"><hr /></div>
 
-                <Mypageimage  nickname={userInfo?.nickname}></Mypageimage>
+                <Mypageimage nickname={userInfo?.nickname} />
 
+                <div className="hr_style"><hr /></div>
 
-                <div className='hr_style'><hr /></div>
-
-                <p className='mypage'>즐겨찾기</p>
+                <p className="mypage">즐겨찾기</p>
                 <br />
                 <br />
-                <div style={{
-                    width: '300px',
-                    margin: 'auto',
-                    borderRadius: '10px',
-                    border: '1px solid #66A5ED',
-                    padding: '10px'
-                }}>
+                <div
+                    style={{
+                        width: '300px',
+                        margin: 'auto',
+                        borderRadius: '10px',
+                        border: '1px solid #66A5ED',
+                        padding: '10px',
+                    }}
+                >
                     {favorites.length === 0 ? (
                         <p>즐겨찾기가 없습니다.</p>
                     ) : (
@@ -77,7 +72,7 @@ const MyPage = () => {
                                     backgroundColor: '#f5faff',
                                     border: '1px solid #66A5ED',
                                     borderRadius: '6px',
-                                    cursor: 'pointer'
+                                    cursor: 'pointer',
                                 }}
                                 onClick={() => navigate(item.path)}
                             >
@@ -86,24 +81,30 @@ const MyPage = () => {
                         ))
                     )}
                 </div>
-                오늘 날짜: {new Date().toLocaleDateString('ko-KR')}
-                <div className='hr_style'><hr /></div>
-                <p className='mypage'>정책알림</p>
-                <br />
-                <br />
-                <div style={{
-                    width: '300px',
-                    height: '100px',
-                    border: '1px solid #000',
-                    margin: 'auto',
-                    borderRadius: '10px',
-                    borderColor: '#66A5ED'
-                }}></div>
-                오늘 날짜: {new Date().toLocaleDateString('ko-KR')}
-                <NavBar></NavBar>
-            </div>
-        </div>
-    )
-}
 
-export default MyPage
+                <div className="hr_style"><hr /></div>
+                <p className="mypage">정책알림</p>
+                <br />
+                <br />
+                <div
+                    style={{
+                        width: '300px',
+                        height: '100px',
+                        border: '1px solid #000',
+                        margin: 'auto',
+                        borderRadius: '10px',
+                        borderColor: '#66A5ED',
+                    }}
+                ></div>
+
+                <p style={{ textAlign: 'center', marginTop: '20px' }}>
+                    오늘 날짜: {new Date().toLocaleDateString('ko-KR')}
+                </p>
+            </div>
+
+            <NavBar />
+        </div>
+    );
+};
+
+export default MyPage;

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import '../style/chatbot.css';
+import '../style/headerlayout.css';
 import Header from './Header';
 import NavBar from './NavBar';
 
@@ -9,10 +10,8 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([]); // 대화 내용 배열
   const chatEndRef = useRef(null);
 
-
   const sendMessage = () => {
     if (!msg.trim()) return;
- 
 
     // 1. 사용자 메시지 추가
     const userMessage = { sender: 'user', text: msg };
@@ -39,50 +38,40 @@ const Chatbot = () => {
   }, [messages]);
 
   return (
-    <div>
-      
-    <div className="chatbot-container" style={{
-        width: '390px',
-        height: '844px',
-        margin: '0 auto',
-        borderRadius: '24px',
-        border: '1px solid #ccc',
-        overflow: 'hidden',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-        backgroundColor: '#fff',
-        position: 'relative',
-        display: 'flex',
-        flexDirection: 'column',
-    }} >
-      
-      <Header></Header>
-      <h2 className="chatbot-title">💬 다온 챗봇</h2>
+    <div className="phon_size">
 
-      <div className="chat-area">
-        {messages.map((m, idx) => (
-          <div
-            key={idx}
-            className={`chat-bubble ${m.sender === 'user' ? 'user' : 'bot'}`}
-          >
-            {m.text}
-          </div>
-        ))}
-        <div ref={chatEndRef} />
+      <Header />
+
+      <div className="scroll-area header-layout">
+
+        <h2 className="chatbot-title">💬 다온 챗봇</h2>
+
+        <div className="chat-area">
+          {messages.map((m, idx) => (
+            <div
+              key={idx}
+              className={`chat-bubble ${m.sender === 'user' ? 'user' : 'bot'}`}
+            >
+              {m.text}
+            </div>
+          ))}
+          <div ref={chatEndRef} />
+        </div>
+
+        <div className="input-group">
+          <input
+            type="text"
+            placeholder="무엇을 도와드릴까요?"
+            value={msg}
+            onChange={(e) => setMsg(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+          />
+          <button onClick={sendMessage}>전송</button>
+        </div>
+
       </div>
 
-      <div className="input-group">
-        <input
-          type="text"
-          placeholder="무엇을 도와드릴까요?"
-          value={msg}
-          onChange={(e) => setMsg(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
-        />
-        <button onClick={sendMessage}>전송</button>
-      </div>
-      
-    <NavBar></NavBar>
-    </div>
+      <NavBar />
     </div>
   );
 };

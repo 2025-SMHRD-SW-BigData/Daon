@@ -4,6 +4,7 @@ import axios from 'axios';
 import Header from './Header';
 import NavBar from './NavBar';
 import '../style/communitywrite.css';
+import '../style/headerlayout.css';
 import { UserContext } from '../context/UserContext';
 
 const CommunityWrite = () => {
@@ -38,8 +39,10 @@ const CommunityWrite = () => {
 
   return (
     <div className="phon_size">
+
       <Header />
-      <div className="scroll-area">
+
+      <div className="scroll-area header-layout">
         <div className="community-write-container">
           <h2 className="community-title">커뮤니티 글쓰기</h2>
           <form onSubmit={handleSubmit} className="write-form">
@@ -89,6 +92,7 @@ const CommunityWrite = () => {
           </form>
         </div>
       </div>
+
       <NavBar />
     </div>
   );
