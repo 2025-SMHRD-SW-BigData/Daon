@@ -17,8 +17,6 @@ const MyPage = () => {
 
     useEffect(() => {
         if (!user?.user_id) {
-            alert('로그인 후 마이페이지에 접속해주세요');
-            navigate('/');
             return;
         }
         axios

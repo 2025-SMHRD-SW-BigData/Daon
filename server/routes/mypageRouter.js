@@ -24,7 +24,6 @@ conn.connect(err => {
     }
 });
 
-router.use(cors());
 
 
 //마이페이지 조회시 필요 정보 넘겨주는 넘
