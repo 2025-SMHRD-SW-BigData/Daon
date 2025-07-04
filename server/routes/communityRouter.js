@@ -27,8 +27,6 @@ conn.connect(err => {
     }
 });
 
-// 모든 라우터에서 CORS 허용 설정
-router.use(cors());
 
 router.post('/write', (req, res) => {
     console.log(req.body)

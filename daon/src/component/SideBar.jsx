@@ -3,6 +3,7 @@ import React, { useState, useContext } from 'react';
 import '../style/Sidebar.css';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
+import axios from 'axios'
 
 // 메뉴와 연동 경로 매핑
 const routeMap = {
@@ -72,8 +73,17 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
 
   const handleLogout = () => {
     if (window.confirm('로그아웃 하시겠습니까?')) {
-      setUser(null); // ✅ 사용자 정보 초기화
-      nav('/');       // 홈으로 이동
+      axios
+        .post('http://localhost:3003/user/logout', {}, { withCredentials: true })
+        .then(() => {
+          setUser(null); // 사용자 상태 초기화
+          alert('로그아웃 되었습니다.');
+          nav('/'); // 홈으로 이동
+        })
+        .catch((error) => {
+          console.error('로그아웃 실패:', error);
+          alert('로그아웃 중 오류가 발생했습니다.');
+        });
     }
   };
 

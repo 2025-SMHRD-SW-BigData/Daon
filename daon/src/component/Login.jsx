@@ -21,9 +21,11 @@ const Login = () => {
     setShowVideo(true);
     setTimeout(() => {
       axios
-        .post('http://192.168.219.45:3003/user/login', {
+        .post('http://localhost:3003/user/login', {
           user_id: id,
           password: pw
+        },{
+          withCredentials : true
         })
         .then((res) => {
           setShowVideo(false);
@@ -37,7 +39,7 @@ const Login = () => {
             alert('로그인 성공!');
             nav('/');
           } else {
-            alert(res.data.message || '아이디 또는 비밀번호가 일치하지 않습니다.');
+            alert('아이디 또는 비밀번호가 일치하지 않습니다.'|| res.data.message );
           }
         })
         .catch((error) => {
