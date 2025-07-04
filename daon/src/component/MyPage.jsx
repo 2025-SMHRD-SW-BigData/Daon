@@ -81,23 +81,7 @@ const MyPage = () => {
                 </div>
 
                 <div className="hr_style"><hr /></div>
-                <p className="mypage">정책알림</p>
-                <br />
-                <br />
-                <div
-                    style={{
-                        width: '300px',
-                        height: '100px',
-                        border: '1px solid #000',
-                        margin: 'auto',
-                        borderRadius: '10px',
-                        borderColor: '#66A5ED',
-                    }}
-                ></div>
-
-                <p style={{ textAlign: 'center', marginTop: '20px' }}>
-                    오늘 날짜: {new Date().toLocaleDateString('ko-KR')}
-                </p>
+                
             </div>
 
             <NavBar />
