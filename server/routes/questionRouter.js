@@ -4,7 +4,6 @@ const cors = require('cors');
 const mysql = require('mysql2');
 
 // CORS 허용
-router.use(cors());
 
 // DB 연결
 const conn = mysql.createConnection({

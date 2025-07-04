@@ -8,6 +8,21 @@ const cors = require('cors');
 //mysql2 : node 서버와 Mysql DB를 연결해주는 모듈
 const mysql = require('mysql2')
 
+// 인증 확인 미들웨어
+const verifyToken = (req, res, next) => {
+  const token = req.cookies.token;
+
+  if (!token) {
+    return res.status(401).json({ success: false, message: '인증 필요' });
+  }
+
+  jwt.verify(token, secretKey, (err, decoded) => {
+    if (err) return res.status(403).json({ success: false, message: '토큰 무효' });
+
+    req.user = decoded;  // 이후 라우터에서 req.user.user_id 사용 가능
+    next();
+  });
+};
 
 // DB 연결 정보
 let conn = mysql.createConnection({
@@ -26,7 +41,6 @@ conn.connect(err => {
   }
 });
 
-router.use(cors());
 
 router.post('/login', (req, res) => {
   const { user_id, password } = req.body;
@@ -45,11 +59,19 @@ router.post('/login', (req, res) => {
       // JWT 토큰 생성 (선택 사항)
       const token = jwt.sign({ user_id }, secretKey, { expiresIn: '1h' });
 
+      // ✅ 쿠키에 JWT 저장
+      res.cookie('token', token, {
+        httpOnly: true,   // JS 접근 불가
+        secure: false,    // HTTPS에서만 동작하려면 true (개발 시 false)
+        sameSite: 'Lax',  // CSRF 방어용 (또는 Strict)
+        maxAge: 3600000   // 1시간
+      });
+
       // 로그인 성공 시 사용자 정보와 토큰을 응답
       res.status(200).json({
         success: true,
         message: '로그인 성공',
-        token,
+        // token, -> cookie에 저장할거라 뺐음
         user_id: user.user_id,
         username: user.username,
         nickname: user.nickname,
@@ -59,6 +81,24 @@ router.post('/login', (req, res) => {
     } else {
       res.status(401).json({ success: false, message: '아이디 또는 비밀번호가 일치하지 않습니다.' });
     }
+  });
+});
+
+//로그아웃
+router.post('/logout', (req, res) => {
+  res.clearCookie('token');  // ✅ 쿠키 제거
+  res.json({ success: true, message: '로그아웃 완료' });
+});
+
+//토큰 인증 테스트용 라우터
+router.get('/check-auth', verifyToken, (req, res) => {
+  const user_id = req.user.user_id;
+  const sql = 'SELECT user_id, username, nickname, role FROM users WHERE user_id = ?';
+  conn.query(sql, [user_id], (err, rows) => {
+    if (err || rows.length === 0) {
+      return res.status(500).json({ success: false });
+    }
+    res.json({ success: true, user: rows[0] });
   });
 });
 
@@ -127,7 +167,7 @@ router.delete(`/community/delete/:post_id`, (req, res) => {
   const sql = `DELETE FROM posts WHERE post_id = ?`;
 
   conn.query(sql, [post_id], (err, result) => {
-    
+
     if (err) {
       console.error('게시글 삭제 실패:', err);
       return res.status(500).json({ success: false, message: '서버 에러' });
@@ -137,41 +177,41 @@ router.delete(`/community/delete/:post_id`, (req, res) => {
   });
 })
 
-router.post('/find-id',(req,res)=>{
-  const { name,phone}=req.body;
-  if(!name || !phone){
-    return res.status(400).json({error:'이름과 휴대폰번호를 입력하세요.'});
+router.post('/find-id', (req, res) => {
+  const { name, phone } = req.body;
+  if (!name || !phone) {
+    return res.status(400).json({ error: '이름과 휴대폰번호를 입력하세요.' });
   }
-  conn.query('SELECT user_id FROM users WHERE username =? AND phone_number =?',[name,phone],(err,rows)=>{
-    if(err){
-      console.error('아이디 찾기 쿼리 실패:',err);
-      return res.status(500).json({error:'서버 오류'});
+  conn.query('SELECT user_id FROM users WHERE username =? AND phone_number =?', [name, phone], (err, rows) => {
+    if (err) {
+      console.error('아이디 찾기 쿼리 실패:', err);
+      return res.status(500).json({ error: '서버 오류' });
     }
 
-    if (rows.length>0){
-      return res.status(200).json({id:rows[0].user_id})
-    }else {
-      return res.status(200).json({id:null});
+    if (rows.length > 0) {
+      return res.status(200).json({ id: rows[0].user_id })
+    } else {
+      return res.status(200).json({ id: null });
     }
 
   })
 })
 
-router.post('/find-pw',(req,res)=>{
-  const { name,id} =req.body
-  if(!name || !id){
-return res.status(400).json({error:'이름과 아이디를 입력하세요.'});
+router.post('/find-pw', (req, res) => {
+  const { name, id } = req.body
+  if (!name || !id) {
+    return res.status(400).json({ error: '이름과 아이디를 입력하세요.' });
   }
-  conn.query('SELECT password FROM users WHERE username =? AND user_id =? ',[name,id],(err,rows)=>{
-    if(err){
-      console.error('비밀번호 찾기 쿼리 실패:',err);
-      return res.status(500).json({error:'서버 오류'})
+  conn.query('SELECT password FROM users WHERE username =? AND user_id =? ', [name, id], (err, rows) => {
+    if (err) {
+      console.error('비밀번호 찾기 쿼리 실패:', err);
+      return res.status(500).json({ error: '서버 오류' })
     }
-    if (rows.length>0){
-      return res.status(200).json({pw : rows[0].password})
+    if (rows.length > 0) {
+      return res.status(200).json({ pw: rows[0].password })
     }
     else {
-      return res.status(200).json({pw:null});
+      return res.status(200).json({ pw: null });
     }
   })
 })

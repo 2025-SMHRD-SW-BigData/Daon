@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { UserContext } from './context/UserContext';
-
+import axios from 'axios'
 // 페이지 컴포넌트
 import Main from './component/Main';
 import Map from './component/Map';
@@ -55,6 +55,30 @@ import './App.css';
 function App() {
   const [user, setUser] = useState(null);
 
+  axios.defaults.withCredentials = true;
+
+  // ✅ 자동 로그인 체크
+  useEffect(() => {
+    axios
+      .get('http://localhost:3003/user/check-auth', {
+        withCredentials: true  //이걸 꼭 추가해야 쿠키가 서버로 전송된다니
+      })
+      .then(res => {
+        if (res.data.success) {
+          setUser({
+            user_id: res.data.user.user_id,
+            username: res.data.user.username,
+            nickname: res.data.user.nickname,
+            role: res.data.user.role
+          });
+        }
+      })
+      .catch(err => {
+        console.log('로그인 유지 실패 또는 비로그인 상태');
+      });
+  }, []);
+
+
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <Routes>
@@ -77,7 +101,7 @@ function App() {
         {/* 어업 관련 페이지 */}
         <Route path="/licenseinfo" element={<LicenseInfo />} />
 
-        <Route path='/reportfishery' element={<Fish_reported />} /> 
+        <Route path='/reportfishery' element={<Fish_reported />} />
         <Route path='/licensedfishery' element={<Fish_licensedfishery />} />
         <Route path='/permitfishery' element={<FIsh_permitfishery />} />
         <Route path='/fishingboat' element={<Fish_fishingboat />} />
@@ -106,12 +130,12 @@ function App() {
 
         {/* 정착지 비교 관련 페이지 */}
         <Route path="/compare" element={<CompareVillage />} />
-      
+
         {/* 전문정착상담가 Q&A */}
-      <Route path='/questions' element={<QuestionList user={user} />} />
-<Route path='/question/new' element={<QuestionForm user={user} />} />
-<Route path='/question/:id' element={<QuestionDetail user={user} />} />
-      
+        <Route path='/questions' element={<QuestionList user={user} />} />
+        <Route path='/question/new' element={<QuestionForm user={user} />} />
+        <Route path='/question/:id' element={<QuestionDetail user={user} />} />
+
       </Routes>
     </UserContext.Provider>
   );

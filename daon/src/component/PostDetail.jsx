@@ -140,6 +140,7 @@ const PostDetail = () => {
                     borderRadius: '10px',
                     marginBottom: '12px',
                     lineHeight: '1.7',
+                    whiteSpace:'pre-line',
                   }}>
                     <strong style={{ display: 'block', marginBottom: '6px' }}>{comment.nickname}</strong>
                     <span>{comment.content}</span>

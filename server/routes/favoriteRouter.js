@@ -27,8 +27,6 @@ conn.connect(err => {
     }
 });
 
-// 모든 라우터에서 CORS 허용 설정
-router.use(cors());
 
 // 즐겨찾기 여부 조회 (GET)
 router.get('/favorite', (req, res) => {
