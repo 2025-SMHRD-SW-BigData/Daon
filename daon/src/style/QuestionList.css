@@ -29,16 +29,36 @@
 }
 
 .qna-write {
-    background-color: #6aa7e6 !important;
-    border: none;
-    color: white !important;
-    padding: 6px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 0.9em;
-    margin-right: -200px
+  background-color: #1f4fa3;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
+
+.qna-write:hover {
+  background-color: #17418b;
+}
+
+.qna-main-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1f4fa3;
+  margin: 0;
+}
+
+.qna-title-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 20px 16px;
+}
+
 
 .qna-list {
     display: flex;
