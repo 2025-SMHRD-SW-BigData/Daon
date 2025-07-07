@@ -26,7 +26,7 @@ const CommunityWrite = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('http://192.168.219.45:3003/community/write', form)
+      .post('http://localhost:3003/community/write', form)
       .then(() => {
         alert('등록 완료');
         navigate('/community');

@@ -23,7 +23,7 @@ const PostDetail = () => {
     if (!post?.post_id) return;
 
     axios
-      .get(`http://192.168.219.45:3003/community/comments/${post.post_id}`)
+      .get(`http://localhost:3003/community/comments/${post.post_id}`)
       .then((res) => {
         setComments(res.data)
         // console.log(res.data)
@@ -48,10 +48,10 @@ const PostDetail = () => {
     };
 
     axios
-      .post('http://192.168.219.45:3003/community/comments', newComment)
+      .post('http://localhost:3003/community/comments', newComment)
       .then(() => {
         // 🔁 댓글 새로고침
-        return axios.get(`http://192.168.219.45:3003/community/comments/${post.post_id}`);
+        return axios.get(`http://localhost:3003/community/comments/${post.post_id}`);
       })
       .then((res) => {
         setComments(res.data);
@@ -72,7 +72,7 @@ const PostDetail = () => {
     if (!confirmDelete) return;
 
     axios
-      .delete(`http://192.168.219.45:3003/community/delete/${post.post_id}`)
+      .delete(`http://localhost:3003/community/delete/${post.post_id}`)
       .then((res) => {
         alert('게시글이 삭제되었습니다.');
         navigate('/community'); // 삭제 후 목록으로 이동

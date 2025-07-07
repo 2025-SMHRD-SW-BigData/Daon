@@ -56,7 +56,7 @@ router.post('/ask', async (req, res) => {
     // console.log('Clova API 전체 응답:', JSON.stringify(response.data, null, 2));
     
     // 응답에서 챗봇의 답변 추출
-    const resultText = response.data.result?.message?.content || '[응답 없음]';
+    const resultText = response.data.result?.message?.content || '[죄송합니다. 현재 답변을 드릴 수 없습니다. 고객센터에 문의해 주세요.]';
 
     // 서버 콘솔에 응답 출력 (디버깅용)
     console.log('챗봇 응답', resultText);
