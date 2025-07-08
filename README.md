@@ -1,4 +1,4 @@
-# 📌 프로젝트 제목: Movie Recommendation System 🎬
+# 📌 프로젝트 제목: Movie Recommendation System 🎬 요런느낌인가봐요
 
 ## 📖 프로젝트 개요
 사용자의 영화 취향을 분석하여 맞춤형 추천 기능을 제공하는 영화 추천 웹 애플리케이션입니다. Flask를 이용한 웹 서버와 머신러닝 기반의 추천 알고리즘을 사용했습니다.
