@@ -51,24 +51,6 @@
 
 ---
 
-## 🗂 프로젝트 구조
-
-📦 gui-fish-road/
-├── client/ # 프론트엔드 (HTML, CSS, JS)
-├── server/ # 백엔드 (Node.js + Express)
-│ ├── routes/ # API 라우터
-│ ├── models/ # DB 모델 (Mongoose)
-│ ├── controllers/ # 로직 처리
-│ └── config/ # 환경변수, DB 연결
-├── public/ # 정적 자산
-└── README.md
-
-yaml
-복사
-편집
-
----
-
 ## 🚀 주요 페이지/기능 요약
 
 ## ✅ 기능별 개발 담당자
