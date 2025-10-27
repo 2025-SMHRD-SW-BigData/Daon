@@ -110,6 +110,11 @@
   
 ![oo](https://github.com/user-attachments/assets/293b0565-aec0-4ab8-967f-e6a2e99c4885)
 
+---
+
+## 📁 시스템 아키텍처
+
+<img width="595" height="360" alt="귀어로드_시스템아키텍처" src="https://github.com/user-attachments/assets/744a4b97-8742-4603-8acd-8260f03d5547" />
 
 ---
 
