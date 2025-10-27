@@ -1,4 +1,4 @@
-![dd](https://github.com/user-attachments/assets/66aca01d-6e64-4e2c-ae06-a623804dc5ab)# 🐟 귀어로드
+# 🐟 귀어로드
 
  귀어귀촌 입문자를 위한 통합 정보 기반 어업 창업 지원 플랫폼  
 
@@ -73,30 +73,41 @@
 > 추후 실제 구현 캡처 또는 시연 GIF 첨부
 
 - 📍 지도 기반 어촌 탐색
+  
 ![aa](https://github.com/user-attachments/assets/2524850f-ec2b-428b-bf90-ae34f8f3a380)
 
 - 🤖 AI 챗봇 질의응답
-- ![aadfsfaf](https://github.com/user-attachments/assets/e4992dbe-3f90-4a95-bfac-a9ead0bf1b49)
+  
+![aadfsfaf](https://github.com/user-attachments/assets/e4992dbe-3f90-4a95-bfac-a9ead0bf1b49)
 
 - 어업 자격 · 어업 정보 · 지원금 및 정책
+
 ![bb](https://github.com/user-attachments/assets/50b64fba-d4e7-4c46-83b0-62ed25858459)
+  
 ![cc](https://github.com/user-attachments/assets/79a2bc24-5d88-4df7-80e9-89ba1cf219fd)
+  
 ![dd](https://github.com/user-attachments/assets/daa7b2cc-e1c8-4822-aad2-42809dc23057)
 
-- 📝 커뮤니티 게시판 
+- 📝 커뮤니티 게시판
+  
  ![gh](https://github.com/user-attachments/assets/d5bb003d-0797-48fd-a2df-d29b0a28a9a7)
 
 
 - 마이페이지 즐겨찾기 & 댓글알림
+  
 ![ee](https://github.com/user-attachments/assets/fc49dc2e-8653-438a-97d2-d633d982884d)
+
 ![etew](https://github.com/user-attachments/assets/c89fb3f4-57b7-482b-9f11-cca13e9fe9e2)
+
 
 - 💬 전문 정착 상담 Q&A
   
 - 귀어로드 일반 사용자
+  
 ![ll](https://github.com/user-attachments/assets/c9e3fd83-bf34-4290-a692-1fd6d5a74163)
 
 - 귀어로드 전문 정착 상담가
+  
 ![oo](https://github.com/user-attachments/assets/293b0565-aec0-4ab8-967f-e6a2e99c4885)
 
 
